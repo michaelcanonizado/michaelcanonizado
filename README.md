@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Michael Canonizado</h1>
-<h3 align="center">Passionately Learning and Growing in Frontend Development</h3>
+<h3 align="center">Passionately Learning and Growing in Web Development</h3>
 
 # 💫 About Me:
 📧 - How to reach me michaelxaviercanonizado@gmail.com<br>
