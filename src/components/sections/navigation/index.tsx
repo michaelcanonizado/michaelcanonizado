@@ -1,11 +1,14 @@
-import { cn } from '@/lib/utils';
-import { container } from '@/styles/container';
+import Link from '@/components/ui/link';
 
 const NavigationBar = () => {
   return (
     <header className='flex justify-center border-b-[1px]'>
-      <nav className={cn('h-[64px] border-x-[1px]', container)}>
-        Navigation Bar
+      <nav className='container h-[64px] border-x-[1px]'>
+        <div className='flex flex-row gap-md'>
+          <Link>About</Link>
+          <Link>Experience</Link>
+          <Link>Projects</Link>
+        </div>
       </nav>
     </header>
   );
