@@ -76,7 +76,7 @@
   font-size: calc((14 / 16) * 1rem);
   letter-spacing: calc((1 / 16) * 1rem);
   line-height: 1.2;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @layer base {

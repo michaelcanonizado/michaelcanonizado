@@ -16,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='dark'>
-      <body className={'flex flex-col justify-center ' + inter.className}>
+    <html lang='en' className='dark min-h-screen'>
+      <body
+        className={'text-body flex flex-col justify-center' + inter.className}
+      >
         <NavigationBar />
         <main className='flex w-screen justify-center'>
           <div className='container border-x-[1px] border-b-[1px]'>
