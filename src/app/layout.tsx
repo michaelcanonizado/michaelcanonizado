@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 
 import NavigationBar from '@/components/sections/navigation';
+import { container } from '@/styles/container';
 
 const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
@@ -17,9 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark'>
-      <body className={inter.className}>
+      <body className={'flex flex-col justify-center ' + inter.className}>
         <NavigationBar />
-        <main className=''>{children}</main>
+        <main className='flex w-screen justify-center'>
+          <div className={container + ' border-x-[1px] border-b-[1px]'}>
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
