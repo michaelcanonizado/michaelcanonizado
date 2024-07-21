@@ -22,9 +22,7 @@ export default function RootLayout({
       >
         <NavigationBar />
         <main className='flex w-screen justify-center'>
-          <div className='container border-x-[1px] border-b-[1px]'>
-            {children}
-          </div>
+          <div className='container border-x-[1px] pb-[100px]'>{children}</div>
         </main>
       </body>
     </html>
