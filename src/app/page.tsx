@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className='space-y-8 p-8'>
+    <div className='m-lg space-y-md'>
       <div className='max-w-[500px]'>
         <h1 className='text-display'>
           Creator. Storyteller. <span className='text-brand'>Webflow.</span>
