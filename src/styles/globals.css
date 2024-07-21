@@ -55,13 +55,13 @@
   max-width: 1080px;
 }
 .text-display {
-  font-size: calc((72 / 16) * 1rem);
+  font-size: calc((112 / 16) * 1rem);
   letter-spacing: calc((-2 / 16) * 1rem);
   line-height: 0.95;
   font-weight: 700;
 }
 .text-heading {
-  font-size: calc((48 / 16) * 1rem);
+  font-size: calc((47 / 16) * 1rem);
   letter-spacing: calc((-0.4 / 16) * 1rem);
   line-height: 1;
   font-weight: 600;
