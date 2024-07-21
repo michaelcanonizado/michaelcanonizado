@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --brand: 150 7% 6%;
-    /* --brand: 11 99% 60%; */
+    /* --brand: 150 7% 6%; */
+    --brand: 12 85% 48%;
 
     --background: 44 22% 90%;
     --foreground: 12 85% 48%;
@@ -52,6 +52,10 @@
   }
 }
 
+.hero-height {
+  height: calc(100vh - (64px * 2));
+  min-height: 650px;
+}
 .container {
   padding-left: 16px;
   padding-right: 16px;
