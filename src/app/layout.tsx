@@ -21,9 +21,7 @@ export default function RootLayout({
         className={'text-body flex flex-col justify-center' + inter.className}
       >
         <NavigationBar className='px-md' />
-        <main className='flex justify-center px-md'>
-          <div className='container border-x-[1px] pb-[100px]'>{children}</div>
-        </main>
+        {children}
       </body>
     </html>
   );

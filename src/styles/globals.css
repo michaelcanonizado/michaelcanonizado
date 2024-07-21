@@ -52,15 +52,22 @@
   }
 }
 
-.hero-height {
-  height: calc(100vh - (64px * 2));
-  min-height: 650px;
+@layer components {
+  .container {
+    @apply w-full max-w-[1080px] border-x-[1px] px-md;
+  }
 }
-.container {
+/* .container {
   padding-left: 16px;
   padding-right: 16px;
   width: 100%;
   max-width: 1080px;
+  border: solid var(--brand);
+  border-width: 0 1px 0 1px;
+} */
+.hero-height {
+  height: calc(100vh - (64px * 2));
+  min-height: 650px;
 }
 .text-display {
   font-size: calc((112 / 16) * 1rem);
@@ -85,6 +92,9 @@
   letter-spacing: calc((1 / 16) * 1rem);
   line-height: 1.2;
   font-weight: 400;
+}
+
+@layer components {
 }
 
 @layer base {
