@@ -19,6 +19,7 @@ export default function Home() {
           michaelxaviercanonizado@gmail.com. mikeycanonizado@gmail.com
         </p>
       </div>
+      <div className='bg-muted size-[100px] rounded'></div>
     </div>
   );
 }
