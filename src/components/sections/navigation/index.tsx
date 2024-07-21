@@ -1,8 +1,10 @@
+import { cn } from '@/lib/utils';
+import { ComponentBaseProps } from '@/types';
 import Link from '@/components/ui/link';
 
-const NavigationBar = () => {
+const NavigationBar = ({ className }: ComponentBaseProps) => {
   return (
-    <header className='flex justify-center border-b-[1px]'>
+    <header className={cn('flex justify-center border-b-[1px]', className)}>
       <nav className='container flex h-[64px] flex-row items-center justify-between border-x-[1px]'>
         <div className=''>
           <h1>Logo</h1>
