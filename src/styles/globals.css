@@ -16,6 +16,8 @@
   }
 
   .dark {
+    --brand: 11 99% 60%;
+
     --background: 150 7% 6%;
     --foreground: 60 100% 95%;
 

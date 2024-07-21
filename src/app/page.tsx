@@ -3,7 +3,7 @@ export default function Home() {
     <div className='space-y-8'>
       <div className='max-w-[500px]'>
         <h1 className='text-display'>
-          Creator. Storyteller. <span className=''>Webflow.</span>
+          Creator. Storyteller. <span className='text-brand'>Webflow.</span>
         </h1>
       </div>
       <div className='max-w-[500px]'>
