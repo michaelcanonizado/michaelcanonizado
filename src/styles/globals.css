@@ -74,9 +74,9 @@
 }
 .text-display {
   font-size: calc((177 / 16) * 1rem);
-  letter-spacing: calc((-2 / 16) * 1rem);
+  letter-spacing: calc((-6 / 16) * 1rem);
   line-height: 0.95;
-  font-weight: 700;
+  font-weight: 800;
 }
 .text-heading {
   font-size: calc((80 / 16) * 1rem);
