@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
   return (
     <>
-      <div className='hero-height container flex flex-col items-center justify-center overflow-hidden border-b-[1px] text-center'>
+      <section className='hero-height container flex flex-col items-center justify-center overflow-hidden border-b-[1px] text-center'>
         <div className='mb-lg'>
           <div className='size-[72px] rounded-full bg-foreground' />
         </div>
@@ -21,7 +21,7 @@ const Hero = () => {
             functionality
           </p>
         </div>
-      </div>
+      </section>
       <div className='text-sub container !m-0 grid h-[64px] grid-cols-3 border-b-[1px] bg-background'>
         <div className='flex items-center justify-start'>
           <p className=''>{'// Code & Engage'}</p>
