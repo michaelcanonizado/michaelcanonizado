@@ -11,9 +11,9 @@ const Hero = () => {
           <p className='font-bold'>Hello! I&apos;m Michael</p>
         </div>
         <div className='text-display mb-lg flex flex-col items-center'>
-          <h1 className=''>Creator.</h1>
-          <h1 className=''>Storyteller.</h1>
-          <h1 className='text-brand'>Web Developer.</h1>
+          <h1 className=''>CREATOR.</h1>
+          <h1 className=''>STORYTELLER.</h1>
+          <h1 className='text-brand'>WEB DEVELOPER.</h1>
         </div>
         <div className=''>
           <p className='font-bold'>
