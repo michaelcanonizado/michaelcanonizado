@@ -11,7 +11,8 @@
     --foreground: 12 85% 48%;
     /* --foreground: 150 7% 6%; */
 
-    --muted: 12 85% 48%;
+    --muted: 40 12% 85%;
+    /* --muted: 12 85% 48%; */
     --muted-foreground: 12 85% 48%;
     /* --muted-foreground: 180 0% 48%; */
 
