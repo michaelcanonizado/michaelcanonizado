@@ -61,9 +61,9 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
           <h1 className='font-bold'>Logo</h1>
         </div>
         <div className='flex flex-row gap-md'>
-          <Link>About</Link>
-          <Link>Experience</Link>
-          <Link>Projects</Link>
+          <Link>about</Link>
+          <Link>experience</Link>
+          <Link>projects</Link>
         </div>
       </nav>
     </header>
