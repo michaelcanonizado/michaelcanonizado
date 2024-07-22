@@ -33,6 +33,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
       style={{
         backgroundColor: 'var(--brand)'
       }}
+      
     >
       <AnimatePresence>
         {isScrolled && (
