@@ -8,11 +8,14 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex min-h-[80vh] items-center justify-center space-y-md border-y text-brand',
+        'container flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y text-brand',
         className
       )}
     >
-      <div className='space-y-lg'>
+      <div className='rotate-[10deg]'>
+        <div className='h-[400px] w-[250px] rounded-lg bg-foreground' />
+      </div>
+      <div className='max-w-[400px] space-y-md'>
         <div className=''>
           <h1 className='text-heading'>
             Looking for a developer who can create a visually appealing and
