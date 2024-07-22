@@ -8,7 +8,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex min-h-screen items-center justify-center space-y-md border-b',
+        'container flex min-h-[80vh] items-center justify-center space-y-md border-y text-brand',
         className
       )}
     >
