@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
         </div>
       </section>
-      <div className='text-sub container !m-0 grid h-[64px] grid-cols-3 border-b bg-background'>
+      <div className='text-sub container !m-0 grid h-[64px] grid-cols-3 border-b bg-background !py-0'>
         <div className='flex items-center justify-start'>
           <p className=''>{'// Code & Engage'}</p>
         </div>

@@ -54,7 +54,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
       <nav
         className={cn(
-          'container z-50 flex h-[64px] flex-row items-center justify-between bg-transparent',
+          'container z-50 flex h-[64px] flex-row items-center justify-between bg-transparent !py-0',
           isScrolled ? 'text-background' : 'text-foreground'
         )}
       >
