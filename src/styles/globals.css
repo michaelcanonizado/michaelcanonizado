@@ -80,7 +80,7 @@
 }
 .text-heading {
   font-size: calc((80 / 16) * 1rem);
-  letter-spacing: calc((-0.3 / 16) * 1rem);
+  letter-spacing: calc((-4.5 / 16) * 1rem);
   line-height: 1.1;
   font-weight: 700;
 }
