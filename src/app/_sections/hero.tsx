@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className='hero-height mb-xl flex w-full flex-col justify-end overflow-hidden pb-md text-center'>
       <div className='flex grow flex-col items-center justify-center space-y-md'>
-        <div className='text-heading space-y-[-8px]'>
+        <div className='text-display space-y-[-8px]'>
           <div>
             <p className=''>creator.</p>
           </div>
