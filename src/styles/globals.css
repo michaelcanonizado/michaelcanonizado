@@ -99,10 +99,10 @@
   font-weight: 700;
 }
 .text-body {
-  font-size: calc((16 / 16) * 1rem);
+  font-size: calc((20 / 16) * 1rem);
   letter-spacing: calc((1 / 16) * 1rem);
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: 400;
 }
 .text-sub {
   font-size: calc((14 / 16) * 1rem);
