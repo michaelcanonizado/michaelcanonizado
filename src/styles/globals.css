@@ -55,7 +55,7 @@
 
 @layer components {
   .container {
-    @apply w-full max-w-[1080px] px-md py-lg md:px-lg md:py-xl;
+    @apply w-full max-w-[1440px] px-md py-lg md:px-lg md:py-xl;
   }
   /* .container {
     @apply w-full max-w-[1080px] border-x px-md py-lg md:px-lg md:py-xl;
