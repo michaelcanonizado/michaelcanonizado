@@ -54,7 +54,7 @@
 
 @layer components {
   .container {
-    @apply w-full max-w-[1080px] border-x-[1px] px-md;
+    @apply w-full max-w-[1080px] border-x px-md;
   }
 }
 /* .container {

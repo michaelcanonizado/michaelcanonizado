@@ -3,9 +3,7 @@ import { ComponentBaseProps } from '@/types';
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('container border-b-[1px]', className)}>
-      Projects
-    </section>
+    <section className={cn('container border-b', className)}>Projects</section>
   );
 };
 

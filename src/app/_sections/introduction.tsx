@@ -4,9 +4,7 @@ import React from 'react';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn('container space-y-md border-b-[1px] p-xl', className)}
-    >
+    <section className={cn('container space-y-md border-b p-xl', className)}>
       <div className='max-w-[700px]'>
         <h1 className='text-heading'>
           Looking for a developer who can create a visually appealing and fully

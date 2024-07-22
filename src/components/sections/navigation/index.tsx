@@ -26,14 +26,10 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
   return (
     <header
-      className={cn(
-        'sticky top-0 flex justify-center border-b-[1px]',
-        className
-      )}
+      className={cn('sticky top-0 flex justify-center border-b', className)}
       style={{
         backgroundColor: 'var(--brand)'
       }}
-      
     >
       <AnimatePresence>
         {isScrolled && (
@@ -58,7 +54,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
       <nav
         className={cn(
-          'container z-50 flex h-[64px] flex-row items-center justify-between border-x-[1px] bg-transparent',
+          'container z-50 flex h-[64px] flex-row items-center justify-between bg-transparent',
           isScrolled ? 'text-background' : 'text-foreground'
         )}
       >
