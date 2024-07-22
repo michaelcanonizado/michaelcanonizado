@@ -3,14 +3,14 @@ import React from 'react';
 const Hero = () => {
   return (
     <>
-      <section className='hero-height container flex flex-col items-center justify-center overflow-hidden border-b text-center'>
+      <section className='hero-height flex flex-col items-center justify-center overflow-hidden text-center'>
         <div className='mb-lg'>
           <div className='size-[72px] rounded-full bg-foreground' />
         </div>
         <div className='mb-[-16px]'>
           <p className='font-bold'>Hello! I&apos;m Michael</p>
         </div>
-        <div className='text-display mb-lg flex max-w-[810px] flex-col items-center'>
+        <div className='text-display mb-lg flex flex-col items-center'>
           <h1 className=''>Creator.</h1>
           <h1 className=''>Storyteller.</h1>
           <h1 className='text-brand'>Web Developer.</h1>
@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
         </div>
       </section>
-      <div className='text-sub container !m-0 grid h-[64px] grid-cols-3 border-b bg-background !py-0'>
+      <div className='text-sub container !m-0 grid h-[64px] grid-cols-3 border-b border-t bg-background !py-0'>
         <div className='flex items-center justify-start'>
           <p className=''>{'// Code & Engage'}</p>
         </div>

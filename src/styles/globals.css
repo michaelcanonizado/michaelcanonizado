@@ -54,8 +54,11 @@
 
 @layer components {
   .container {
-    @apply w-full max-w-[1080px] border-x px-md py-lg md:px-lg md:py-xl;
+    @apply w-full max-w-[1080px] px-md py-lg md:px-lg md:py-xl;
   }
+  /* .container {
+    @apply w-full max-w-[1080px] border-x px-md py-lg md:px-lg md:py-xl;
+  } */
 }
 /* .container {
   padding-left: 16px;
@@ -70,7 +73,7 @@
   min-height: 650px;
 }
 .text-display {
-  font-size: calc((112 / 16) * 1rem);
+  font-size: calc((177 / 16) * 1rem);
   letter-spacing: calc((-2 / 16) * 1rem);
   line-height: 0.95;
   font-weight: 700;
