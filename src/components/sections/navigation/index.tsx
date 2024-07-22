@@ -1,12 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
-  useScroll,
-  useTransform
+  useScroll
 } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
@@ -59,15 +58,12 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
         )}
       >
         <div className=''>
-          <h1>Logo</h1>
+          <h1 className='font-bold'>Logo</h1>
         </div>
         <div className='flex flex-row gap-md'>
           <Link>About</Link>
           <Link>Experience</Link>
           <Link>Projects</Link>
-        </div>
-        <div className=''>
-          <h1>O</h1>
         </div>
       </nav>
     </header>
