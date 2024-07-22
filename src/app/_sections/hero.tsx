@@ -3,32 +3,30 @@ import HeroName from '@/../public/hero-name';
 
 const Hero = () => {
   return (
-    <>
-      <section className='hero-height flex w-full flex-col justify-end overflow-hidden pb-md text-center'>
-        <div className='flex grow flex-col items-center justify-center space-y-md'>
-          <div className='text-heading space-y-[-8px]'>
-            <div>
-              <p className=''>creator.</p>
-            </div>
-            <div>
-              <p className=''>storyteller.</p>
-            </div>
-            <div>
-              <p className=''>web developer.</p>
-            </div>
+    <section className='hero-height mb-xl flex w-full flex-col justify-end overflow-hidden pb-md text-center'>
+      <div className='flex grow flex-col items-center justify-center space-y-md'>
+        <div className='text-heading space-y-[-8px]'>
+          <div>
+            <p className=''>creator.</p>
           </div>
-          <div className=''>
-            <p className='text-body'>
-              Creating a digital experience that bridge aesthetics and
-              functionality
-            </p>
+          <div>
+            <p className=''>storyteller.</p>
+          </div>
+          <div>
+            <p className=''>web developer.</p>
           </div>
         </div>
         <div className=''>
-          <HeroName />
+          <p className='text-body'>
+            Creating a digital experience that bridge aesthetics and
+            functionality
+          </p>
         </div>
-      </section>
-    </>
+      </div>
+      <div className=''>
+        <HeroName />
+      </div>
+    </section>
   );
 };
 
