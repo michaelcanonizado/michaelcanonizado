@@ -78,7 +78,7 @@
 .text-heading {
   font-size: calc((47 / 16) * 1rem);
   letter-spacing: calc((-0.4 / 16) * 1rem);
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 600;
 }
 .text-body {
