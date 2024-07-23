@@ -26,3 +26,16 @@ export const TextHeading = ({ className, children }: ComponentBaseProps) => {
     </h2>
   );
 };
+
+export const TextBody = ({ className, children }: ComponentBaseProps) => {
+  return (
+    <p
+      className={cn(
+        'text-[calc((20/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)]',
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+};
