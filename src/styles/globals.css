@@ -57,58 +57,11 @@
   .container {
     @apply w-full max-w-[1440px] px-md py-lg md:px-lg md:py-xl;
   }
-  /* .container {
-    @apply w-full max-w-[1080px] border-x px-md py-lg md:px-lg md:py-xl;
-  } */
 }
-/* .container {
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 100%;
-  max-width: 1080px;
-  border: solid var(--brand);
-  border-width: 0 1px 0 1px;
-} */
 .hero-height {
   height: calc(100vh - 64px);
   /* height: calc(100vh - (64px * 2)); */
   min-height: 650px;
-}
-/* .text-display {
-  font-size: calc((177 / 16) * 1rem);
-  letter-spacing: calc((-6 / 16) * 1rem);
-  line-height: 0.95;
-  font-weight: 800;
-} */
-/* .text-heading {
-  font-size: calc((80 / 16) * 1rem);
-  letter-spacing: calc((-4.5 / 16) * 1rem);
-  line-height: 1.1;
-  font-weight: 700;
-} */
-.text-display {
-  font-size: calc((80 / 16) * 1rem);
-  letter-spacing: calc((-4.5 / 16) * 1rem);
-  line-height: 1.1;
-  font-weight: 700;
-}
-.text-heading {
-  font-size: calc((40 / 16) * 1rem);
-  letter-spacing: calc((-2.5 / 16) * 1rem);
-  line-height: 1.1;
-  font-weight: 700;
-}
-.text-body {
-  font-size: calc((20 / 16) * 1rem);
-  letter-spacing: calc((1 / 16) * 1rem);
-  line-height: 1.4;
-  font-weight: 400;
-}
-.text-sub {
-  font-size: calc((14 / 16) * 1rem);
-  letter-spacing: calc((1 / 16) * 1rem);
-  line-height: 1.2;
-  font-weight: 400;
 }
 
 @layer components {
