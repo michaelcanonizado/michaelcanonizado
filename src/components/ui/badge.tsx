@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import React from 'react';
+import { TextSub } from './text';
 
 const Badge = ({ className, children }: ComponentBaseProps) => {
-  return <div className={cn('text-sub', className)}>{children}</div>;
+  return <TextSub className={cn('', className)}>{children}</TextSub>;
 };
 
 export default Badge;
