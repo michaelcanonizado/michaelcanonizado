@@ -1,29 +1,29 @@
-import React from 'react';
 import HeroName from '@/../public/hero-name';
+import { TextBody, TextDisplay } from '@/components/ui/text';
 
 const Hero = () => {
   return (
     <section className='hero-height mb-xl flex w-full flex-col justify-end overflow-hidden pb-md text-center'>
       <div className='flex grow flex-col items-center justify-center space-y-md'>
-        <div className='text-display space-y-[-8px]'>
+        <div className='space-y-[-8px]'>
           <div>
-            <p className=''>creator.</p>
+            <TextDisplay>creator.</TextDisplay>
           </div>
           <div>
-            <p className=''>storyteller.</p>
+            <TextDisplay>storyteller.</TextDisplay>
           </div>
           <div>
-            <p className=''>web developer.</p>
+            <TextDisplay>web developer.</TextDisplay>
           </div>
         </div>
-        <div className=''>
-          <p className='text-body'>
+        <div>
+          <TextBody>
             Creating a digital experience that bridge aesthetics and
             functionality
-          </p>
+          </TextBody>
         </div>
       </div>
-      <div className=''>
+      <div>
         <HeroName />
       </div>
     </section>
