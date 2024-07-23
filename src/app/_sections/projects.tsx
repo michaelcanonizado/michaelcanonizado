@@ -32,7 +32,7 @@ const Project = () => {
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
     <section
-      className={cn('min-h-[80vh container space-y-xl border-b', className)}
+      className={cn('container min-h-[80vh] space-y-xl border-b', className)}
     >
       <div className=''>
         <h1 className='text-display text-center'>Projects</h1>
