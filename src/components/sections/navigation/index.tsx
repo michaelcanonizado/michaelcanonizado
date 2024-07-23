@@ -10,6 +10,7 @@ import {
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import Link from '@/components/ui/link';
+import { TextBody } from '@/components/ui/text';
 
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const { scrollY } = useScroll();
@@ -58,7 +59,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
         )}
       >
         <div className=''>
-          <h1 className='font-bold'>Logo</h1>
+          <TextBody className='font-bold'>Logo</TextBody>
         </div>
         <div className='flex flex-row gap-md'>
           <Link>about</Link>
