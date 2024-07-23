@@ -58,14 +58,6 @@
     @apply w-full max-w-[1440px] px-md py-lg md:px-lg md:py-xl;
   }
 }
-.hero-height {
-  height: calc(100vh - 64px);
-  /* height: calc(100vh - (64px * 2)); */
-  min-height: 650px;
-}
-
-@layer components {
-}
 
 @layer base {
   * {
