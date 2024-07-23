@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import React from 'react';
+import { TextHeading } from '@/components/ui/text';
 
 const Technologies = ({ className }: ComponentBaseProps) => {
   return (
@@ -9,13 +9,9 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         'min-h-[80vh] w-full border bg-foreground py-xl',
         className
       )}
-      style={{
-        marginLeft: 'calc(50%-50vw)',
-        marginRight: 'calc(50%-50vw)'
-      }}
     >
       <div className='flex flex-row items-center justify-center'>
-        <h1 className='text-heading text-background'>Technologies</h1>
+        <TextHeading className='text-background'>Technologies</TextHeading>
       </div>
     </section>
   );
