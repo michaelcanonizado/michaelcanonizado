@@ -1,3 +1,4 @@
+import About from './_sections/about';
 import Hero from './_sections/hero';
 import Introduction from './_sections/introduction';
 import Projects from './_sections/projects';
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Introduction />
       <Projects />
+      <About />
     </main>
   );
 }
