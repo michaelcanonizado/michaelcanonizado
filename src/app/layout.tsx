@@ -18,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='min-h-screen bg-background text-foreground'>
       <body
-        className={
-          'text-body relative flex flex-col justify-center' + inter.className
-        }
+        className={'relative flex flex-col justify-center' + inter.className}
       >
         <NavigationBar />
         {children}
