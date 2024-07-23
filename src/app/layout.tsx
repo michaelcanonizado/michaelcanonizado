@@ -22,7 +22,7 @@ export default function RootLayout({
           'text-body relative flex flex-col justify-center' + inter.className
         }
       >
-        <NavigationBar className='px-md' />
+        <NavigationBar />
         {children}
       </body>
     </html>

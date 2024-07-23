@@ -6,7 +6,7 @@ import Technologies from './_sections/technologies';
 
 export default function Home() {
   return (
-    <main className='mb-[100px] flex min-h-[5000px] flex-col items-center px-md'>
+    <main className='mb-[100px] flex min-h-[5000px] flex-col items-center'>
       <Hero />
       <Introduction />
       <Projects />
