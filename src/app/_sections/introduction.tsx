@@ -1,14 +1,12 @@
-'use client';
-
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import React from 'react';
+import { TextBody, TextHeading } from '@/components/ui/text';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y text-brand',
+        'container flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y',
         className
       )}
     >
@@ -16,17 +14,17 @@ const Introduction = ({ className }: ComponentBaseProps) => {
         <div className='h-[400px] w-[250px] rounded-lg bg-foreground' />
       </div>
       <div className='max-w-[400px] space-y-md'>
-        <div className=''>
-          <h1 className='text-heading'>
+        <div>
+          <TextHeading>
             Looking for a developer who can create a visually appealing and
             fully functional website?
-          </h1>
+          </TextHeading>
         </div>
         <div className='max-w-[700px]'>
-          <p className='text-body'>
+          <TextBody>
             Your search ends here! With my knowledge in web development,
             you&apos;ll get a website that sets you apart!
-          </p>
+          </TextBody>
         </div>
       </div>
     </section>
