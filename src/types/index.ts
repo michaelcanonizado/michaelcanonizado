@@ -1,4 +1,4 @@
 export type ComponentBaseProps = {
   className?: string;
-  children?: string;
+  children?: React.ReactNode;
 };
