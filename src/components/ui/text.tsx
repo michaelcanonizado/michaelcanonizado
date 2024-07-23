@@ -39,3 +39,16 @@ export const TextBody = ({ className, children }: ComponentBaseProps) => {
     </p>
   );
 };
+
+export const TextSub = ({ className, children }: ComponentBaseProps) => {
+  return (
+    <p
+      className={cn(
+        'text-[calc((14/16)*1rem)] font-[400] leading-[1.2] tracking-[calc((1/16)*1rem)]',
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+};
