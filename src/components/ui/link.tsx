@@ -1,12 +1,12 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import React from 'react';
+import { TextSub } from '@/components/ui/text';
 
 const Link = ({ className, children }: ComponentBaseProps) => {
   return (
-    <div className={cn('text-sub hover:cursor-pointer', className)}>
+    <TextSub className={cn('hover:cursor-pointer', className)}>
       {children}
-    </div>
+    </TextSub>
   );
 };
 
