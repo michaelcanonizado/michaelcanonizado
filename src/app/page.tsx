@@ -2,6 +2,7 @@ import About from './_sections/about';
 import Hero from './_sections/hero';
 import Introduction from './_sections/introduction';
 import Projects from './_sections/projects';
+import Technologies from './_sections/technologies';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Introduction />
       <Projects />
       <About />
+      <Technologies />
     </main>
   );
 }
