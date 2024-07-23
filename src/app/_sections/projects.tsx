@@ -37,7 +37,7 @@ const Projects = ({ className }: ComponentBaseProps) => {
       <div className=''>
         <h1 className='text-display text-center'>Projects</h1>
       </div>
-      <div className='flex flex-row gap-xl'>
+      <div className='flex flex-row flex-wrap gap-xl'>
         <Project />
         <Project />
         <Project />
