@@ -5,33 +5,30 @@ import Card from '@/components/ui/card';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn(
-        'section flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y',
-        className
-      )}
-    >
-      <div className='rotate-[10deg]'>
-        <Card />
-      </div>
-      <div className='max-w-[400px] space-y-md'>
-        <div>
-          <TextHeading>
-            Looking for a developer who can create a visually appealing and
-            fully functional website?
-          </TextHeading>
+    <section className={cn('section space-y-md', className)}>
+      <div className='py-2xl flex items-center justify-center space-x-xl border-y'>
+        <div className='rotate-[10deg]'>
+          <Card />
         </div>
-        <div className='my-lg'>
-          <TextHeading>
-            We'd be excited for a collaboration opportunity in your next
-            venture.
-          </TextHeading>
-        </div>
-        <div className='max-w-[700px]'>
-          <TextBody>
-            Your search ends here! With my knowledge in web development,
-            you&apos;ll get a website that sets you apart!
-          </TextBody>
+        <div className='max-w-[400px] space-y-md'>
+          <div>
+            <TextHeading>
+              Looking for a developer who can create a visually appealing and
+              fully functional website?
+            </TextHeading>
+          </div>
+          <div className='my-lg'>
+            <TextHeading>
+              We'd be excited for a collaboration opportunity in your next
+              venture.
+            </TextHeading>
+          </div>
+          <div className='max-w-[700px]'>
+            <TextBody>
+              Your search ends here! With my knowledge in web development,
+              you&apos;ll get a website that sets you apart!
+            </TextBody>
+          </div>
         </div>
       </div>
     </section>

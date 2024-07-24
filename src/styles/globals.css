@@ -64,7 +64,7 @@
     @apply w-full max-w-[1440px] px-md md:px-lg;
   }
   .section {
-    @apply w-full py-lg md:py-xl;
+    @apply min-h-[calc(100dvh-64px)] w-full py-lg md:py-xl;
   }
 }
 
