@@ -7,26 +7,24 @@
     /* --brand: 150 7% 6%; */
     --brand: 12 85% 48%;
 
+    --navbar-background: 12 85% 48%;
+    --navbar-foreground: 44 22% 90%;
     --background: 44 22% 90%;
     --foreground: 12 85% 48%;
-    /* --foreground: 150 7% 6%; */
 
     --muted: 40 12% 85%;
-    /* --muted: 12 85% 48%; */
     --muted-foreground: 12 85% 48%;
-    /* --muted-foreground: 180 0% 48%; */
 
     --border: 12 85% 48%;
     --input: 12 85% 48%;
     --ring: 12 85% 48%;
-    /* --border: 60 4% 9%;
-    --input: 60 4% 9%;
-    --ring: 60 4% 9%; */
   }
 
   .inverted {
     --brand: 125 32% 8%;
 
+    --navbar-background: 60 100% 95%;
+    --navbar-foreground: 11 99% 60%;
     --background: 11 99% 60%;
     --foreground: 60 100% 95%;
 
@@ -41,6 +39,8 @@
   .dark {
     --brand: 11 99% 60%;
 
+    --navbar-background: 150 7% 6%;
+    --navbar-foreground: 60 100% 95%;
     --background: 150 7% 6%;
     --foreground: 60 100% 95%;
 
