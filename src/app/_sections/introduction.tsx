@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody, TextHeading } from '@/components/ui/text';
+import Card from '@/components/ui/card';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   return (
@@ -11,7 +12,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
       )}
     >
       <div className='rotate-[10deg]'>
-        <div className='h-[400px] w-[250px] rounded-lg bg-foreground' />
+        <Card />
       </div>
       <div className='max-w-[400px] space-y-md'>
         <div>
