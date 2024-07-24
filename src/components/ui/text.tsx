@@ -5,7 +5,7 @@ export const TextDisplay = ({ className, children }: ComponentBaseProps) => {
   return (
     <h1
       className={cn(
-        'font-display text-[calc((137/16)*1rem)] font-[700] leading-[0.8] tracking-[calc((0/16)*1rem)]',
+        'font-display text-[calc((137/16)*1rem)] font-[700] leading-[0.8] tracking-[calc((0/16)*1rem)] text-brand',
         className
       )}
     >
@@ -18,7 +18,7 @@ export const TextHeading = ({ className, children }: ComponentBaseProps) => {
   return (
     <h2
       className={cn(
-        'font-display text-[calc((32/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)]',
+        'font-display text-[calc((32/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)] text-brand',
         className
       )}
     >
