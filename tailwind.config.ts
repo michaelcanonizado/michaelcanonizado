@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)'],
-        build: ['var(--font-build)']
+        sans: ['var(--font-inter)'],
+        display: 'var(--font-clash-display)'
       },
       colors: {
         brand: 'hsl(var(--brand))',

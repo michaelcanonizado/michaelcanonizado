@@ -6,7 +6,7 @@ export const inter = Inter({
   variable: '--font-inter'
 });
 
-export const build = localFont({
-  src: './build.ttf',
-  variable: '--font-build'
+export const clashDisplay = localFont({
+  src: './ClashDisplay-Variable.ttf',
+  variable: '--font-clash-display'
 });
