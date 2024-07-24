@@ -2,10 +2,11 @@ import HeroNameFull from '../../../public/hero/hero-name-full';
 import HeroNameFirst from '../../../public/hero/hero-name-first';
 import HeroNameLast from '../../../public/hero/hero-name-last';
 import { TextBody, TextHeading } from '@/components/ui/text';
+import { cn } from '@/lib/utils';
 
 const Hero = () => {
   return (
-    <section>
+    <section className={cn('pb-xl')}>
       <div className='flex h-[calc(100vh-64px)] min-h-[600px] w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
           <div className='space-y-[-8px]'>
@@ -30,7 +31,7 @@ const Hero = () => {
           <HeroNameFirst />
         </div>
       </div>
-      <div className='mb-xl'>
+      <div className=''>
         <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
           <HeroNameLast />
         </div>
