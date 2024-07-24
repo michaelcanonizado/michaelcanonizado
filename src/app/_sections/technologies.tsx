@@ -62,20 +62,21 @@ const Technologies = ({ className }: ComponentBaseProps) => {
 
   return (
     <section
-      className={cn(
-        'container min-h-[40vh] space-y-lg border-x px-lg py-xl',
-        className
-      )}
+      className={cn('container min-h-[40vh] space-y-lg px-lg py-xl', className)}
     >
       <div className='flex flex-row items-center justify-center'>
         <TextHeading>Technologies</TextHeading>
       </div>
       <div
         className={cn(
-          'relative flex h-[100px] flex-row overflow-hidden border-x bg-slate-300',
+          'relative flex h-[100px] flex-row overflow-hidden',
           sliderHeight,
           sliderWidth
         )}
+        style={{
+          maskImage:
+            'linear-gradient(to right,transparent,#000 20% 80%,transparent)'
+        }}
       >
         {technologyImages.map((image, index) => {
           return (
