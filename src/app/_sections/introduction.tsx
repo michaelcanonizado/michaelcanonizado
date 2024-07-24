@@ -6,7 +6,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y',
+        'section flex min-h-[80vh] items-center justify-center space-x-xl space-y-md border-y',
         className
       )}
     >

@@ -62,7 +62,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   const imageHeight = `${height}px`;
 
   return (
-    <section className={cn('container space-y-lg py-xl', className)}>
+    <section className={cn('section space-y-lg py-xl', className)}>
       <div className='flex flex-row items-center justify-center'>
         <TextHeading>Technologies</TextHeading>
       </div>

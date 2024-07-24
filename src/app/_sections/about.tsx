@@ -14,7 +14,7 @@ const About = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex min-h-[80vh] flex-col items-center space-y-xl',
+        'section flex min-h-[80vh] flex-col items-center space-y-xl',
         className
       )}
     >
