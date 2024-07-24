@@ -26,7 +26,10 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
   return (
     <header
-      className={cn('sticky top-0 flex justify-center border-b', className)}
+      className={cn(
+        'sticky top-0 z-50 flex justify-center border-b',
+        className
+      )}
       style={{
         backgroundColor: 'var(--brand)'
       }}
