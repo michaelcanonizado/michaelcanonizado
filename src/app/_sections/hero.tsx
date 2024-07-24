@@ -1,5 +1,5 @@
 import HeroName from '@/../public/hero-name';
-import { TextBody, TextDisplay } from '@/components/ui/text';
+import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 
 const Hero = () => {
   return (
@@ -7,13 +7,13 @@ const Hero = () => {
       <div className='flex grow flex-col items-center justify-center space-y-md'>
         <div className='space-y-[-8px]'>
           <div>
-            <TextDisplay>creator.</TextDisplay>
+            <TextHeading>creator.</TextHeading>
           </div>
           <div>
-            <TextDisplay>storyteller.</TextDisplay>
+            <TextHeading>storyteller.</TextHeading>
           </div>
           <div>
-            <TextDisplay>web developer.</TextDisplay>
+            <TextHeading>web developer.</TextHeading>
           </div>
         </div>
         <div>
