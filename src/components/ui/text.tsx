@@ -5,7 +5,7 @@ export const TextDisplay = ({ className, children }: ComponentBaseProps) => {
   return (
     <h1
       className={cn(
-        'text-[calc((80/16)*1rem)] font-[700] leading-[1.1] tracking-[calc((-4.5/16)*1rem)]',
+        'font-display text-[calc((137/16)*1rem)] font-[700] leading-[0.8] tracking-[calc((0/16)*1rem)]',
         className
       )}
     >
