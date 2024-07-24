@@ -49,7 +49,7 @@ const technologyImages = [
   }
 ];
 
-const Technologies = ({ className }: ComponentBaseProps) => {
+const InfiniteLogoSlider = () => {
   const width = 100;
   const height = 100;
   const animationDuration = 8;
@@ -62,51 +62,57 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   const imageHeight = `${height}px`;
 
   return (
+    <div
+      className={cn('relative flex flex-row overflow-hidden')}
+      style={{
+        maskImage:
+          'linear-gradient(to right,transparent,#000 20% 80%,transparent)',
+        minWidth: sliderWidth,
+        height: sliderHeight
+      }}
+    >
+      {technologyImages.map((image, index) => {
+        return (
+          <motion.div
+            className='absolute'
+            style={{
+              width: imageWidth,
+              height: imageHeight
+            }}
+            key={index}
+            initial={{
+              left: '100%'
+            }}
+            animate={{
+              left: '-100%'
+            }}
+            transition={{
+              duration: animationDuration,
+              type: 'tween',
+              ease: 'linear',
+              repeat: Infinity,
+              delay: (animationDuration / numOfImages) * (index + 3)
+            }}
+          >
+            <Image
+              alt={image.alt}
+              src={`/technologies-temp/${image.src}`}
+              fill
+            />
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+};
+
+const Technologies = ({ className }: ComponentBaseProps) => {
+  return (
     <section className={cn('section space-y-lg py-xl', className)}>
       <div className='flex flex-row items-center justify-center'>
         <TextHeading>Technologies</TextHeading>
       </div>
-      <div
-        className={cn('relative flex flex-row overflow-hidden')}
-        style={{
-          maskImage:
-            'linear-gradient(to right,transparent,#000 20% 80%,transparent)',
-          minWidth: sliderWidth,
-          height: sliderHeight
-        }}
-      >
-        {technologyImages.map((image, index) => {
-          return (
-            <motion.div
-              className='absolute'
-              style={{
-                width: imageWidth,
-                height: imageHeight
-              }}
-              key={index}
-              initial={{
-                left: '100%'
-              }}
-              animate={{
-                left: '-100%'
-              }}
-              transition={{
-                duration: animationDuration,
-                type: 'tween',
-                ease: 'linear',
-                repeat: Infinity,
-                delay: (animationDuration / numOfImages) * (index + 3)
-              }}
-            >
-              <Image
-                alt={image.alt}
-                src={`/technologies-temp/${image.src}`}
-                fill
-              />
-            </motion.div>
-          );
-        })}
-      </div>
+      <InfiniteLogoSlider />
     </section>
   );
 };
