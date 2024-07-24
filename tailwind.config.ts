@@ -34,7 +34,8 @@ const config: Config = {
         sm: '8px',
         md: '16px',
         lg: '32px',
-        xl: '64px'
+        xl: '64px',
+        '2xl': '128px'
       }
     }
   },
