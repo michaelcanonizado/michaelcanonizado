@@ -71,7 +71,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         style={{
           maskImage:
             'linear-gradient(to right,transparent,#000 20% 80%,transparent)',
-          width: sliderWidth,
+          minWidth: sliderWidth,
           height: sliderHeight
         }}
       >
