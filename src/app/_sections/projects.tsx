@@ -16,9 +16,9 @@ const Project = () => {
           <TextHeading>minder</TextHeading>
         </div>
         <div className='mb-md flex flex-row gap-sm'>
-          <TextSub>NextJS</TextSub>
-          <TextSub>ShadCN</TextSub>
-          <TextSub>MongoDB</TextSub>
+          <TextSub className='font-semibold'>NextJS</TextSub>
+          <TextSub className='font-semibold'>ShadCN</TextSub>
+          <TextSub className='font-semibold'>MongoDB</TextSub>
         </div>
         <div className='flex items-center justify-end'>
           <TextBody>
