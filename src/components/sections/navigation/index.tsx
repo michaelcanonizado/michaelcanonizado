@@ -26,10 +26,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
   return (
     <header
-      className={cn(
-        'sticky top-0 z-50 flex justify-center border-b',
-        className
-      )}
+      className={cn('sticky top-0 z-50 flex justify-center', className)}
       style={{
         backgroundColor: 'var(--brand)'
       }}
@@ -62,7 +59,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
         )}
       >
         <div className=''>
-          <TextBody className='font-bold'>Logo</TextBody>
+          <TextBody className='font-display font-bold'>Logo</TextBody>
         </div>
         <div className='flex flex-row gap-md'>
           <Link>about</Link>
