@@ -8,7 +8,7 @@ import Footer from './_sections/footer';
 
 export default function Home() {
   return (
-    <main className='container mx-auto mb-[100px] flex min-h-[5000px] flex-col items-center'>
+    <main className='container mx-auto flex min-h-[5000px] flex-col items-center'>
       <Hero />
       <Introduction />
       <Projects />

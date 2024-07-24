@@ -5,7 +5,7 @@ import { ComponentBaseProps } from '@/types';
 const Footer = ({ className }: ComponentBaseProps) => {
   return (
     <section
-      className={cn('section min-h-[100vh] space-y-xl pt-[150px]', className)}
+      className={cn('section space-y-xl bg-slate-300 pt-[150px]', className)}
     >
       <div className=''>
         <TextDisplay>Footer</TextDisplay>
