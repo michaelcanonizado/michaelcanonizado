@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        build: ['var(--font-build)']
+      },
       colors: {
         brand: 'hsl(var(--brand))',
         border: 'hsl(var(--border))',
