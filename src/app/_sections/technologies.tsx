@@ -61,15 +61,13 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   const imageHeight = `h-[${height}px]`;
 
   return (
-    <section
-      className={cn('container min-h-[40vh] space-y-lg px-lg py-xl', className)}
-    >
+    <section className={cn('container space-y-lg px-lg py-xl', className)}>
       <div className='flex flex-row items-center justify-center'>
         <TextHeading>Technologies</TextHeading>
       </div>
       <div
         className={cn(
-          'relative flex h-[100px] flex-row overflow-hidden',
+          'relative flex flex-row overflow-hidden',
           sliderHeight,
           sliderWidth
         )}
@@ -81,11 +79,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         {technologyImages.map((image, index) => {
           return (
             <motion.div
-              className={cn(
-                'absolute h-[100px] w-[100px]',
-                imageWidth,
-                imageHeight
-              )}
+              className={cn('absolute', imageWidth, imageHeight)}
               key={index}
               initial={{
                 left: '100%'
