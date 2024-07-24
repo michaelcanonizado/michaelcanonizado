@@ -18,7 +18,10 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          secondary: 'hsl(var(--foreground-secondary))'
+        },
         'navbar-background': 'hsl(var(--navbar-background))',
         'navbar-foreground': 'hsl(var(--navbar-foreground))',
         muted: {
