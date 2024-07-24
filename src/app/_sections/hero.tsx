@@ -23,7 +23,7 @@ const Hero = () => {
           </TextBody>
         </div>
       </div>
-      <div className='ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] px-[24px] md:px-[40px]'>
+      <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
         <HeroName />
       </div>
     </section>
