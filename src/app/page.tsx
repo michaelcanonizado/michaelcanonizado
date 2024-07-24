@@ -1,4 +1,5 @@
 import About from './_sections/about';
+import Closing from './_sections/closing';
 import Hero from './_sections/hero';
 import Introduction from './_sections/introduction';
 import Projects from './_sections/projects';
@@ -12,6 +13,7 @@ export default function Home() {
       <Projects />
       <About />
       <Technologies />
+      <Closing />
     </main>
   );
 }
