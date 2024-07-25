@@ -9,6 +9,7 @@ import Git from '../../../public/technologies/git';
 import Java from '../../../public/technologies/java';
 import MongoDB from '../../../public/technologies/mongodb';
 import NextJS from '../../../public/technologies/nextjs';
+import Node from '../../../public/technologies/node';
 
 const technologyImages = [
   {
@@ -136,6 +137,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <Java />
         <MongoDB />
         <NextJS />
+        <Node />
       </div>
     </section>
   );
