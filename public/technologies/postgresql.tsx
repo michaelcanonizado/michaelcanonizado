@@ -1,6 +1,13 @@
-const PostgreSQL = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const PostgreSQL = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='374'
       height='75'
@@ -95,6 +102,7 @@ const PostgreSQL = ({ className }: { className?: string }) => {
       </defs>
     </svg>
   );
-};
+});
+PostgreSQL.displayName = 'PostgreSQL-SVG';
 
 export default PostgreSQL;
