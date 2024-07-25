@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Java = ({ className, ...props }: { className?: string }) => {
   return (
     <svg
