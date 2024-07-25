@@ -33,7 +33,7 @@ const Hero = ({ className }: ComponentBaseProps) => {
       </div>
       <div className=''>
         <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
-          <NameLast />
+          <NameLast variant='orange' />
         </div>
       </div>
     </section>
