@@ -6,6 +6,7 @@ import { TextBody, TextHeading } from '@/components/ui/text';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Git from '../../../public/technologies/git';
+import Java from '../../../public/technologies/java';
 
 const technologyImages = [
   {
@@ -128,8 +129,9 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         </div>
       </div>
       {/* <InfiniteLogoSlider /> */}
-      <div className=''>
+      <div className='flex flex-row flex-wrap gap-lg'>
         <Git />
+        <Java />
       </div>
     </section>
   );
