@@ -42,9 +42,7 @@ const Project = () => {
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn('section min-h-[80vh] space-y-xl border-b', className)}
-    >
+    <section className={cn('container space-y-xl border-b', className)}>
       <div className=''>
         <TextDisplay className='text-center'>Projects</TextDisplay>
       </div>

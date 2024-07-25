@@ -6,7 +6,7 @@ import { ComponentBaseProps } from '@/types';
 
 const Hero = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('section pt-0', className)}>
+    <section className={cn('container !pt-0', className)}>
       <div className='max-height flex w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
           <div className='space-y-[-8px]'>

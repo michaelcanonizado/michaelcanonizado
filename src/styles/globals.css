@@ -61,10 +61,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[1440px] px-md md:px-lg;
-  }
-  .section {
-    @apply w-full py-lg md:py-2xl;
+    @apply mx-auto w-full max-w-[1440px] px-md py-lg md:px-lg md:py-2xl;
   }
   .max-height {
     @apply min-h-[calc(100dvh-64px)];

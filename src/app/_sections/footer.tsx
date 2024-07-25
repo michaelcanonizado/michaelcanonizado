@@ -18,7 +18,7 @@ const InfiniteEmailSlider = () => {
 
 const Footer = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('!w-[calc(100vw-18px)] space-y-md', className)}>
+    <section className={cn('w-full space-y-md', className)}>
       <InfiniteEmailSlider />
       <div className='flex flex-col justify-end bg-foreground !py-0'>
         <div className='flex grow flex-row justify-between px-xl py-xl'>

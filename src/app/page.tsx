@@ -9,7 +9,7 @@ import Experience from './_sections/experience';
 
 export default function Home() {
   return (
-    <main className='container flex min-h-[5000px] flex-col items-center'>
+    <main className='flex flex-col items-center'>
       <Hero />
       <Introduction />
       <Projects />
