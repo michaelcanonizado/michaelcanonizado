@@ -5,6 +5,7 @@ import Projects from './_sections/projects';
 import Technologies from './_sections/technologies';
 import Closing from './_sections/closing';
 import Footer from './_sections/footer';
+import Experience from './_sections/experience';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <About />
       <Technologies />
+      <Experience />
       <Closing />
       <Footer />
     </main>
