@@ -4,67 +4,66 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Git from '../../../public/technologies/git';
-import Java from '../../../public/technologies/java';
-import MongoDB from '../../../public/technologies/mongodb';
-import NextJS from '../../../public/technologies/nextjs';
-import Node from '../../../public/technologies/node';
-import PostgreSQL from '../../../public/technologies/postgresql';
-import ReactJS from '../../../public/technologies/reactjs';
-import Redux from '../../../public/technologies/redux';
-import TailwindCSS from '../../../public/technologies/tailwindcss';
-import Typescript from '../../../public/technologies/typescript';
-import { useEffect, useRef } from 'react';
 
-const technologyImages = [
+import Git from '@/../public/technologies/git';
+import Java from '@/../public/technologies/java';
+import MongoDB from '@/../public/technologies/mongodb';
+import NextJS from '@/../public/technologies/nextjs';
+import Node from '@/../public/technologies/node';
+import PostgreSQL from '@/../public/technologies/postgresql';
+import ReactJS from '@/../public/technologies/reactjs';
+import Redux from '@/../public/technologies/redux';
+import TailwindCSS from '@/../public/technologies/tailwindcss';
+import Typescript from '@/../public/technologies/typescript';
+
+const technologyLogos = [
   {
-    src: 'github-logo.png',
-    alt: 'typescript'
+    name: 'Git',
+    component: <Git />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'Java',
+    component: <Java />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'MongoDB',
+    component: <MongoDB />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'NextJS',
+    component: <NextJS />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'ReactJS',
+    component: <ReactJS />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'Typescript',
+    component: <Typescript />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'TailwindCSS',
+    component: <TailwindCSS />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'Redux',
+    component: <Redux />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'Node',
+    component: <Node />
   },
   {
-    src: 'typescript-logo.png',
-    alt: 'typescript'
+    name: 'PostgreSQL',
+    component: <PostgreSQL />
   }
 ];
 
 const InfiniteLogoSlider = () => {
-  const width = 100;
-  const height = 100;
+  const width = 250;
+  const height = 75;
   const animationDuration = 8;
-  const numOfImages = technologyImages.length;
+  const numOfImages = technologyLogos.length;
 
   /* Styles will be inlined so that the styles can be properly applied. Using dynamic tailwind classes is currently buggy. */
   const sliderWidth = `${width * numOfImages}px`;
@@ -82,12 +81,11 @@ const InfiniteLogoSlider = () => {
         height: sliderHeight
       }}
     >
-      {technologyImages.map((image, index) => {
+      {technologyLogos.map((logo, index) => {
         return (
           <motion.div
             className='absolute'
             style={{
-              width: imageWidth,
               height: imageHeight
             }}
             key={index}
@@ -105,11 +103,7 @@ const InfiniteLogoSlider = () => {
               delay: (animationDuration / numOfImages) * (index + 3)
             }}
           >
-            <Image
-              alt={image.alt}
-              src={`/technologies-temp/${image.src}`}
-              fill
-            />
+            {logo.component}
           </motion.div>
         );
       })}
@@ -118,25 +112,6 @@ const InfiniteLogoSlider = () => {
 };
 
 const Technologies = ({ className }: ComponentBaseProps) => {
-  const ref = useRef<SVGSVGElement | null>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      console.log('----------------------------------------------------');
-      console.log('----------------------------------------------------');
-      // Get the width using getBoundingClientRect
-      const width = ref.current.getBoundingClientRect().width;
-      console.log('SVG Width using getBoundingClientRect:', width);
-
-      // Get the width using the width attribute (if defined)
-      const widthAttribute = ref.current.getAttribute('width');
-      console.log('SVG Width using attribute:', widthAttribute);
-      console.log('----------------------------------------------------');
-      console.log('----------------------------------------------------');
-    }
-    console.log('NO REF!');
-  }, [ref]);
-
   return (
     <section
       className={cn(
@@ -156,19 +131,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
           </TextBody>
         </div>
       </div>
-      {/* <InfiniteLogoSlider /> */}
-      <div className='flex flex-row flex-wrap gap-lg'>
-        <Git ref={ref} />
-        <Java />
-        <MongoDB />
-        <NextJS />
-        <Node />
-        <PostgreSQL />
-        <ReactJS />
-        <Redux />
-        <TailwindCSS />
-        <Typescript />
-      </div>
+      <InfiniteLogoSlider />
     </section>
   );
 };
