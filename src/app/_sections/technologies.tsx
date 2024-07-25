@@ -14,6 +14,7 @@ import PostgreSQL from '../../../public/technologies/postgresql';
 import ReactJS from '../../../public/technologies/reactjs';
 import Redux from '../../../public/technologies/redux';
 import TailwindCSS from '../../../public/technologies/tailwindcss';
+import Typescript from '../../../public/technologies/typescript';
 
 const technologyImages = [
   {
@@ -146,6 +147,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <ReactJS />
         <Redux />
         <TailwindCSS />
+        <Typescript />
       </div>
     </section>
   );
