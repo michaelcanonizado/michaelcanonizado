@@ -5,7 +5,7 @@ import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 const Picture = () => {
   return (
     <div className='overflow-hidden rounded-xl'>
-      <div className='h-[700px] w-[550px] bg-foreground' />
+      <div className='aspect-[35/54] h-[65vh] bg-foreground' />
     </div>
   );
 };
