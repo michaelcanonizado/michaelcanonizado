@@ -1,8 +1,7 @@
-const Typescript = ({ className, ...props }: { className?: string }) => {
+const Typescript = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='261'
       height='75'
       viewBox='0 0 1004 289'

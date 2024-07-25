@@ -1,8 +1,7 @@
-const Java = ({ className, ...props }: { className?: string }) => {
+const Java = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='152'
       height='75'
       viewBox='0 0 810 401'

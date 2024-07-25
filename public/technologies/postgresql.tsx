@@ -1,8 +1,7 @@
-const PostgreSQL = ({ className, ...props }: { className?: string }) => {
+const PostgreSQL = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='374'
       height='75'
       viewBox='0 0 2959 594'

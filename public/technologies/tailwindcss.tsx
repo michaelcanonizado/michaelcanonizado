@@ -1,8 +1,7 @@
-const TailwindCSS = ({ className, ...props }: { className?: string }) => {
+const TailwindCSS = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='532'
       height='75'
       viewBox='0 0 1057 149'

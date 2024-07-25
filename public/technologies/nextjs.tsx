@@ -1,8 +1,7 @@
-const NextJS = ({ className, ...props }: { className?: string }) => {
+const NextJS = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='329'
       height='75'
       viewBox='0 0 1151 259'

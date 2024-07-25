@@ -1,8 +1,7 @@
-const Redux = ({ className, ...props }: { className?: string }) => {
+const Redux = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='243'
       height='75'
       viewBox='0 0 969 300'

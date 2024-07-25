@@ -1,8 +1,7 @@
-const MongoDB = ({ className, ...props }: { className?: string }) => {
+const MongoDB = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='298'
       height='75'
       viewBox='0 0 1380 348'

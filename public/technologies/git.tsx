@@ -1,8 +1,7 @@
-const Git = ({ className, ...props }: { className?: string }) => {
+const Git = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='175'
       height='75'
       viewBox='0 0 588 253'

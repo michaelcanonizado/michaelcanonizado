@@ -1,8 +1,7 @@
-const ReactJS = ({ className, ...props }: { className?: string }) => {
+const ReactJS = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
-      {...props}
       width='226'
       height='75'
       viewBox='0 0 780 259'
