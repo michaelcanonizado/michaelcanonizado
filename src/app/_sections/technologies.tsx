@@ -110,7 +110,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'section flex !min-h-0 flex-col items-center space-y-lg !pt-0',
+        'section flex !min-h-0 flex-col items-center space-y-lg border-b !pt-0',
         className
       )}
     >

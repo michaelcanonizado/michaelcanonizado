@@ -5,8 +5,8 @@ import Card from '@/components/ui/card';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('section space-y-md', className)}>
-      <div className='py-2xl flex items-center justify-center space-x-xl border-y'>
+    <section className={cn('section !py-0', className)}>
+      <div className='flex items-center justify-center space-x-xl border-y py-2xl'>
         <div className='rotate-[10deg]'>
           <Card />
         </div>

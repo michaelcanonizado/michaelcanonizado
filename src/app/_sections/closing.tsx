@@ -6,10 +6,7 @@ import Card from '@/components/ui/card';
 const Closing = ({ className }: ComponentBaseProps) => {
   return (
     <section
-      className={cn(
-        'section mb-xl min-h-[100vh] space-y-xl pt-[150px]',
-        className
-      )}
+      className={cn('section mb-2xl min-h-[100vh] space-y-xl', className)}
     >
       <div className='text-center'>
         <TextDisplay>{"LET'S DO SOMETHING AWESOME TOGETHER!"}</TextDisplay>
