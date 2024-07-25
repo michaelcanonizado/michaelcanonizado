@@ -1,4 +1,9 @@
-const Node = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const Node = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
@@ -57,6 +62,7 @@ const Node = ({ className }: { className?: string }) => {
       </defs>
     </svg>
   );
-};
+});
+Node.displayName = 'Node-SVG';
 
 export default Node;
