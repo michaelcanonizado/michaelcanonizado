@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Git from '../../../public/technologies/git';
 import Java from '../../../public/technologies/java';
 import MongoDB from '../../../public/technologies/mongodb';
+import NextJS from '../../../public/technologies/nextjs';
 
 const technologyImages = [
   {
@@ -134,6 +135,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <Git />
         <Java />
         <MongoDB />
+        <NextJS />
       </div>
     </section>
   );
