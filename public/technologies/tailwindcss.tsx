@@ -1,6 +1,13 @@
-const TailwindCSS = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const TailwindCSS = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='532'
       height='75'
@@ -20,6 +27,7 @@ const TailwindCSS = ({ className }: { className?: string }) => {
       />
     </svg>
   );
-};
+});
+TailwindCSS.displayName = 'TailwindCSS-SVG';
 
 export default TailwindCSS;
