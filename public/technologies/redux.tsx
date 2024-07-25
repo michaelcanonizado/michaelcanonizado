@@ -1,6 +1,13 @@
-const Redux = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const Redux = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='243'
       height='75'
@@ -30,6 +37,7 @@ const Redux = ({ className }: { className?: string }) => {
       <path d='M878.903 117.365H843.903L881.903 174.865L841.903 236.365H874.903C878.503 236.365 882.07 232.031 883.403 229.865L903.903 193.865C909.903 204.198 922.503 225.965 924.903 230.365C927.303 234.765 931.237 236.198 932.903 236.365H968.903L928.903 173.365L967.403 117.365H934.403C930.403 117.365 928.07 120.031 927.403 121.365L907.903 156.865C901.57 146.365 888.403 124.565 886.403 121.365C884.403 118.165 880.57 117.365 878.903 117.365Z' />
     </svg>
   );
-};
+});
+Redux.displayName = 'Redux-SVG';
 
 export default Redux;
