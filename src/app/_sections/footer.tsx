@@ -1,24 +1,28 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import {
   AnimationDefinition,
+  AnimationPlaybackControls,
   motion,
-  Transition,
-  useAnimationControls
+  useAnimate,
+  ValueAnimationTransition
 } from 'framer-motion';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
-import { useEffect } from 'react';
 
 const InfiniteEmailSlider = () => {
-  const controls = useAnimationControls();
+  const [scope, animate] = useAnimate();
+  const [controls, setControls] = useState<AnimationPlaybackControls | null>(
+    null
+  );
 
   const animations: AnimationDefinition = {
     x: '-100%'
   };
-  const transitions: Transition = {
+  const transitions: ValueAnimationTransition = {
     duration: 10,
     type: 'tween',
     repeat: Infinity,
@@ -26,24 +30,24 @@ const InfiniteEmailSlider = () => {
   };
 
   useEffect(() => {
-    controls.start(animations, transitions);
+    const animationControls = animate('#slide', animations, transitions);
+    setControls(animationControls);
   }, []);
 
   const onMouseEnter = () => {
-    controls.stop();
+    if (controls) {
+      controls.pause();
+    }
   };
 
   const onMouseLeave = () => {
-    controls.start(animations, transitions);
+    if (controls) {
+      controls.play();
+    }
   };
 
   const Slide = (
-    <motion.div
-      className={cn('flex w-fit flex-row flex-nowrap')}
-      animate={controls}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <motion.div id='slide' className={cn('flex w-fit flex-row flex-nowrap')}>
       <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
         michaelxaviercanonizado@gmail.com
       </span>
@@ -51,7 +55,12 @@ const InfiniteEmailSlider = () => {
   );
 
   return (
-    <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'>
+    <div
+      className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'
+      ref={scope}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {Slide}
       {Slide}
       {Slide}
