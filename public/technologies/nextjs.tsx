@@ -3,9 +3,11 @@ import React from 'react';
 export const NextJS = React.forwardRef<
   SVGSVGElement,
   React.SVGProps<SVGSVGElement>
->(({ className }: { className?: string }) => {
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='329'
       height='75'

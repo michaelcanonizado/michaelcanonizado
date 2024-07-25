@@ -3,9 +3,11 @@ import React from 'react';
 export const MongoDB = React.forwardRef<
   SVGSVGElement,
   React.SVGProps<SVGSVGElement>
->(({ className }: { className?: string }) => {
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='298'
       height='75'
