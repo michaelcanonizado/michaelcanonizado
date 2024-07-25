@@ -1,27 +1,48 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import {
+  AnimationDefinition,
+  motion,
+  Transition,
+  useAnimationControls
+} from 'framer-motion';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
+import { useEffect } from 'react';
 
 const InfiniteEmailSlider = () => {
+  const controls = useAnimationControls();
+
+  const animations: AnimationDefinition = {
+    x: '-100%'
+  };
+  const transitions: Transition = {
+    duration: 10,
+    type: 'tween',
+    repeat: Infinity,
+    ease: 'linear'
+  };
+
+  useEffect(() => {
+    controls.start(animations, transitions);
+  }, []);
+
+  const onMouseEnter = () => {
+    controls.stop();
+  };
+
+  const onMouseLeave = () => {
+    controls.start(animations, transitions);
+  };
+
   const Slide = (
     <motion.div
       className={cn('flex w-fit flex-row flex-nowrap')}
-      initial={{
-        x: 0
-      }}
-      animate={{
-        x: '-100%'
-      }}
-      transition={{
-        duration: 15,
-        type: 'tween',
-        repeat: Infinity,
-        ease: 'linear'
-      }}
+      animate={controls}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
         michaelxaviercanonizado@gmail.com
@@ -30,7 +51,7 @@ const InfiniteEmailSlider = () => {
   );
 
   return (
-    <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm transition-all hover:cursor-pointer hover:bg-foreground'>
+    <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'>
       {Slide}
       {Slide}
       {Slide}
