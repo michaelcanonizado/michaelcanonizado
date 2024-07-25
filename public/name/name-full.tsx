@@ -1,4 +1,4 @@
-const HeroNameFull = ({ className }: { className?: string }) => {
+export const NameFull = ({ className }: { className?: string }) => {
   return (
     <svg
       viewBox='0 0 2197 152'
@@ -13,5 +13,3 @@ const HeroNameFull = ({ className }: { className?: string }) => {
     </svg>
   );
 };
-
-export default HeroNameFull;

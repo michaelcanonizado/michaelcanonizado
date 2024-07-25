@@ -1,6 +1,5 @@
-import HeroNameFull from '../../../public/hero/hero-name-full';
-import HeroNameFirst from '../../../public/hero/hero-name-first';
-import HeroNameLast from '../../../public/hero/hero-name-last';
+import { NameFirst } from '../../../public/name/name-first';
+import { NameLast } from '../../../public/name/name-last';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
@@ -29,12 +28,12 @@ const Hero = ({ className }: ComponentBaseProps) => {
           </div>
         </div>
         <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
-          <HeroNameFirst />
+          <NameFirst />
         </div>
       </div>
       <div className=''>
         <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
-          <HeroNameLast />
+          <NameLast />
         </div>
       </div>
     </section>

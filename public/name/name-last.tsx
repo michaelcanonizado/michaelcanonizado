@@ -1,4 +1,4 @@
-const HeroNameLast = ({ className }: { className?: string }) => {
+export const NameLast = ({ className }: { className?: string }) => {
   return (
     <svg
       viewBox='0 0 1285 152'
@@ -13,5 +13,3 @@ const HeroNameLast = ({ className }: { className?: string }) => {
     </svg>
   );
 };
-
-export default HeroNameLast;

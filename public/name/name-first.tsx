@@ -1,4 +1,4 @@
-const HeroNameFirst = ({ className }: { className?: string }) => {
+export const NameFirst = ({ className }: { className?: string }) => {
   return (
     <svg
       viewBox='0 0 870 152'
@@ -13,5 +13,3 @@ const HeroNameFirst = ({ className }: { className?: string }) => {
     </svg>
   );
 };
-
-export default HeroNameFirst;
