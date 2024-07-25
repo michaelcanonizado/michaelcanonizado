@@ -66,6 +66,9 @@
   .section {
     @apply w-full py-lg md:py-2xl;
   }
+  .max-height {
+    @apply min-h-[calc(100dvh-64px)];
+  }
 }
 
 @layer base {

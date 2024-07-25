@@ -6,8 +6,8 @@ import { ComponentBaseProps } from '@/types';
 
 const Hero = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('section', className)}>
-      <div className='section flex min-h-[calc(100dvh-64px)] w-full flex-col justify-end pb-md text-center'>
+    <section className={cn('section pt-0', className)}>
+      <div className='max-height flex w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
           <div className='space-y-[-8px]'>
             <div>
