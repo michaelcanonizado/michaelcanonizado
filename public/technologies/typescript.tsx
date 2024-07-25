@@ -1,6 +1,13 @@
-const Typescript = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const Typescript = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
+      {...props}
       className={className}
       width='261'
       height='75'
@@ -26,6 +33,7 @@ const Typescript = ({ className }: { className?: string }) => {
       />
     </svg>
   );
-};
+});
+Typescript.displayName = 'Typescript-SVG';
 
 export default Typescript;
