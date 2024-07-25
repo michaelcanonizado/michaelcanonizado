@@ -1,17 +1,40 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
+import { motion } from 'framer-motion';
+import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
 
 const InfiniteEmailSlider = () => {
+  const Slide = (
+    <motion.div
+      className={cn('flex w-fit flex-row flex-nowrap')}
+      initial={{
+        x: 0
+      }}
+      animate={{
+        x: '-100%'
+      }}
+      transition={{
+        duration: 15,
+        type: 'tween',
+        repeat: Infinity,
+        ease: 'linear'
+      }}
+    >
+      <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
+        michaelxaviercanonizado@gmail.com
+      </span>
+    </motion.div>
+  );
+
   return (
-    <div className='group flex flex-row gap-lg overflow-hidden border-y hover:cursor-pointer hover:bg-foreground'>
-      <span className='translate-x-[0%] font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
-        michaelxaviercanonizado@gmail.com
-      </span>
-      <span className='font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
-        michaelxaviercanonizado@gmail.com
-      </span>
+    <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm transition-all hover:cursor-pointer hover:bg-foreground'>
+      {Slide}
+      {Slide}
+      {Slide}
+      {Slide}
     </div>
   );
 };
