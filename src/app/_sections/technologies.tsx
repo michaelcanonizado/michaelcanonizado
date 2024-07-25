@@ -10,6 +10,7 @@ import Java from '../../../public/technologies/java';
 import MongoDB from '../../../public/technologies/mongodb';
 import NextJS from '../../../public/technologies/nextjs';
 import Node from '../../../public/technologies/node';
+import PostgreSQL from '../../../public/technologies/postgresql';
 
 const technologyImages = [
   {
@@ -138,6 +139,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <MongoDB />
         <NextJS />
         <Node />
+        <PostgreSQL />
       </div>
     </section>
   );
