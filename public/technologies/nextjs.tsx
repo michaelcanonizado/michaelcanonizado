@@ -1,4 +1,9 @@
-const NextJS = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const NextJS = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
@@ -40,6 +45,7 @@ const NextJS = ({ className }: { className?: string }) => {
       </defs>
     </svg>
   );
-};
+});
+NextJS.displayName = 'NextJS-SVG';
 
 export default NextJS;
