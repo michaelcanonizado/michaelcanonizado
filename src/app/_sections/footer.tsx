@@ -3,16 +3,25 @@ import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
 
+const InfiniteEmailSlider = () => {
+  return (
+    <div className='group flex flex-row gap-lg overflow-hidden border-y hover:cursor-pointer hover:bg-foreground'>
+      <span className='translate-x-[0%] font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
+        michaelxaviercanonizado@gmail.com
+      </span>
+      <span className='font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
+        michaelxaviercanonizado@gmail.com
+      </span>
+    </div>
+  );
+};
+
 const Footer = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn(
-        'flex !w-[calc(100vw-18px)] flex-col justify-end bg-foreground !py-0',
-        className
-      )}
-    >
-      <div className=''>
-        <div className='flex grow flex-row justify-between px-lg py-xl'>
+    <section className={cn('!w-[calc(100vw-18px)] space-y-md', className)}>
+      <InfiniteEmailSlider />
+      <div className='flex flex-col justify-end bg-foreground !py-0'>
+        <div className='flex grow flex-row justify-between px-xl py-xl'>
           <div className='max-w-[500px]'>
             <TextHeading className='text-background'>
               Creating a digital experience that bridge aesthetics and
