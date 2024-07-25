@@ -11,6 +11,7 @@ import MongoDB from '../../../public/technologies/mongodb';
 import NextJS from '../../../public/technologies/nextjs';
 import Node from '../../../public/technologies/node';
 import PostgreSQL from '../../../public/technologies/postgresql';
+import ReactJS from '../../../public/technologies/reactjs';
 
 const technologyImages = [
   {
@@ -140,6 +141,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <NextJS />
         <Node />
         <PostgreSQL />
+        <ReactJS />
       </div>
     </section>
   );
