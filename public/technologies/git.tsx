@@ -1,7 +1,14 @@
-const Git = ({ className }: { className?: string }) => {
+import React from 'react';
+
+export const Git = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ className, ...props }, ref) => {
   return (
     <svg
+      {...props}
       className={className}
+      ref={ref}
       width='175'
       height='75'
       viewBox='0 0 588 253'
@@ -63,6 +70,7 @@ const Git = ({ className }: { className?: string }) => {
       </g>
     </svg>
   );
-};
+});
+Git.displayName = 'Git-SVG';
 
 export default Git;

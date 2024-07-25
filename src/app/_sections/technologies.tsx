@@ -15,6 +15,7 @@ import ReactJS from '../../../public/technologies/reactjs';
 import Redux from '../../../public/technologies/redux';
 import TailwindCSS from '../../../public/technologies/tailwindcss';
 import Typescript from '../../../public/technologies/typescript';
+import { useEffect, useRef } from 'react';
 
 const technologyImages = [
   {
@@ -117,6 +118,25 @@ const InfiniteLogoSlider = () => {
 };
 
 const Technologies = ({ className }: ComponentBaseProps) => {
+  const ref = useRef<SVGSVGElement | null>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      console.log('----------------------------------------------------');
+      console.log('----------------------------------------------------');
+      // Get the width using getBoundingClientRect
+      const width = ref.current.getBoundingClientRect().width;
+      console.log('SVG Width using getBoundingClientRect:', width);
+
+      // Get the width using the width attribute (if defined)
+      const widthAttribute = ref.current.getAttribute('width');
+      console.log('SVG Width using attribute:', widthAttribute);
+      console.log('----------------------------------------------------');
+      console.log('----------------------------------------------------');
+    }
+    console.log('NO REF!');
+  }, [ref]);
+
   return (
     <section
       className={cn(
@@ -138,7 +158,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
       </div>
       {/* <InfiniteLogoSlider /> */}
       <div className='flex flex-row flex-wrap gap-lg'>
-        <Git />
+        <Git ref={ref} />
         <Java />
         <MongoDB />
         <NextJS />
