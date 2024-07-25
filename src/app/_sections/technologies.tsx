@@ -60,53 +60,38 @@ const technologyLogos = [
 ];
 
 const InfiniteLogoSlider = () => {
-  const width = 250;
-  const height = 75;
-  const animationDuration = 8;
-  const numOfImages = technologyLogos.length;
-
-  /* Styles will be inlined so that the styles can be properly applied. Using dynamic tailwind classes is currently buggy. */
-  const sliderWidth = `${width * numOfImages}px`;
-  const sliderHeight = `${height}px`;
-  const imageWidth = `${width}px`;
-  const imageHeight = `${height}px`;
-
-  return (
-    <div
-      className={cn('relative flex flex-row overflow-hidden')}
-      style={{
-        maskImage:
-          'linear-gradient(to right,transparent,#000 20% 80%,transparent)',
-        minWidth: sliderWidth,
-        height: sliderHeight
+  const Slide = (
+    <motion.div
+      className={cn('flex w-fit flex-row flex-nowrap')}
+      initial={{
+        x: 0
+      }}
+      animate={{
+        x: '-100%'
+      }}
+      transition={{
+        duration: 15,
+        type: 'tween',
+        repeat: Infinity,
+        ease: 'linear'
       }}
     >
       {technologyLogos.map((logo, index) => {
         return (
-          <motion.div
-            className='absolute'
-            style={{
-              height: imageHeight
-            }}
-            key={index}
-            initial={{
-              left: '100%'
-            }}
-            animate={{
-              left: '-100%'
-            }}
-            transition={{
-              duration: animationDuration,
-              type: 'tween',
-              ease: 'linear',
-              repeat: Infinity,
-              delay: (animationDuration / numOfImages) * (index + 3)
-            }}
-          >
+          <div className='mx-lg h-fit w-fit' key={index}>
             {logo.component}
-          </motion.div>
+          </div>
         );
       })}
+    </motion.div>
+  );
+
+  return (
+    <div className='flex flex-row flex-nowrap overflow-hidden border-y py-xl'>
+      {Slide}
+      {Slide}
+      {Slide}
+      {Slide}
     </div>
   );
 };
@@ -115,7 +100,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'section flex !min-h-0 flex-col items-center space-y-lg border-b !pt-0',
+        'section flex !min-h-0 w-[99.1vw] flex-col items-center space-y-lg overflow-hidden !pt-0',
         className
       )}
     >
