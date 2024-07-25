@@ -5,6 +5,7 @@ import { ComponentBaseProps } from '@/types';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Git from '../../../public/technologies/git';
 
 const technologyImages = [
   {
@@ -126,7 +127,10 @@ const Technologies = ({ className }: ComponentBaseProps) => {
           </TextBody>
         </div>
       </div>
-      <InfiniteLogoSlider />
+      {/* <InfiniteLogoSlider /> */}
+      <div className=''>
+        <Git />
+      </div>
     </section>
   );
 };
