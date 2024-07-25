@@ -12,6 +12,7 @@ import NextJS from '../../../public/technologies/nextjs';
 import Node from '../../../public/technologies/node';
 import PostgreSQL from '../../../public/technologies/postgresql';
 import ReactJS from '../../../public/technologies/reactjs';
+import Redux from '../../../public/technologies/redux';
 
 const technologyImages = [
   {
@@ -142,6 +143,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         <Node />
         <PostgreSQL />
         <ReactJS />
+        <Redux />
       </div>
     </section>
   );
