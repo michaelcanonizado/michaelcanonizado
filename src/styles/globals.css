@@ -61,7 +61,7 @@
 
 @layer components {
   .container {
-    @apply w-full max-w-[1440px] px-md md:px-lg;
+    @apply mx-auto w-full max-w-[1440px] px-md md:px-lg;
   }
   .section {
     @apply w-full py-lg md:py-2xl;
