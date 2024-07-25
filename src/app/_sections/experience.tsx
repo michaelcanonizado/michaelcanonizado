@@ -4,9 +4,7 @@ import { ComponentBaseProps } from '@/types';
 
 const Experience = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn('container min-h-[100vh] space-y-xl border-b', className)}
-    >
+    <section className={cn('container min-h-[100vh] space-y-xl', className)}>
       <div className=''>
         <TextDisplay className='text-center'>Experience</TextDisplay>
       </div>

@@ -14,7 +14,7 @@ const About = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'max-height container flex flex-col items-center space-y-lg',
+        'max-height container flex flex-col items-center justify-center space-y-lg',
         className
       )}
     >
