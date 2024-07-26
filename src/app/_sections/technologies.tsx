@@ -119,7 +119,11 @@ const Technologies = ({ className }: ComponentBaseProps) => {
           </TextBody>
         </div>
       </div>
-      <InfiniteSlider className='group py-lg' baseVelocity={2}>
+      <InfiniteSlider
+        className='group border-none py-lg'
+        baseVelocity={2}
+        stopOnHover={false}
+      >
         <div className='flex w-fit flex-row flex-nowrap'>
           {technologyLogos.map((logo, index) => {
             return (
