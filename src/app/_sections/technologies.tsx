@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody, TextHeading } from '@/components/ui/text';
@@ -15,6 +17,7 @@ import ReactJS from '@/../public/technologies/reactjs';
 import Redux from '@/../public/technologies/redux';
 import TailwindCSS from '@/../public/technologies/tailwindcss';
 import Typescript from '@/../public/technologies/typescript';
+import InfiniteSlider from '@/components/ui/infinite-slider';
 
 const technologyLogos = [
   {
@@ -78,7 +81,7 @@ const InfiniteLogoSlider = () => {
     >
       {technologyLogos.map((logo, index) => {
         return (
-          <div className='mx-lg h-fit w-fit' key={index}>
+          <div className='' key={index}>
             {logo.component}
           </div>
         );
@@ -116,7 +119,17 @@ const Technologies = ({ className }: ComponentBaseProps) => {
           </TextBody>
         </div>
       </div>
-      <InfiniteLogoSlider />
+      <InfiniteSlider className='group py-lg' baseVelocity={2}>
+        <div className='flex w-fit flex-row flex-nowrap'>
+          {technologyLogos.map((logo, index) => {
+            return (
+              <div className='mx-lg h-fit w-fit' key={index}>
+                {logo.component}
+              </div>
+            );
+          })}
+        </div>
+      </InfiniteSlider>
     </section>
   );
 };
