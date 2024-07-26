@@ -67,7 +67,7 @@ const About = ({ className }: ComponentBaseProps) => {
             </TextBody>
           </div>
 
-          <div className='relative aspect-[35/54] h-[65vh] overflow-hidden rounded-xl'>
+          <div className='relative aspect-[3/4] h-[65vh] overflow-hidden rounded-xl'>
             <Image
               className='object-cover object-center'
               fill
