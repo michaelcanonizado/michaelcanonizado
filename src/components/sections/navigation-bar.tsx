@@ -34,7 +34,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
       <AnimatePresence>
         {isScrolled && (
           <motion.div
-            className='bg-navbar-background absolute inset-0 h-full'
+            className='absolute inset-0 h-full bg-navbar-background'
             initial={{
               translateY: '-100%'
             }}
@@ -54,7 +54,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
 
       <nav
         className={cn(
-          'container z-50 flex h-[64px] flex-row items-center justify-between bg-transparent !py-0',
+          'container z-50 !my-0 flex h-[64px] flex-row items-center justify-between bg-transparent !py-0',
           isScrolled ? 'text-navbar-foreground' : 'text-foreground'
         )}
       >

@@ -7,7 +7,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex items-center justify-center space-x-xl border-y py-2xl',
+        'container my-0 flex items-center justify-center space-x-xl border-y py-2xl',
         className
       )}
     >
