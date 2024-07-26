@@ -1,12 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import {
-  AnimationDefinition,
-  AnimationPlaybackControls,
   motion,
-  useAnimate,
   useAnimationFrame,
   useMotionValue,
   useScroll,
@@ -20,6 +17,8 @@ import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
 
 const InfiniteEmailSlider = () => {
+  const [isHovered, setIsHovered] = useState<1 | 0>(1);
+
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -35,7 +34,8 @@ const InfiniteEmailSlider = () => {
   const x = useTransform(baseX, v => `${wrap(-20, -45, v)}%`);
   const directionFactor = { current: 1 };
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    let moveBy =
+      directionFactor.current * baseVelocity * (delta / 1000) * isHovered;
 
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
@@ -48,6 +48,13 @@ const InfiniteEmailSlider = () => {
     baseX.set(baseX.get() + moveBy);
   });
 
+  const onMouseEnter = () => {
+    setIsHovered(0);
+  };
+  const onMouseLeave = () => {
+    setIsHovered(1);
+  };
+
   const Content = (
     <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
       michaelxaviercanonizado@gmail.com
@@ -56,7 +63,11 @@ const InfiniteEmailSlider = () => {
 
   return (
     <>
-      <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'>
+      <div
+        className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         <motion.div
           id='slide'
           className={cn('flex w-fit flex-row flex-nowrap')}
