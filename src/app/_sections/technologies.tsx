@@ -5,7 +5,6 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody, TextHeading } from '@/components/ui/text';
-import { motion } from 'framer-motion';
 
 import Git from '@/../public/technologies/git';
 import Java from '@/../public/technologies/java';
@@ -62,43 +61,6 @@ const technologyLogos = [
   }
 ];
 
-const InfiniteLogoSlider = () => {
-  const Slide = (
-    <motion.div
-      className={cn('flex w-fit flex-row flex-nowrap')}
-      initial={{
-        x: 0
-      }}
-      animate={{
-        x: '-100%'
-      }}
-      transition={{
-        duration: 15,
-        type: 'tween',
-        repeat: Infinity,
-        ease: 'linear'
-      }}
-    >
-      {technologyLogos.map((logo, index) => {
-        return (
-          <div className='' key={index}>
-            {logo.component}
-          </div>
-        );
-      })}
-    </motion.div>
-  );
-
-  return (
-    <div className='flex flex-row flex-nowrap overflow-hidden border-y py-xl'>
-      {Slide}
-      {Slide}
-      {Slide}
-      {Slide}
-    </div>
-  );
-};
-
 const Technologies = ({ className }: ComponentBaseProps) => {
   return (
     <section
@@ -121,7 +83,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
       </div>
       <InfiniteSlider
         className='group border-none py-lg'
-        baseVelocity={2}
+        baseVelocity={1}
         stopOnHover={false}
       >
         <div className='flex w-fit flex-row flex-nowrap'>
