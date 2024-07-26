@@ -1,4 +1,4 @@
-import { NameFirst } from '../../../public/name/name-first';
+import { NameFirst } from '../../../public/name/';
 import { NameLast } from '../../../public/name/name-last';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
@@ -28,7 +28,7 @@ const Hero = ({ className }: ComponentBaseProps) => {
           </div>
         </div>
         <div className='md:ml-[calc(52.5%-50vw)] md:mr-[calc(52.5%-50vw)]'>
-          <NameFirst variant='orange' />
+          <NameFirst className='fill-foreground' />
         </div>
       </div>
       <div className=''>

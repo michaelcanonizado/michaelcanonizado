@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
-import { NameFirst } from '@/../public/name/name-first';
+import { NameFirst } from '@/../public/name/';
 import InfiniteSlider from '@/components/ui/infinite-slider';
 
 const Footer = ({ className }: ComponentBaseProps) => {
@@ -44,7 +44,7 @@ const Footer = ({ className }: ComponentBaseProps) => {
           </div>
         </div>
         <div className='px-md pb-md'>
-          <NameFirst variant='white' />
+          <NameFirst className='fill-background' />
         </div>
       </div>
     </section>
