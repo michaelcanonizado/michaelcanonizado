@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { inter, clashDisplay } from '@/styles/fonts';
-import NavigationBar from '@/components/sections/navigation';
+import NavigationBar from '@/components/sections/navigation-bar';
 
 export const metadata: Metadata = {
   title: 'Michael Canonizado',
