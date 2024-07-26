@@ -14,29 +14,38 @@ import {
 } from 'framer-motion';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
-import { NameFirst } from '../../../public/name/name-first';
+import { NameFirst } from '@/../public/name/name-first';
 
 const InfiniteEmailSlider = () => {
-  const [isHovered, setIsHovered] = useState<1 | 0>(1);
+  const [isHovered, setIsHovered] = useState(false);
 
   const baseX = useMotionValue(0);
+  const baseVelocity = 3;
+
+  /* Track scroll */
   const { scrollY } = useScroll();
+  /* Get scroll velocity */
   const scrollVelocity = useVelocity(scrollY);
+  /* Smoothen/add spring to scroll */
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400
   });
+  /* Transform the velocity value to a smaller range */
   const velocityFactor = useTransform(smoothVelocity, [0, 5000], [0, 10], {
     clamp: false
   });
-  const baseVelocity = 3;
 
   const x = useTransform(baseX, v => `${wrap(-20, -45, v)}%`);
   const directionFactor = { current: 1 };
   useAnimationFrame((t, delta) => {
-    let moveBy =
-      directionFactor.current * baseVelocity * (delta / 1000) * isHovered;
+    /* Each frame the slider will move depending on how much velocity there is in the scroll. If the slider isHovered, the moveBy value will be 0. */
+    let moveBy = 0;
+    if (isHovered === false) {
+      moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    }
 
+    /* Change direction depending on the scroll direction. */
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
     } else if (velocityFactor.get() > 0) {
@@ -49,10 +58,10 @@ const InfiniteEmailSlider = () => {
   });
 
   const onMouseEnter = () => {
-    setIsHovered(0);
+    setIsHovered(true);
   };
   const onMouseLeave = () => {
-    setIsHovered(1);
+    setIsHovered(false);
   };
 
   const Content = (
