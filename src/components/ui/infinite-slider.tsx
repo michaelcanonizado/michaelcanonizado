@@ -15,11 +15,17 @@ import {
   wrap
 } from 'framer-motion';
 
+type InfiniteSliderProps = {
+  baseVelocity?: number;
+  stopOnHover?: boolean;
+};
+
 const InfiniteSlider = ({
   className,
   children,
-  baseVelocity = 3
-}: ComponentBaseProps & { baseVelocity?: number }) => {
+  baseVelocity = 3,
+  stopOnHover = true
+}: ComponentBaseProps & InfiniteSliderProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const baseX = useMotionValue(0);
@@ -43,7 +49,7 @@ const InfiniteSlider = ({
   useAnimationFrame((t, delta) => {
     /* Each frame the slider will move depending on how much velocity there is in the scroll. If the slider isHovered, the moveBy value will be 0. */
     let moveBy = 0;
-    if (isHovered === false) {
+    if (isHovered === false || !stopOnHover) {
       moveBy = directionFactor.current * baseVelocity * (delta / 1000);
     }
 
@@ -69,8 +75,9 @@ const InfiniteSlider = ({
   return (
     <div
       className={cn(
-        'group flex flex-row flex-nowrap overflow-hidden border-y p-0 hover:cursor-pointer hover:bg-foreground',
-        className
+        'group flex flex-row flex-nowrap overflow-hidden border-y p-0',
+        className,
+        stopOnHover ? 'hover:cursor-pointer hover:bg-foreground' : ''
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
