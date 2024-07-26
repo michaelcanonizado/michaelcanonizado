@@ -1,71 +1,74 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import {
   AnimationDefinition,
   AnimationPlaybackControls,
   motion,
   useAnimate,
-  ValueAnimationTransition
+  useAnimationFrame,
+  useMotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+  useVelocity,
+  wrap
 } from 'framer-motion';
 import { TextBody, TextHeading } from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
 import { NameFirst } from '../../../public/name/name-first';
 
 const InfiniteEmailSlider = () => {
-  const [scope, animate] = useAnimate();
-  const [controls, setControls] = useState<AnimationPlaybackControls | null>(
-    null
-  );
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 5000], [0, 10], {
+    clamp: false
+  });
+  const baseVelocity = 3;
 
-  const animations: AnimationDefinition = {
-    x: '-100%'
-  };
-  const transitions: ValueAnimationTransition = {
-    duration: 10,
-    type: 'tween',
-    repeat: Infinity,
-    ease: 'linear'
-  };
+  const x = useTransform(baseX, v => `${wrap(-20, -45, v)}%`);
+  const directionFactor = { current: 1 };
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-  useEffect(() => {
-    const animationControls = animate('#slide', animations, transitions);
-    setControls(animationControls);
-  }, []);
-
-  const onMouseEnter = () => {
-    if (controls) {
-      controls.pause();
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
     }
-  };
 
-  const onMouseLeave = () => {
-    if (controls) {
-      controls.play();
-    }
-  };
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
-  const Slide = (
-    <motion.div id='slide' className={cn('flex w-fit flex-row flex-nowrap')}>
-      <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
-        michaelxaviercanonizado@gmail.com
-      </span>
-    </motion.div>
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  const Content = (
+    <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
+      michaelxaviercanonizado@gmail.com
+    </span>
   );
 
   return (
-    <div
-      className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'
-      ref={scope}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      {Slide}
-      {Slide}
-      {Slide}
-      {Slide}
-    </div>
+    <>
+      <div className='group flex flex-row flex-nowrap overflow-hidden border-y py-sm hover:cursor-pointer hover:bg-foreground'>
+        <motion.div
+          id='slide'
+          className={cn('flex w-fit flex-row flex-nowrap')}
+          style={{ x }}
+        >
+          {Content}
+          {Content}
+          {Content}
+          {Content}
+        </motion.div>
+      </div>
+    </>
   );
 };
 
