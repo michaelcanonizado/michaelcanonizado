@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, TextHeading } from '@/components/ui/text';
+import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 
 import Git from '@/../public/technologies/git';
 import Java from '@/../public/technologies/java';
@@ -69,21 +69,21 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         className
       )}
     >
-      <div className='flex max-w-[500px] flex-col items-center justify-center space-y-md'>
+      <div className='flex max-w-[900px] flex-col items-center justify-center space-y-lg'>
         <div>
-          <TextHeading>Technologies</TextHeading>
+          <TextDisplay>Technologies</TextDisplay>
         </div>
         <div>
-          <TextBody className='text-center'>
+          <TextHeading className='text-center'>
             My expertise spans a diverse range of technologies. Utilixing the
             latest technologies to deliver high-perfomance and scalable
             solutions.
-          </TextBody>
+          </TextHeading>
         </div>
       </div>
       <InfiniteSlider
         className='group border-none py-lg'
-        baseVelocity={1}
+        baseVelocity={1.5}
         stopOnHover={false}
       >
         <div className='flex w-fit flex-row flex-nowrap'>
