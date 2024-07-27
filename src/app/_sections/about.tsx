@@ -32,51 +32,45 @@ const images = [
   }
 ];
 
+/*
+Hi there, I'm Michael (you can call me Mikey!). I am a self-taught web developer based in the Philippines.
+
+I am a 2nd year Computer Science student with 4 years of experience in web development.
+
+I love building websites that are user-friendly, aesthetic, and functional.
+
+I'm here to transform your ideas into a website that elevates your business. My strong work ethic and discipline set me apart as a developer you can rely on!
+*/
+
 const About = ({ className }: ComponentBaseProps) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const containerRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['5% start', '90% end']
-  });
-
-  const index = useTransform(scrollYProgress, [0, 1], [0, images.length - 1]);
-
-  useMotionValueEvent(index, 'change', latest => {
-    setCurrentImageIndex(Math.floor(latest));
-  });
-
   return (
-    <section ref={containerRef} className={cn('relative h-[300vh]', className)}>
-      <div className='max-height container sticky top-0 flex flex-col items-center justify-center space-y-lg'>
-        <div>
-          <TextDisplay className='text-center'>About</TextDisplay>
+    <section
+      className={cn('max-height container !mb-0 space-y-xl !pt-0', className)}
+    >
+      <div className='flex flex-row justify-center'>
+        <TextDisplay className='max-w-[10ch] text-center'>
+          {'You can call me Mikey!'}
+        </TextDisplay>
+      </div>
+      <div className='grid grid-cols-2 gap-xl'>
+        <div className='flex flex-row justify-end'>
+          <div className='relative flex w-full max-w-[500px] flex-row justify-center'>
+            <div className='absolute bottom-[-10%] h-[500px] w-[400px] rotate-[-10deg] overflow-hidden rounded-lg'>
+              <Image fill src='/about/image-4.jpg' alt=' mikey' />
+            </div>
+          </div>
         </div>
-
-        <div className='grid grid-cols-[1fr_auto_1fr] gap-lg'>
-          <div className='flex flex-col items-end justify-center gap-lg text-end'>
+        <div className='max-w-[500px] space-y-lg'>
+          <div className=''>
             <TextHeading>
-              {
-                "Hi there, I'm Michael (you can call me Mikey!). I am a self-taught web developer based in the Philippines."
-              }
+              I am a self-taught web developer based in the Philippines!
             </TextHeading>
+          </div>
+          <div className='space-y-md'>
             <TextBody>
               I am a 2nd year Computer Science student with 4 years of
               experience in web development.
             </TextBody>
-          </div>
-
-          <div className='relative aspect-[3/4] h-[65vh] overflow-hidden rounded-xl'>
-            <Image
-              className='object-cover object-center'
-              fill
-              alt={images[currentImageIndex].alt}
-              src={`/about/${images[currentImageIndex].src}`}
-            />
-          </div>
-
-          <div className='flex flex-col items-start justify-center gap-md'>
             <TextBody>
               I love building websites that are user-friendly, aesthetic, and
               functional.
