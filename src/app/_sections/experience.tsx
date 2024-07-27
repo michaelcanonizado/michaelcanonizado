@@ -27,6 +27,15 @@ const experiences = [
   }
 ];
 
+const Add = () => {
+  return (
+    <div className='relative size-[16px]'>
+      <div className='absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-0 bg-foreground duration-300 group-hover:bg-foreground-secondary' />
+      <div className='absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 bg-foreground duration-300 group-hover:bg-foreground-secondary' />
+    </div>
+  );
+};
+
 const Dropdown = ({
   heading,
   description,
@@ -78,8 +87,9 @@ const Dropdown = ({
         <div className=''>
           <TextBody className='font-bold'>{heading}</TextBody>
         </div>
-        <div className=''>
-          <TextSub>{time}</TextSub>
+        <div className='flex flex-row items-center gap-sm'>
+          <TextSub className='mb-[-2px]'>{time}</TextSub>
+          <Add />
         </div>
       </div>
     </motion.div>
