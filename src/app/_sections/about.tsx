@@ -44,9 +44,7 @@ I'm here to transform your ideas into a website that elevates your business. My 
 
 const About = ({ className }: ComponentBaseProps) => {
   return (
-    <section
-      className={cn('max-height container !mb-0 space-y-xl !pt-0', className)}
-    >
+    <section className={cn('max-height container space-y-xl !pt-0', className)}>
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
           {'You can call me Mikey!'}

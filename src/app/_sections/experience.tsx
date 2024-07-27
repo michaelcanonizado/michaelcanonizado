@@ -202,7 +202,7 @@ const Experience = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container !mt-0 flex flex-col items-center space-y-lg !pt-0',
+        'container flex flex-col items-center space-y-lg',
         className
       )}
     >
