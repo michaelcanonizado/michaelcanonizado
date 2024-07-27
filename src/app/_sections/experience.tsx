@@ -2,9 +2,10 @@
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { motion, useAnimate } from 'framer-motion';
+import { AnimatePresence, motion, useAnimate } from 'framer-motion';
 
 import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
+import { useState } from 'react';
 
 const experiences = [
   {
@@ -48,6 +49,8 @@ const Dropdown = ({
   time: string;
   index: number;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [scope, animate] = useAnimate();
 
   const onMouseEnter = () => {
@@ -55,6 +58,10 @@ const Dropdown = ({
   };
   const onMouseLeave = () => {
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
+  };
+  const onClick = () => {
+    console.log('Open!');
+    setIsOpen(prev => !prev);
   };
 
   return (
@@ -73,6 +80,7 @@ const Dropdown = ({
       viewport={{ once: true }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
       className='group relative flex w-full overflow-hidden border-b px-0 py-md hover:cursor-pointer'
       {...props}
     >
@@ -82,15 +90,32 @@ const Dropdown = ({
       />
       <div
         id='text'
-        className='z-10 flex w-full flex-row items-center justify-between duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
+        className='z-10 flex w-full flex-col gap-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
       >
-        <div className=''>
-          <TextBody className='font-bold'>{heading}</TextBody>
+        <div className='flex w-full flex-row items-center justify-between'>
+          <div className=''>
+            <TextBody className='font-bold'>{heading}</TextBody>
+          </div>
+          <div className='flex flex-row items-center gap-sm'>
+            <TextSub className='mb-[-2px]'>{time}</TextSub>
+            <Add />
+          </div>
         </div>
-        <div className='flex flex-row items-center gap-sm'>
-          <TextSub className='mb-[-2px]'>{time}</TextSub>
-          <Add />
-        </div>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{
+                y: '-100%'
+              }}
+              animate={{
+                y: '0'
+              }}
+              className=''
+            >
+              <TextSub>{description}</TextSub>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );
