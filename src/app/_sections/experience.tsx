@@ -1,11 +1,12 @@
 'use client';
 
+import { useState } from 'react';
+
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { AnimatePresence, motion, useAnimate } from 'framer-motion';
+import { motion, useAnimate } from 'framer-motion';
 
 import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
-import { useState } from 'react';
 
 const experiences = [
   {
@@ -50,7 +51,6 @@ const Dropdown = ({
   index: number;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [scope, animate] = useAnimate();
 
   const onMouseEnter = () => {
@@ -60,28 +60,49 @@ const Dropdown = ({
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
   };
   const onClick = () => {
-    console.log('Open!');
     setIsOpen(prev => !prev);
+  };
+
+  const variants = {
+    hidden: {
+      x: '-100%',
+      height: '60px'
+    },
+    show: {
+      x: '0%'
+    },
+    open: {
+      height: 'auto'
+    },
+    close: {
+      height: '60px'
+    }
   };
 
   return (
     <motion.div
       ref={scope}
-      initial={{
-        x: '-100%'
-      }}
+      variants={variants}
+      initial='hidden'
       whileInView={{
         x: '0%'
       }}
+      animate={isOpen ? 'open' : 'close'}
       transition={{
-        delay: 0.1 * index,
-        duration: 0.5
+        x: {
+          delay: 0.1 * index,
+          duration: 0.5
+        },
+        height: {
+          duration: 0.2,
+          ease: 'easeIn'
+        }
       }}
       viewport={{ once: true }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
-      className='group relative flex w-full overflow-hidden border-b px-0 py-md hover:cursor-pointer'
+      className='group relative flex w-full overflow-hidden border-b px-0 hover:cursor-pointer'
       {...props}
     >
       <div
@@ -90,9 +111,9 @@ const Dropdown = ({
       />
       <div
         id='text'
-        className='z-10 flex w-full flex-col gap-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
+        className='z-10 flex w-full flex-col pb-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
       >
-        <div className='flex w-full flex-row items-center justify-between'>
+        <div className='flex w-full flex-row items-center justify-between py-md'>
           <div className=''>
             <TextBody className='font-bold'>{heading}</TextBody>
           </div>
@@ -101,21 +122,10 @@ const Dropdown = ({
             <Add />
           </div>
         </div>
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{
-                y: '-100%'
-              }}
-              animate={{
-                y: '0'
-              }}
-              className=''
-            >
-              <TextSub>{description}</TextSub>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+        <div className=''>
+          <TextSub>{description}</TextSub>
+        </div>
       </div>
     </motion.div>
   );
