@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
@@ -29,11 +29,23 @@ const experiences = [
   }
 ];
 
-const Add = () => {
+const Add = ({ isOpen }: { isOpen: boolean }) => {
+  const bgColor = isOpen ? 'bg-foreground-secondary' : 'bg-foreground';
+
   return (
     <div className='relative size-[16px]'>
-      <div className='absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-0 bg-foreground duration-300 group-hover:bg-foreground-secondary' />
-      <div className='absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 bg-foreground duration-300 group-hover:bg-foreground-secondary' />
+      <div
+        className={cn(
+          'absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-0 duration-300 group-hover:bg-foreground-secondary',
+          bgColor
+        )}
+      />
+      <div
+        className={cn(
+          'absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 duration-300 group-hover:bg-foreground-secondary',
+          bgColor
+        )}
+      />
     </div>
   );
 };
@@ -57,11 +69,19 @@ const Dropdown = ({
     animate('#overlay', { x: '0%' }, { ease: 'easeIn', duration: 0.2 });
   };
   const onMouseLeave = () => {
+    if (isOpen) return;
+
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
   };
   const onClick = () => {
     setIsOpen(prev => !prev);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      animate('#overlay', { x: '0%' });
+    }
+  }, [isOpen]);
 
   const variants = {
     hidden: {
@@ -102,7 +122,7 @@ const Dropdown = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
-      className='group relative flex w-full overflow-hidden border-b px-0 hover:cursor-pointer'
+      className='group relative box-border flex w-full overflow-hidden border-b px-0 hover:cursor-pointer'
       {...props}
     >
       <div
@@ -111,7 +131,10 @@ const Dropdown = ({
       />
       <div
         id='text'
-        className='z-10 flex w-full flex-col pb-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
+        className={cn(
+          'z-10 flex w-full flex-col pb-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary',
+          isOpen ? 'px-sm text-foreground-secondary' : 'text-foreground'
+        )}
       >
         <div className='flex w-full flex-row items-center justify-between py-md'>
           <div className=''>
@@ -119,7 +142,7 @@ const Dropdown = ({
           </div>
           <div className='flex flex-row items-center gap-sm'>
             <TextSub className='mb-[-2px]'>{time}</TextSub>
-            <Add />
+            <Add isOpen={isOpen} />
           </div>
         </div>
 
