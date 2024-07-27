@@ -5,7 +5,6 @@ import { ComponentBaseProps } from '@/types';
 import { motion, useAnimate } from 'framer-motion';
 
 import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
-import { useRef } from 'react';
 
 const experiences = [
   {
@@ -32,11 +31,13 @@ const Dropdown = ({
   heading,
   description,
   time,
+  index,
   ...props
 }: {
   heading: string;
   description: string;
   time: string;
+  index: number;
 }) => {
   const [scope, animate] = useAnimate();
 
@@ -48,12 +49,23 @@ const Dropdown = ({
   };
 
   return (
-    <div
+    <motion.div
       ref={scope}
-      className='group relative flex w-full overflow-hidden border-b px-0 py-md hover:cursor-pointer'
-      {...props}
+      initial={{
+        x: '-100%'
+      }}
+      whileInView={{
+        x: '0%'
+      }}
+      transition={{
+        delay: 0.1 * index,
+        duration: 0.5
+      }}
+      viewport={{ once: true }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      className='group relative flex w-full overflow-hidden border-b px-0 py-md hover:cursor-pointer'
+      {...props}
     >
       <div
         id='overlay'
@@ -70,7 +82,7 @@ const Dropdown = ({
           <TextSub>{time}</TextSub>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -85,7 +97,7 @@ const Experience = ({ className }: ComponentBaseProps) => {
       <div className=''>
         <TextHeading className='text-center'>Experience</TextHeading>
       </div>
-      <div className='w-full max-w-[600px]'>
+      <div className='w-full max-w-[600px] overflow-hidden'>
         {experiences.map((experience, index) => {
           return (
             <Dropdown
@@ -93,6 +105,7 @@ const Experience = ({ className }: ComponentBaseProps) => {
               description={experience.description}
               time={experience.time}
               key={index}
+              index={index}
             />
           );
         })}
