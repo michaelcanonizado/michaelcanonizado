@@ -1,13 +1,11 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import {
-  TextBody,
-  TextDisplay,
-  TextHeading,
-  TextSub
-} from '@/components/ui/text';
 import { ComponentBaseProps } from '@/types';
+import { motion, useAnimate } from 'framer-motion';
+
+import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
+import { useRef } from 'react';
 
 const experiences = [
   {
@@ -30,6 +28,52 @@ const experiences = [
   }
 ];
 
+const Dropdown = ({
+  heading,
+  description,
+  time,
+  ...props
+}: {
+  heading: string;
+  description: string;
+  time: string;
+}) => {
+  const [scope, animate] = useAnimate();
+
+  const onMouseEnter = () => {
+    animate('#overlay', { x: '0%' }, { ease: 'easeIn', duration: 0.2 });
+  };
+  const onMouseLeave = () => {
+    animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
+  };
+
+  return (
+    <div
+      ref={scope}
+      className='group relative flex w-full overflow-hidden border-b px-0 py-md hover:cursor-pointer'
+      {...props}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div
+        id='overlay'
+        className='absolute inset-0 z-0 translate-x-[-100%] bg-foreground'
+      />
+      <div
+        id='text'
+        className='z-10 flex w-full flex-row items-center justify-between duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary'
+      >
+        <div className=''>
+          <TextBody className='font-bold'>{heading}</TextBody>
+        </div>
+        <div className=''>
+          <TextSub>{time}</TextSub>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Experience = ({ className }: ComponentBaseProps) => {
   return (
     <section
@@ -44,17 +88,12 @@ const Experience = ({ className }: ComponentBaseProps) => {
       <div className='w-full max-w-[600px]'>
         {experiences.map((experience, index) => {
           return (
-            <div
-              className='flex w-full flex-row items-center justify-between border-b px-0 py-md'
+            <Dropdown
+              heading={experience.heading}
+              description={experience.description}
+              time={experience.time}
               key={index}
-            >
-              <div className=''>
-                <TextBody className='font-bold'>{experience.heading}</TextBody>
-              </div>
-              <div className=''>
-                <TextSub>{experience.time}</TextSub>
-              </div>
-            </div>
+            />
           );
         })}
       </div>
