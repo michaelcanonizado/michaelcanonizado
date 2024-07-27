@@ -6,7 +6,12 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion, useAnimate } from 'framer-motion';
 
-import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
+import {
+  TextBody,
+  TextDisplay,
+  TextHeading,
+  TextSub
+} from '@/components/ui/text';
 
 const experiences = [
   {
@@ -123,7 +128,7 @@ const Dropdown = ({
   const variants = {
     hidden: {
       x: '-100%',
-      height: '60px'
+      height: '100px'
     },
     show: {
       x: '0%'
@@ -132,7 +137,7 @@ const Dropdown = ({
       height: 'auto'
     },
     close: {
-      height: '60px'
+      height: '100px'
     }
   };
 
@@ -169,22 +174,24 @@ const Dropdown = ({
       <div
         id='text'
         className={cn(
-          'z-10 flex w-full flex-col pb-md duration-200 ease-in group-hover:px-sm group-hover:text-foreground-secondary',
-          isOpen ? 'px-sm text-foreground-secondary' : 'text-foreground'
+          'z-10 flex w-full flex-col pb-md duration-300 ease-in group-hover:px-md group-hover:text-foreground-secondary',
+          isOpen ? 'px-md text-foreground-secondary' : 'text-foreground'
         )}
       >
-        <div className='flex w-full flex-row items-center justify-between py-md'>
+        <div className='flex w-full flex-row items-center justify-between py-lg'>
           <div className=''>
-            <TextBody className='font-bold'>{heading}</TextBody>
+            <TextHeading className='group-hover:text-foreground-secondary'>
+              {heading}
+            </TextHeading>
           </div>
-          <div className='flex flex-row items-center gap-sm'>
-            <TextSub className='mb-[-2px]'>{time}</TextSub>
+          <div className='flex flex-row items-center gap-sm md:gap-md'>
+            <TextBody className='mb-[-2px]'>{time}</TextBody>
             <Add isOpen={isOpen} />
           </div>
         </div>
 
         <div className=''>
-          <TextSub>{description}</TextSub>
+          <TextBody>{description}</TextBody>
         </div>
       </div>
     </motion.div>
@@ -200,9 +207,9 @@ const Experience = ({ className }: ComponentBaseProps) => {
       )}
     >
       <div className=''>
-        <TextHeading className='text-center'>Experience</TextHeading>
+        <TextDisplay className='text-center'>Experience</TextDisplay>
       </div>
-      <div className='w-full max-w-[600px] overflow-hidden'>
+      <div className='w-full overflow-hidden'>
         {experiences.map((experience, index) => {
           return (
             <Dropdown
