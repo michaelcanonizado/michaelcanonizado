@@ -32,15 +32,40 @@ const experiences = [
 const Add = ({ isOpen }: { isOpen: boolean }) => {
   const bgColor = isOpen ? 'bg-foreground-secondary' : 'bg-foreground';
 
+  const variants = {
+    initial: {
+      left: '50%',
+      top: '50%',
+      x: '-50%',
+      y: '-50%'
+    },
+    close: {
+      rotate: '0deg'
+    },
+    open: {
+      rotate: '90deg'
+    }
+  };
+
   return (
-    <div className='relative size-[16px]'>
-      <div
+    <div id='add-icon' className='relative size-[16px]'>
+      <motion.div
+        id='add-icon-h'
+        variants={variants}
+        initial='initial'
+        animate={isOpen ? 'open' : 'close'}
+        transition={{
+          rotate: {
+            duration: 0.1
+          }
+        }}
         className={cn(
-          'absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-0 duration-300 group-hover:bg-foreground-secondary',
+          'absolute h-[2px] w-full duration-300 group-hover:bg-foreground-secondary',
           bgColor
         )}
       />
       <div
+        id='add-icon-v'
         className={cn(
           'absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 duration-300 group-hover:bg-foreground-secondary',
           bgColor
@@ -67,11 +92,23 @@ const Dropdown = ({
 
   const onMouseEnter = () => {
     animate('#overlay', { x: '0%' }, { ease: 'easeIn', duration: 0.2 });
+
+    animate(
+      '#add-icon',
+      { rotate: '90deg' },
+      { ease: 'linear', duration: 0.2 }
+    );
   };
   const onMouseLeave = () => {
     if (isOpen) return;
 
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
+
+    animate(
+      '#add-icon',
+      { rotate: '-90deg' },
+      { ease: 'linear', duration: 0.2 }
+    );
   };
   const onClick = () => {
     setIsOpen(prev => !prev);
