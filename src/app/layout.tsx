@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { inter, clashDisplay } from '@/styles/fonts';
 import NavigationBar from '@/components/sections/navigation-bar';
-import CursorProvider from './cursor-provider';
 
 export const metadata: Metadata = {
   title: 'Michael Canonizado',
@@ -24,10 +23,8 @@ export default function RootLayout({
           clashDisplay.variable
         )}
       >
-        <CursorProvider>
-          <NavigationBar />
-          {children}
-        </CursorProvider>
+        <NavigationBar />
+        {children}
       </body>
     </html>
   );
