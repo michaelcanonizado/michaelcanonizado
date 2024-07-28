@@ -1,37 +1,26 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
+import { TextDisplay } from '@/components/ui/text';
 import Card from '@/components/ui/card';
 
 const Closing = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container mb-2xl flex min-h-[100vh] flex-col justify-center gap-xl',
+        'max-height relative mb-2xl mt-2xl flex w-full flex-row items-center justify-center gap-xl overflow-hidden border-y',
         className
       )}
     >
-      <div className='text-center'>
-        <TextDisplay>{"LET'S DO SOMETHING AWESOME TOGETHER!"}</TextDisplay>
+      <div className='absolute inset-0 z-0'>
+        <Card className='absolute left-[12%] top-[-6%] rotate-[10deg] scale-[1.5] opacity-[60%]' />
+        <Card className='absolute right-[12%] top-[-5%] rotate-[-10deg] scale-[1.5] opacity-[60%]' />
+        <Card className='absolute bottom-[-2%] left-[5%] h-[250px] w-[400px] rotate-[-5deg] scale-[1.5] opacity-[60%]' />
+        <Card className='absolute bottom-[-2%] right-[5%] h-[250px] w-[400px] rotate-[5deg] scale-[1.6] opacity-[60%]' />
       </div>
-      <div className='grid grid-cols-2'>
-        <div className='relative'>
-          <Card className='absolute bottom-[-50%] right-[50%] translate-x-[50%] rotate-[-10deg] scale-[1.1] opacity-[75%]' />
-        </div>
-        <div className='max-w-[450px] space-y-md'>
-          <div>
-            <TextHeading>
-              {
-                "I'd be exicted for a collaboration oppurtunity in your next venture."
-              }
-            </TextHeading>
-          </div>
-          <div>
-            <TextBody>
-              {"I'll bring your vision to life and make a difference!"}
-            </TextBody>
-          </div>
-        </div>
+      <div className='z-10 max-w-[1000px] text-center'>
+        <TextDisplay>
+          {"I'LL BRING YOUR VISION TO LIFE AND MAKE A DIFFERENCE!"}
+        </TextDisplay>
       </div>
     </section>
   );
