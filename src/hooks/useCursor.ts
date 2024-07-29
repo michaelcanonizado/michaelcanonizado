@@ -1,22 +1,29 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 type MousePosition = {
-  x: number | undefined;
-  y: number | undefined;
+  x: number;
+  y: number;
 };
 
-const useCursor = () => {
+const useMousePosition = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
     y: 0
   });
 
   const updateMousePosition: EventListener = (e: MouseEventInit): void => {
+    if (!e.clientX || !e.clientY) {
+      return;
+    }
+
     setMousePosition({ x: e.clientX, y: e.clientY });
-    console.log('Mouse Pos: ', mousePosition);
   };
 
   useEffect(() => {
+    console.log('MOUNTED MOUSE!');
+
     window.addEventListener('mousemove', updateMousePosition);
 
     return () => {
@@ -24,6 +31,7 @@ const useCursor = () => {
     };
   }, []);
 
+  console.log('Mouse Pos: ', mousePosition);
   return mousePosition;
 };
-export default useCursor;
+export default useMousePosition;
