@@ -9,8 +9,17 @@ import {
 } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import Link from '@/components/ui/link';
 import { TextBody } from '@/components/ui/text';
+
+const Link = ({ className, children }: ComponentBaseProps) => {
+  return (
+    <TextBody
+      className={cn('font-display font-[500] hover:cursor-pointer', className)}
+    >
+      {children}
+    </TextBody>
+  );
+};
 
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const { scrollY } = useScroll();
