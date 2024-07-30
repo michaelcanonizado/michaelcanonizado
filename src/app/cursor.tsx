@@ -1,48 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
-type MousePosition = {
-  x: number;
-  y: number;
-};
+import { useCursorContext } from '@/context/cursor';
 
 const Cursor = () => {
-  const [isHidden, setIsHidden] = useState(true);
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0
-  });
+  const { cursor } = useCursorContext();
+  const { x, y } = cursor.mousePosition;
 
   const size = 32;
-
-  const onMouseLeave = () => {
-    setIsHidden(true);
-  };
-
-  const updateMousePosition: EventListener = (e: MouseEventInit): void => {
-    if (!e.clientX || !e.clientY) {
-      return;
-    }
-
-    setIsHidden(false);
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
-
-  useEffect(() => {
-    window.addEventListener('mousemove', updateMousePosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
-  }, []);
 
   const variants = {
     default: {
       scale: 1,
-      x: mousePosition.x - size / 2,
-      y: mousePosition.y - size / 2
+      x: x - size / 2,
+      y: y - size / 2
     },
     hidden: {
       opacity: 0,
@@ -53,7 +24,7 @@ const Cursor = () => {
   return (
     <motion.div
       variants={variants}
-      animate={isHidden ? 'hidden' : 'default'}
+      animate={'default'}
       transition={{
         type: 'tween',
         ease: 'backOut',
@@ -63,7 +34,6 @@ const Cursor = () => {
         width: `${size}px`,
         height: `${size}px`
       }}
-      onMouseLeave={onMouseLeave}
       className='pointer-events-none fixed left-0 top-0 scale-[0] rounded-full bg-foreground'
     />
   );

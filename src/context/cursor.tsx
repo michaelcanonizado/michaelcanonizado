@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, createContext, useState } from 'react';
+import { useContext, createContext, useState, useEffect } from 'react';
 
 type Cursor = {
   mousePosition: {
@@ -30,14 +30,36 @@ const CursorContextProvider = ({
 }) => {
   const [cursor, setCursor] = useState<Cursor>(defaultValues);
 
+  const updateMousePosition: EventListener = (e: MouseEventInit): void => {
+    if (!e.clientX || !e.clientY) {
+      return;
+    }
+
+    const x = e.clientX;
+    const y = e.clientY;
+
+    setCursor(prevState => {
+      return { ...prevState, mousePosition: { x, y } };
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', updateMousePosition);
+
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition);
+    };
+  }, []);
+
   return (
     <cursorContext.Provider value={{ cursor }}>
       {children}
     </cursorContext.Provider>
   );
 };
+export default CursorContextProvider;
 
-const useCursorContext = () => {
+export const useCursorContext = () => {
   const context = useContext(cursorContext);
   if (!context) {
     throw new Error(
