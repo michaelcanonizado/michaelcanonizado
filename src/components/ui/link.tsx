@@ -4,11 +4,16 @@ import { TextBody } from '@/components/ui/text';
 
 const Link = ({ className, children }: ComponentBaseProps) => {
   return (
-    <TextBody
-      className={cn('font-display font-[500] hover:cursor-pointer', className)}
+    <div
+      className={cn(
+        'group w-fit rounded-full border px-lg py-sm hover:bg-foreground',
+        className
+      )}
     >
-      {children}
-    </TextBody>
+      <TextBody className='group-hover:text-foreground-secondary'>
+        {children}
+      </TextBody>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ import {
   TextHeading,
   TextSub
 } from '@/components/ui/text';
+import Link from '@/components/ui/link';
 
 const Project = () => {
   return (
@@ -30,11 +31,7 @@ const Project = () => {
             convallis dolor venenatis id.
           </TextBody>
         </div>
-        <div className='group w-fit rounded-full border px-lg py-sm hover:bg-foreground'>
-          <TextBody className='group-hover:text-foreground-secondary'>
-            View
-          </TextBody>
-        </div>
+        <Link>View</Link>
       </div>
     </div>
   );
