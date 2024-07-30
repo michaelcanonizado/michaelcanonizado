@@ -8,9 +8,11 @@ type Cursor = {
     y: number;
   };
   isHovered: boolean;
+  isHidden: boolean;
 };
 type CursorContext = {
   cursor: Cursor;
+  setIsHidden: (state: boolean) => void;
 };
 
 const defaultValues: Cursor = {
@@ -18,7 +20,8 @@ const defaultValues: Cursor = {
     x: 0,
     y: 0
   },
-  isHovered: false
+  isHovered: false,
+  isHidden: true
 };
 
 const cursorContext = createContext<CursorContext | null>(null);
@@ -30,20 +33,23 @@ const CursorContextProvider = ({
 }) => {
   const [cursor, setCursor] = useState<Cursor>(defaultValues);
 
-  const updateMousePosition: EventListener = (e: MouseEventInit): void => {
-    if (!e.clientX || !e.clientY) {
-      return;
-    }
-
-    const x = e.clientX;
-    const y = e.clientY;
-
-    setCursor(prevState => {
-      return { ...prevState, mousePosition: { x, y } };
-    });
-  };
-
   useEffect(() => {
+    const updateMousePosition: EventListener = (e: MouseEventInit): void => {
+      if (!e.clientX || !e.clientY) {
+        return;
+      }
+
+      const x = e.clientX;
+      const y = e.clientY;
+      setCursor(prevState => {
+        return { ...prevState, mousePosition: { x, y } };
+      });
+
+      setCursor(prevState => {
+        return { ...prevState, isHidden: false };
+      });
+    };
+
     window.addEventListener('mousemove', updateMousePosition);
 
     return () => {
@@ -51,8 +57,14 @@ const CursorContextProvider = ({
     };
   }, []);
 
+  const setIsHidden = (state: boolean) => {
+    setCursor(prevState => {
+      return { ...prevState, isHidden: state };
+    });
+  };
+
   return (
-    <cursorContext.Provider value={{ cursor }}>
+    <cursorContext.Provider value={{ cursor, setIsHidden }}>
       {children}
     </cursorContext.Provider>
   );
