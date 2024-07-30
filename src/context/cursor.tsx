@@ -13,6 +13,7 @@ type Cursor = {
 type CursorContext = {
   cursor: Cursor;
   setIsHidden: (state: boolean) => void;
+  setIsHover: (state: boolean) => void;
 };
 
 const defaultValues: Cursor = {
@@ -63,12 +64,19 @@ const CursorContextProvider = ({
     });
   };
 
+  const setIsHover = (state: boolean) => {
+    setCursor(prevState => {
+      return { ...prevState, isHover: state };
+    });
+    console.log('Hover: ', state);
+  };
+
   const onMouseLeave = () => {
     setIsHidden(true);
   };
 
   return (
-    <cursorContext.Provider value={{ cursor, setIsHidden }}>
+    <cursorContext.Provider value={{ cursor, setIsHidden, setIsHover }}>
       <div onMouseLeave={onMouseLeave}>{children}</div>
     </cursorContext.Provider>
   );
