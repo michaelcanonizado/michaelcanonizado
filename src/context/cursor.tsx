@@ -63,9 +63,13 @@ const CursorContextProvider = ({
     });
   };
 
+  const onMouseLeave = () => {
+    setIsHidden(true);
+  };
+
   return (
     <cursorContext.Provider value={{ cursor, setIsHidden }}>
-      {children}
+      <div onMouseLeave={onMouseLeave}>{children}</div>
     </cursorContext.Provider>
   );
 };

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useCursorContext } from '@/context/cursor';
 
 const Cursor = () => {
-  const { cursor, setIsHidden } = useCursorContext();
+  const { cursor } = useCursorContext();
   const { x, y } = cursor.mousePosition;
   const { isHidden } = cursor;
 
@@ -22,10 +22,6 @@ const Cursor = () => {
     }
   };
 
-  const onMouseLeave = () => {
-    setIsHidden(true);
-  };
-
   return (
     <motion.div
       variants={variants}
@@ -39,7 +35,6 @@ const Cursor = () => {
         width: `${size}px`,
         height: `${size}px`
       }}
-      onMouseLeave={onMouseLeave}
       className='pointer-events-none fixed left-0 top-0 scale-[0] rounded-full bg-foreground'
     />
   );
