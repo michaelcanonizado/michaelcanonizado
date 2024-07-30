@@ -52,7 +52,7 @@ const Cursor = () => {
         width: `${size}px`,
         height: `${size}px`
       }}
-      className='fixed left-0 top-0 rounded-full bg-foreground'
+      className='pointer-events-none fixed left-0 top-0 rounded-full bg-foreground'
     />
   );
 };

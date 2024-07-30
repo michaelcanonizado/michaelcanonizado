@@ -77,7 +77,7 @@ const InfiniteSlider = ({
       className={cn(
         'group flex flex-row flex-nowrap overflow-hidden border-y p-0',
         className,
-        stopOnHover ? 'hover:cursor-pointer hover:bg-foreground' : ''
+        stopOnHover ? 'hover:bg-foreground' : ''
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

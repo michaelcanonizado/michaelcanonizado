@@ -30,7 +30,7 @@ const Project = () => {
             convallis dolor venenatis id.
           </TextBody>
         </div>
-        <div className='group w-fit rounded-full border px-lg py-sm hover:cursor-pointer hover:bg-foreground'>
+        <div className='group w-fit rounded-full border px-lg py-sm hover:bg-foreground'>
           <TextBody className='group-hover:text-foreground-secondary'>
             View
           </TextBody>
