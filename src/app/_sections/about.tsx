@@ -3,29 +3,48 @@
 import { useRef } from 'react';
 
 import { cn } from '@/lib/utils';
-import { useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
 import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 import Image from 'next/image';
+import Card from '@/components/ui/card';
 
 const About = ({ className }: ComponentBaseProps) => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start 70%', 'end 90%']
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [-20, 5]);
+  const x = useTransform(scrollYProgress, [0, 1], [-50, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
+
   return (
-    <section className={cn('max-height container space-y-xl !pt-0', className)}>
+    <section
+      ref={containerRef}
+      className={cn('max-height container space-y-xl !pt-0', className)}
+    >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
           {'You can call me Mikey!'}
         </TextDisplay>
       </div>
-      <div className='grid grid-cols-2 gap-xl'>
-        <div className='flex flex-row justify-end'>
-          <div className='relative flex w-full max-w-[500px] flex-row justify-center'>
-            <div className='absolute bottom-[-10%] h-[500px] w-[400px] rotate-[-10deg] overflow-hidden rounded-lg'>
-              <Image fill src='/about/image-4.jpg' alt=' mikey' />
-            </div>
-          </div>
-        </div>
-        <div className='max-w-[500px] space-y-lg'>
+      <div className='flex items-center justify-center gap-xl space-x-xl'>
+        <motion.div
+          style={{
+            rotate,
+            x,
+            y
+          }}
+          className=''
+        >
+          <Card className='relative h-[500px] w-[350px]'>
+            <Image fill src='/about/image-4.jpg' alt=' mikey' />
+          </Card>
+        </motion.div>
+        <div className='!m-0 max-w-[500px] space-y-lg'>
           <div className=''>
             <TextHeading>
               I am a self-taught web developer based in the Philippines!
