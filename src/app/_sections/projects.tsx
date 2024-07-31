@@ -1,5 +1,9 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
+import { motion } from 'framer-motion';
+
 import {
   TextBody,
   TextDisplay,
@@ -9,8 +13,36 @@ import {
 import Link from '@/components/ui/link';
 
 const Project = () => {
+  const containerVariants = {
+    hidden: {
+      y: 50,
+      opacity: 0
+    },
+    show: {
+      y: 0,
+      opacity: 100,
+      transition: {
+        opacity: {
+          duration: 0.7,
+          type: 'tween',
+          ease: 'linear'
+        },
+        y: {
+          duration: 0.5,
+          type: 'spring'
+        }
+      }
+    }
+  };
+
   return (
-    <div className='flex w-full flex-col justify-start overflow-hidden rounded-lg border bg-muted lg:flex-row'>
+    <motion.div
+      variants={containerVariants}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true }}
+      className='flex w-full flex-col justify-start overflow-hidden rounded-lg border bg-muted lg:flex-row'
+    >
       <div className='h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
         <div className='h-full w-full bg-muted' />
       </div>
@@ -40,7 +72,7 @@ const Project = () => {
         </div>
         <Link>View</Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
