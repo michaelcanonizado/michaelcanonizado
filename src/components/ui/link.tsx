@@ -6,14 +6,11 @@ const Link = ({ className, children }: ComponentBaseProps) => {
   return (
     <div
       className={cn(
-        'group w-fit rounded-full border px-lg py-sm hover:bg-foreground',
+        'group w-fit rounded-full border px-lg py-sm hover:bg-background/50',
         className
       )}
     >
-      <TextBody
-        showAnimation={false}
-        className='group-hover:text-foreground-secondary'
-      >
+      <TextBody showAnimation={false} className=''>
         {children}
       </TextBody>
     </div>
