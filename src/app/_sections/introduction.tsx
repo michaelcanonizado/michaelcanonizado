@@ -16,6 +16,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
 
   const rotate = useTransform(scrollYProgress, [0, 1], [10, -10]);
   const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
 
   return (
     <section
@@ -28,7 +29,8 @@ const Introduction = ({ className }: ComponentBaseProps) => {
       <motion.div
         style={{
           y,
-          rotate: rotate
+          rotate: rotate,
+          scale
         }}
         className=''
       >
