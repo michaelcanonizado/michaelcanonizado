@@ -10,9 +10,9 @@ import Link from '@/components/ui/link';
 
 const Project = () => {
   return (
-    <div className='flex w-full flex-col justify-start overflow-hidden rounded-lg border lg:flex-row'>
+    <div className='flex w-full flex-col justify-start overflow-hidden rounded-lg border bg-muted lg:flex-row'>
       <div className='h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
-        <div className='h-full w-full bg-foreground' />
+        <div className='h-full w-full bg-muted' />
       </div>
       <div className='flex flex-col justify-between p-lg'>
         <div className='mb-lg'>
