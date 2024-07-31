@@ -10,12 +10,12 @@ import Link from '@/components/ui/link';
 
 const Project = () => {
   return (
-    <div className='flex w-full flex-row justify-start overflow-hidden rounded-lg border'>
-      <div className='h-[350px] w-full min-w-[400px] max-w-[700px]'>
+    <div className='flex w-full flex-col justify-start overflow-hidden rounded-lg border lg:flex-row'>
+      <div className='h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
         <div className='h-full w-full bg-foreground' />
       </div>
       <div className='flex flex-col justify-between p-lg'>
-        <div className=''>
+        <div className='mb-lg'>
           <div className='mb-xs flex items-center justify-start'>
             <TextHeading>minder</TextHeading>
           </div>
