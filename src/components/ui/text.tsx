@@ -10,8 +10,24 @@ type TextProps = {
 } & ComponentBaseProps;
 
 export const textDisplayVariants: Variants = {
-  hidden: {},
-  show: {}
+  hidden: {
+    opacity: 0,
+    y: 30
+  },
+  show: {
+    opacity: 100,
+    y: 0,
+    transition: {
+      opacity: {
+        duration: 0.5,
+        type: 'tween',
+        ease: 'linear'
+      },
+      y: {
+        duration: 0.3
+      }
+    }
+  }
 };
 export const textHeadingVariants: Variants = {
   hidden: {},
