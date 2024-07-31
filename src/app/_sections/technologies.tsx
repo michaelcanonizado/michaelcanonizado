@@ -90,7 +90,9 @@ const Technologies = ({ className }: ComponentBaseProps) => {
           {technologyLogos.map((logo, index) => {
             return (
               <div className='mx-lg h-fit w-fit' key={index}>
-                {logo.component}
+                {React.cloneElement(logo.component, {
+                  className: 'fill-foreground stroke-foreground'
+                })}
               </div>
             );
           })}
