@@ -1,5 +1,9 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
+import { textBodyVariants } from '@/styles/variants';
 
 export const TextDisplay = ({ className, children }: ComponentBaseProps) => {
   return (
@@ -16,27 +20,33 @@ export const TextDisplay = ({ className, children }: ComponentBaseProps) => {
 
 export const TextHeading = ({ className, children }: ComponentBaseProps) => {
   return (
-    <h2
+    <motion.h2
+      variants={textBodyVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'font-display text-[calc((32/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)]',
         className
       )}
     >
       {children}
-    </h2>
+    </motion.h2>
   );
 };
 
 export const TextBody = ({ className, children }: ComponentBaseProps) => {
   return (
-    <p
+    <motion.p
+      variants={textBodyVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'text-[calc((20/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)]',
         className
       )}
     >
       {children}
-    </p>
+    </motion.p>
   );
 };
 

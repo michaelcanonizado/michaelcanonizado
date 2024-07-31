@@ -6,7 +6,6 @@ import { TextBody, TextHeading } from '@/components/ui/text';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from '@/components/ui/card';
 import { useRef } from 'react';
-import { textBodyVariants } from '@/styles/variants';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -39,28 +38,19 @@ const Introduction = ({ className }: ComponentBaseProps) => {
       </motion.div>
 
       <div className='max-w-[400px] space-y-md'>
-        <motion.div
-          variants={textBodyVariants}
-          initial='hidden'
-          whileInView='show'
-        >
+        <div>
           <TextHeading>
             Looking for a developer who can create a visually appealing and
             fully functional website?
           </TextHeading>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={textBodyVariants}
-          initial='hidden'
-          whileInView='show'
-          className='max-w-[700px]'
-        >
+        <div className='max-w-[700px]'>
           <TextBody>
             Your search ends here! With my knowledge in web development,
             you&apos;ll get a website that sets you apart!
           </TextBody>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
