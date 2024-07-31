@@ -18,6 +18,22 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
 
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    show: {
+      opacity: 100,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        type: 'tween',
+        ease: 'linear'
+      }
+    }
+  };
+
   return (
     <section
       ref={containerRef}
@@ -38,19 +54,24 @@ const Introduction = ({ className }: ComponentBaseProps) => {
       </motion.div>
 
       <div className='max-w-[400px] space-y-md'>
-        <div>
+        <motion.div variants={textVariants} initial='hidden' whileInView='show'>
           <TextHeading>
             Looking for a developer who can create a visually appealing and
             fully functional website?
           </TextHeading>
-        </div>
+        </motion.div>
 
-        <div className='max-w-[700px]'>
+        <motion.div
+          variants={textVariants}
+          initial='hidden'
+          whileInView='show'
+          className='max-w-[700px]'
+        >
           <TextBody>
             Your search ends here! With my knowledge in web development,
             you&apos;ll get a website that sets you apart!
           </TextBody>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
