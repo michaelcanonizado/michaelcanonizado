@@ -5,6 +5,7 @@ import { inter, clashDisplay } from '@/styles/fonts';
 import NavigationBar from '@/components/sections/navigation-bar';
 import Cursor from './cursor';
 import CursorContextProvider from '@/context/cursor';
+import LenisScrollProvider from '@/providers/lenis';
 
 export const metadata: Metadata = {
   title: 'Michael Canonizado',
@@ -25,11 +26,13 @@ export default function RootLayout({
           clashDisplay.variable
         )}
       >
-        <CursorContextProvider>
-          {/* <Cursor /> */}
-          <NavigationBar />
-          {children}
-        </CursorContextProvider>
+        <LenisScrollProvider>
+          <CursorContextProvider>
+            {/* <Cursor /> */}
+            <NavigationBar />
+            {children}
+          </CursorContextProvider>
+        </LenisScrollProvider>
       </body>
     </html>
   );
