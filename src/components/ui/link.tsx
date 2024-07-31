@@ -10,7 +10,10 @@ const Link = ({ className, children }: ComponentBaseProps) => {
         className
       )}
     >
-      <TextBody className='group-hover:text-foreground-secondary'>
+      <TextBody
+        showAnimation={false}
+        className='group-hover:text-foreground-secondary'
+      >
         {children}
       </TextBody>
     </div>

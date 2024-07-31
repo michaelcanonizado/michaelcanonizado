@@ -17,15 +17,21 @@ const Project = () => {
       <div className='flex flex-col justify-between p-lg'>
         <div className='mb-lg'>
           <div className='mb-xs flex items-center justify-start'>
-            <TextHeading>minder</TextHeading>
+            <TextHeading showAnimation={false}>minder</TextHeading>
           </div>
           <div className='mb-md flex flex-row gap-sm'>
-            <TextSub className='font-semibold'>NextJS</TextSub>
-            <TextSub className='font-semibold'>ShadCN</TextSub>
-            <TextSub className='font-semibold'>MongoDB</TextSub>
+            <TextSub showAnimation={false} className='font-semibold'>
+              NextJS
+            </TextSub>
+            <TextSub showAnimation={false} className='font-semibold'>
+              ShadCN
+            </TextSub>
+            <TextSub showAnimation={false} className='font-semibold'>
+              MongoDB
+            </TextSub>
           </div>
           <div className='flex items-center justify-end'>
-            <TextBody>
+            <TextBody showAnimation={false}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               nibh ligula, tempor sed elementum quis, sodales ac erat. Cras
               rhoncus volutpat lectus nec venenatis.
