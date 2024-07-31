@@ -30,8 +30,24 @@ export const textDisplayVariants: Variants = {
   }
 };
 export const textHeadingVariants: Variants = {
-  hidden: {},
-  show: {}
+  hidden: {
+    opacity: 0,
+    y: 10
+  },
+  show: {
+    opacity: 100,
+    y: 0,
+    transition: {
+      opacity: {
+        duration: 0.5,
+        type: 'tween',
+        ease: 'linear'
+      },
+      y: {
+        duration: 0.3
+      }
+    }
+  }
 };
 export const textBodyVariants: Variants = {
   hidden: {
