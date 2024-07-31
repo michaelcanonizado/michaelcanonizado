@@ -42,9 +42,14 @@ export const textBodyVariants: Variants = {
     opacity: 100,
     y: 0,
     transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'linear'
+      opacity: {
+        duration: 0.5,
+        type: 'tween',
+        ease: 'linear'
+      },
+      y: {
+        duration: 0.3
+      }
     }
   }
 };
