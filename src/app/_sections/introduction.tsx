@@ -21,13 +21,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
             fully functional website?
           </TextHeading>
         </div>
-        <div className='my-lg'>
-          <TextHeading>
-            {
-              "We'd be excited for a collaboration opportunity in your next venture."
-            }
-          </TextHeading>
-        </div>
+
         <div className='max-w-[700px]'>
           <TextBody>
             Your search ends here! With my knowledge in web development,
