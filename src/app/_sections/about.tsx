@@ -1,46 +1,13 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { cn } from '@/lib/utils';
-import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
 import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
 import Image from 'next/image';
-
-const images = [
-  {
-    src: 'image-1.jpg',
-    alt: 'image-1'
-  },
-  {
-    src: 'image-2.jpg',
-    alt: 'image-2'
-  },
-  {
-    src: 'image-3.jpg',
-    alt: 'image-3'
-  },
-  {
-    src: 'image-4.jpg',
-    alt: 'image-4'
-  },
-  {
-    src: 'image-5.jpg',
-    alt: 'image-5'
-  }
-];
-
-/*
-Hi there, I'm Michael (you can call me Mikey!). I am a self-taught web developer based in the Philippines.
-
-I am a 2nd year Computer Science student with 4 years of experience in web development.
-
-I love building websites that are user-friendly, aesthetic, and functional.
-
-I'm here to transform your ideas into a website that elevates your business. My strong work ethic and discipline set me apart as a developer you can rely on!
-*/
 
 const About = ({ className }: ComponentBaseProps) => {
   return (
