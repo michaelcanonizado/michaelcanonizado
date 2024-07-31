@@ -6,6 +6,7 @@ import { TextBody, TextHeading } from '@/components/ui/text';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from '@/components/ui/card';
 import { useRef } from 'react';
+import { textBodyVariants } from '@/styles/variants';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -17,22 +18,6 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   const rotate = useTransform(scrollYProgress, [0, 1], [10, -10]);
   const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
-
-  const textVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20
-    },
-    show: {
-      opacity: 100,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        type: 'tween',
-        ease: 'linear'
-      }
-    }
-  };
 
   return (
     <section
@@ -54,7 +39,11 @@ const Introduction = ({ className }: ComponentBaseProps) => {
       </motion.div>
 
       <div className='max-w-[400px] space-y-md'>
-        <motion.div variants={textVariants} initial='hidden' whileInView='show'>
+        <motion.div
+          variants={textBodyVariants}
+          initial='hidden'
+          whileInView='show'
+        >
           <TextHeading>
             Looking for a developer who can create a visually appealing and
             fully functional website?
@@ -62,7 +51,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
         </motion.div>
 
         <motion.div
-          variants={textVariants}
+          variants={textBodyVariants}
           initial='hidden'
           whileInView='show'
           className='max-w-[700px]'
