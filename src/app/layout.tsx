@@ -17,10 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang='en'
-      className='min-h-screen cursor-none bg-background text-foreground'
-    >
+    <html lang='en' className='min-h-screen bg-background text-foreground'>
       <body
         className={cn(
           'relative flex flex-col justify-center font-sans',
@@ -29,7 +26,7 @@ export default function RootLayout({
         )}
       >
         <CursorContextProvider>
-          <Cursor />
+          {/* <Cursor /> */}
           <NavigationBar />
           {children}
         </CursorContextProvider>
