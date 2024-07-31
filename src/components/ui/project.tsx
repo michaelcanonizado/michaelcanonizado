@@ -37,7 +37,7 @@ const Project = ({ className }: ComponentBaseProps) => {
       whileInView='show'
       viewport={{ once: true }}
       className={cn(
-        'flex w-full flex-col justify-start overflow-hidden rounded-lg border bg-muted lg:flex-row',
+        'flex w-full flex-col justify-start overflow-hidden rounded-lg bg-muted lg:flex-row',
         className
       )}
     >
