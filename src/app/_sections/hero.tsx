@@ -8,16 +8,8 @@ const Hero = ({ className }: ComponentBaseProps) => {
     <section className={cn('container !mt-0 !pt-0', className)}>
       <div className='max-height flex w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
-          <div className='space-y-[-8px]'>
-            <div>
-              <TextHeading>creator.</TextHeading>
-            </div>
-            <div>
-              <TextHeading>storyteller.</TextHeading>
-            </div>
-            <div>
-              <TextHeading>web developer.</TextHeading>
-            </div>
+          <div className='max-w-[25ch]'>
+            <TextHeading>creator. storyteller. web developer.</TextHeading>
           </div>
           <div>
             <TextBody>
