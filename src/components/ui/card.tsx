@@ -1,11 +1,16 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 
-const Card = ({ className }: ComponentBaseProps) => {
+const Card = ({ className, children }: ComponentBaseProps) => {
   return (
     <div
-      className={cn('h-[400px] w-[250px] rounded-lg bg-foreground', className)}
-    />
+      className={cn(
+        'h-[400px] w-[250px] overflow-hidden rounded-lg bg-foreground',
+        className
+      )}
+    >
+      {children}
+    </div>
   );
 };
 
