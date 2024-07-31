@@ -14,12 +14,12 @@ const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 70%', 'end 90%']
+    offset: ['start 70%', 'end 40%']
   });
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [-20, 5]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [-10, -3]);
   const x = useTransform(scrollYProgress, [0, 1], [-50, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 1], [300, 0, -175]);
 
   return (
     <section
@@ -31,12 +31,13 @@ const About = ({ className }: ComponentBaseProps) => {
           {'You can call me Mikey!'}
         </TextDisplay>
       </div>
-      <div className='flex items-center justify-center gap-xl space-x-xl'>
+      <div className='flex items-start justify-center gap-xl space-x-xl'>
         <motion.div
           style={{
             rotate,
             x,
-            y
+            y,
+            scale: 1.1
           }}
           className=''
         >
