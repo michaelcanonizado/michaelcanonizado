@@ -22,26 +22,8 @@
     --ring: 12 85% 48%;
   }
 
-  .inverted {
-    --brand: 125 32% 8%;
-
-    --navbar-background: 60 100% 95%;
-    --navbar-foreground: 11 99% 60%;
-
-    --background: 11 99% 60%;
-    --foreground: 60 100% 95%;
-    --foreground-secondary: 11 99% 60%;
-
-    --muted: 60 4% 9%;
-    --muted-foreground: 60 12% 82%;
-
-    --border: 60 4% 9%;
-    --input: 60 4% 9%;
-    --ring: 60 4% 9%;
-  }
-
   .dark {
-    --brand: 11 99% 60%;
+    --brand: 270 100% 68%;
 
     --navbar-background: 150 7% 6%;
     --navbar-foreground: 60 100% 95%;
