@@ -5,6 +5,8 @@ import { NameFirst } from '@/../public/name/';
 import InfiniteSlider from '@/components/ui/infinite-slider';
 
 const Footer = ({ className }: ComponentBaseProps) => {
+  const headerColor = 'text-foreground';
+
   return (
     <section className={cn('w-full space-y-md', className)}>
       <InfiniteSlider className='' baseVelocity={-3}>
@@ -12,20 +14,20 @@ const Footer = ({ className }: ComponentBaseProps) => {
           michaelxaviercanonizado@gmail.com
         </span>
       </InfiniteSlider>
-      <div className='flex flex-col justify-end bg-foreground !py-0'>
+      <div className='flex flex-col justify-end bg-muted !py-0'>
         <div className='flex grow flex-row justify-between px-xl py-xl'>
           <div className='max-w-[500px]'>
-            <TextHeading className='text-background'>
+            <TextHeading className={headerColor}>
               Creating a digital experience that bridge aesthetics and
               functionality
             </TextHeading>
           </div>
-          <div className='flex flex-row gap-xl border'>
+          <div className='flex flex-row gap-xl'>
             <div className='space-y-md'>
               <div className=''>
-                <TextHeading className='text-background'>Site Map</TextHeading>
+                <TextHeading className={headerColor}>Site Map</TextHeading>
               </div>
-              <div className='text-background'>
+              <div className={headerColor}>
                 <TextBody>About</TextBody>
                 <TextBody>Projects</TextBody>
                 <TextBody>Experience</TextBody>
@@ -33,9 +35,9 @@ const Footer = ({ className }: ComponentBaseProps) => {
             </div>
             <div className='space-y-md'>
               <div className=''>
-                <TextHeading className='text-background'>Follow Me</TextHeading>
+                <TextHeading className={headerColor}>Follow Me</TextHeading>
               </div>
-              <div className='text-background'>
+              <div className={headerColor}>
                 <TextBody>LinkedIn</TextBody>
                 <TextBody>Github</TextBody>
                 <TextBody>Discord</TextBody>
@@ -44,7 +46,7 @@ const Footer = ({ className }: ComponentBaseProps) => {
           </div>
         </div>
         <div className='px-md pb-md'>
-          <NameFirst className='fill-background' />
+          <NameFirst className='fill-brand' />
         </div>
       </div>
     </section>
