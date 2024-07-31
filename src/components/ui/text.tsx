@@ -5,13 +5,15 @@ import { motion, Variants } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
 type TextProps = {
+  variants?: Variants;
   showAnimation?: boolean;
 } & ComponentBaseProps;
 
 export const TextDisplay = ({
   className,
   children,
-  showAnimation = true
+  showAnimation = true,
+  variants
 }: TextProps) => {
   const textDisplayVariants: Variants = {
     hidden: {},
@@ -20,7 +22,7 @@ export const TextDisplay = ({
 
   return (
     <motion.h1
-      variants={textDisplayVariants}
+      variants={variants ? variants : textDisplayVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
@@ -36,7 +38,8 @@ export const TextDisplay = ({
 export const TextHeading = ({
   className,
   children,
-  showAnimation = true
+  showAnimation = true,
+  variants
 }: TextProps) => {
   const textHeadingVariants: Variants = {
     hidden: {},
@@ -45,7 +48,7 @@ export const TextHeading = ({
 
   return (
     <motion.h2
-      variants={textHeadingVariants}
+      variants={variants ? variants : textHeadingVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
@@ -61,7 +64,8 @@ export const TextHeading = ({
 export const TextBody = ({
   className,
   children,
-  showAnimation = true
+  showAnimation = true,
+  variants
 }: TextProps) => {
   const textBodyVariants: Variants = {
     hidden: {
@@ -81,7 +85,7 @@ export const TextBody = ({
 
   return (
     <motion.p
-      variants={textBodyVariants}
+      variants={variants ? variants : textBodyVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
@@ -97,7 +101,8 @@ export const TextBody = ({
 export const TextSub = ({
   className,
   children,
-  showAnimation = true
+  showAnimation = true,
+  variants
 }: TextProps) => {
   const textSubVariants: Variants = {
     hidden: {},
@@ -106,7 +111,7 @@ export const TextSub = ({
 
   return (
     <motion.p
-      variants={textSubVariants}
+      variants={variants ? variants : textSubVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
