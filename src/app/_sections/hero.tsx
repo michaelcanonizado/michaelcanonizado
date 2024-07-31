@@ -9,10 +9,12 @@ const Hero = ({ className }: ComponentBaseProps) => {
       <div className='max-height flex w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
           <div className='max-w-[25ch]'>
-            <TextHeading>creator. storyteller. web developer.</TextHeading>
+            <TextHeading showAnimation={false}>
+              creator. storyteller. web developer.
+            </TextHeading>
           </div>
           <div>
-            <TextBody>
+            <TextBody showAnimation={false}>
               Creating a digital experience that bridge aesthetics and
               functionality
             </TextBody>
