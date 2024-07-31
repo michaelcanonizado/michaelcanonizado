@@ -12,11 +12,13 @@ type TextProps = {
 export const textDisplayVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 30
+    y: 30,
+    scale: 0.985
   },
   show: {
     opacity: 100,
     y: 0,
+    scale: 1,
     transition: {
       opacity: {
         duration: 0.5,
