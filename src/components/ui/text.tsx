@@ -9,17 +9,40 @@ type TextProps = {
   showAnimation?: boolean;
 } & ComponentBaseProps;
 
+export const textDisplayVariants: Variants = {
+  hidden: {},
+  show: {}
+};
+export const textHeadingVariants: Variants = {
+  hidden: {},
+  show: {}
+};
+export const textBodyVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20
+  },
+  show: {
+    opacity: 100,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      type: 'tween',
+      ease: 'linear'
+    }
+  }
+};
+export const textSubVariants: Variants = {
+  hidden: {},
+  show: {}
+};
+
 export const TextDisplay = ({
   className,
   children,
   showAnimation = true,
   variants
 }: TextProps) => {
-  const textDisplayVariants: Variants = {
-    hidden: {},
-    show: {}
-  };
-
   return (
     <motion.h1
       variants={variants ? variants : textDisplayVariants}
@@ -41,11 +64,6 @@ export const TextHeading = ({
   showAnimation = true,
   variants
 }: TextProps) => {
-  const textHeadingVariants: Variants = {
-    hidden: {},
-    show: {}
-  };
-
   return (
     <motion.h2
       variants={variants ? variants : textHeadingVariants}
@@ -67,22 +85,6 @@ export const TextBody = ({
   showAnimation = true,
   variants
 }: TextProps) => {
-  const textBodyVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 20
-    },
-    show: {
-      opacity: 100,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        type: 'tween',
-        ease: 'linear'
-      }
-    }
-  };
-
   return (
     <motion.p
       variants={variants ? variants : textBodyVariants}
@@ -104,11 +106,6 @@ export const TextSub = ({
   showAnimation = true,
   variants
 }: TextProps) => {
-  const textSubVariants: Variants = {
-    hidden: {},
-    show: {}
-  };
-
   return (
     <motion.p
       variants={variants ? variants : textSubVariants}

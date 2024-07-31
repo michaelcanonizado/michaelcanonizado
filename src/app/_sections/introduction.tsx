@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, TextHeading } from '@/components/ui/text';
+import { TextBody, textBodyVariants, TextHeading } from '@/components/ui/text';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from '@/components/ui/card';
 import { useRef } from 'react';
@@ -39,7 +39,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
 
       <div className='max-w-[400px] space-y-md'>
         <div>
-          <TextHeading>
+          <TextHeading variants={textBodyVariants}>
             Looking for a developer who can create a visually appealing and
             fully functional website?
           </TextHeading>
