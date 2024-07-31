@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='min-h-screen bg-background text-foreground'>
+    <html lang='en' className='dark min-h-screen bg-background text-foreground'>
       <body
         className={cn(
           'relative flex flex-col justify-center font-sans',
