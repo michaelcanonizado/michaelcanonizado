@@ -34,9 +34,7 @@ const experiences = [
   }
 ];
 
-const Add = ({ isOpen }: { isOpen: boolean }) => {
-  const bgColor = isOpen ? 'bg-foreground-secondary' : 'bg-foreground';
-
+const OpenStateIcon = ({ isOpen }: { isOpen: boolean }) => {
   const variants = {
     initial: {
       left: '50%',
@@ -53,9 +51,9 @@ const Add = ({ isOpen }: { isOpen: boolean }) => {
   };
 
   return (
-    <div id='add-icon' className='relative size-[16px]'>
+    <div id='open-state-icon' className='relative size-[16px]'>
       <motion.div
-        id='add-icon-h'
+        id='open-state-icon-h'
         variants={variants}
         initial='initial'
         animate={isOpen ? 'open' : 'close'}
@@ -64,17 +62,11 @@ const Add = ({ isOpen }: { isOpen: boolean }) => {
             duration: 0.1
           }
         }}
-        className={cn(
-          'absolute h-[2px] w-full duration-300 group-hover:bg-foreground-secondary',
-          bgColor
-        )}
+        className='absolute h-[2px] w-full bg-brand duration-300'
       />
       <div
-        id='add-icon-v'
-        className={cn(
-          'absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 duration-300 group-hover:bg-foreground-secondary',
-          bgColor
-        )}
+        id='open-state-icon-v'
+        className='absolute left-[50%] top-[50%] h-[2px] w-full translate-x-[-50%] translate-y-[-50%] rotate-90 bg-brand duration-300'
       />
     </div>
   );
@@ -99,7 +91,7 @@ const Dropdown = ({
     animate('#overlay', { x: '0%' }, { ease: 'easeIn', duration: 0.2 });
 
     animate(
-      '#add-icon',
+      '#open-state-icon',
       { rotate: '90deg' },
       { ease: 'linear', duration: 0.2 }
     );
@@ -110,7 +102,7 @@ const Dropdown = ({
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
 
     animate(
-      '#add-icon',
+      '#open-state-icon',
       { rotate: '-90deg' },
       { ease: 'linear', duration: 0.2 }
     );
@@ -169,33 +161,26 @@ const Dropdown = ({
     >
       <div
         id='overlay'
-        className='absolute inset-0 z-0 translate-x-[-100%] bg-foreground'
+        className='absolute inset-0 z-0 translate-x-[-100%] bg-muted'
       />
       <div
         id='text'
         className={cn(
-          'z-10 flex w-full flex-col pb-md duration-300 ease-in group-hover:px-md group-hover:text-foreground-secondary',
-          isOpen ? 'px-md text-foreground-secondary' : 'text-foreground'
+          'z-10 flex w-full flex-col pb-md text-foreground duration-300 ease-in group-hover:px-md group-hover:text-foreground',
+          isOpen ? 'px-md' : ''
         )}
       >
         <div className='flex w-full flex-row items-center justify-between py-lg'>
-          <div className=''>
-            <TextHeading
-              className={cn(
-                'group-hover:text-foreground-secondary',
-                isOpen ? 'text-foreground-secondary' : 'text-foreground'
-              )}
-            >
-              {heading}
-            </TextHeading>
+          <div>
+            <TextHeading>{heading}</TextHeading>
           </div>
           <div className='flex flex-row items-center gap-sm md:gap-md'>
             <TextBody className='mb-[-2px]'>{time}</TextBody>
-            <Add isOpen={isOpen} />
+            <OpenStateIcon isOpen={isOpen} />
           </div>
         </div>
 
-        <div className=''>
+        <div>
           <TextBody>{description}</TextBody>
         </div>
       </div>
