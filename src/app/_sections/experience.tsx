@@ -180,7 +180,12 @@ const Dropdown = ({
       >
         <div className='flex w-full flex-row items-center justify-between py-lg'>
           <div className=''>
-            <TextHeading className='group-hover:text-foreground-secondary'>
+            <TextHeading
+              className={cn(
+                'group-hover:text-foreground-secondary',
+                isOpen ? 'text-foreground-secondary' : 'text-foreground'
+              )}
+            >
               {heading}
             </TextHeading>
           </div>
