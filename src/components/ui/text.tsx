@@ -1,9 +1,8 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { motion, Variants } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
-import { textBodyVariants } from '@/styles/variants';
 
 type TextProps = {
   showAnimation?: boolean;
@@ -14,8 +13,14 @@ export const TextDisplay = ({
   children,
   showAnimation = true
 }: TextProps) => {
+  const textDisplayVariants: Variants = {
+    hidden: {},
+    show: {}
+  };
+
   return (
     <motion.h1
+      variants={textDisplayVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
@@ -33,9 +38,14 @@ export const TextHeading = ({
   children,
   showAnimation = true
 }: TextProps) => {
+  const textHeadingVariants: Variants = {
+    hidden: {},
+    show: {}
+  };
+
   return (
     <motion.h2
-      variants={textBodyVariants}
+      variants={textHeadingVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
@@ -53,6 +63,22 @@ export const TextBody = ({
   children,
   showAnimation = true
 }: TextProps) => {
+  const textBodyVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    show: {
+      opacity: 100,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        type: 'tween',
+        ease: 'linear'
+      }
+    }
+  };
+
   return (
     <motion.p
       variants={textBodyVariants}
@@ -73,8 +99,14 @@ export const TextSub = ({
   children,
   showAnimation = true
 }: TextProps) => {
+  const textSubVariants: Variants = {
+    hidden: {},
+    show: {}
+  };
+
   return (
     <motion.p
+      variants={textSubVariants}
       initial={showAnimation ? 'hidden' : ''}
       whileInView={showAnimation ? 'show' : ''}
       className={cn(
