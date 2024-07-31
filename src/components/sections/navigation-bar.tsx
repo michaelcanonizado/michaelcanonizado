@@ -14,6 +14,7 @@ import { TextBody } from '@/components/ui/text';
 const Link = ({ className, children }: ComponentBaseProps) => {
   return (
     <TextBody
+      showAnimation={false}
       className={cn('font-display font-[500] hover:cursor-pointer', className)}
     >
       {children}
@@ -67,8 +68,11 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
           isScrolled ? 'text-navbar-foreground' : 'text-foreground'
         )}
       >
-        <div className=''>
-          <TextBody className='font-display font-bold text-brand'>
+        <div>
+          <TextBody
+            showAnimation={false}
+            className='font-display font-bold text-brand'
+          >
             Logo
           </TextBody>
         </div>
