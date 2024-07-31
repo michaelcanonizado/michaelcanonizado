@@ -22,7 +22,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
     <section
       ref={containerRef}
       className={cn(
-        'container my-0 flex items-center justify-center space-x-xl overflow-hidden border-y py-2xl',
+        'container my-0 flex items-center justify-center space-x-xl overflow-hidden rounded-xl bg-muted py-2xl',
         className
       )}
     >
