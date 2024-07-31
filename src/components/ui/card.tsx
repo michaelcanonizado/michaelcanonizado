@@ -5,7 +5,7 @@ const Card = ({ className, children }: ComponentBaseProps) => {
   return (
     <div
       className={cn(
-        'h-[400px] w-[250px] overflow-hidden rounded-lg bg-foreground',
+        'h-[400px] w-[250px] overflow-hidden rounded-lg bg-brand',
         className
       )}
     >
