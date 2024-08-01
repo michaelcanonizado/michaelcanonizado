@@ -9,6 +9,16 @@ type TextProps = {
   showAnimation?: boolean;
 } & ComponentBaseProps;
 
+const noAnimationVariants: Variants = {
+  hidden: {
+    opacity: 100,
+    y: 0
+  },
+  show: {
+    opacity: 100,
+    y: 0
+  }
+};
 export const textDisplayVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -82,11 +92,15 @@ export const TextDisplay = ({
   showAnimation = true,
   variants
 }: TextProps) => {
+  const textVariants = showAnimation
+    ? textDisplayVariants
+    : noAnimationVariants;
+
   return (
     <motion.h1
-      variants={variants ? variants : textDisplayVariants}
-      initial={showAnimation ? 'hidden' : ''}
-      whileInView={showAnimation ? 'show' : ''}
+      variants={variants ? variants : textVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'font-display text-[calc((137/16)*1rem)] font-[700] leading-[0.8] tracking-[calc((0/16)*1rem)] text-brand',
         className
@@ -103,11 +117,15 @@ export const TextHeading = ({
   showAnimation = true,
   variants
 }: TextProps) => {
+  const textVariants = showAnimation
+    ? textHeadingVariants
+    : noAnimationVariants;
+
   return (
     <motion.h2
-      variants={variants ? variants : textHeadingVariants}
-      initial={showAnimation ? 'hidden' : ''}
-      whileInView={showAnimation ? 'show' : ''}
+      variants={variants ? variants : textVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'font-display text-[calc((32/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)]',
         className
@@ -124,11 +142,13 @@ export const TextBody = ({
   showAnimation = true,
   variants
 }: TextProps) => {
+  const textVariants = showAnimation ? textBodyVariants : noAnimationVariants;
+
   return (
     <motion.p
-      variants={variants ? variants : textBodyVariants}
-      initial={showAnimation ? 'hidden' : ''}
-      whileInView={showAnimation ? 'show' : ''}
+      variants={variants ? variants : textVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'text-[calc((20/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)]',
         className
@@ -145,11 +165,13 @@ export const TextSub = ({
   showAnimation = true,
   variants
 }: TextProps) => {
+  const textVariants = showAnimation ? textSubVariants : noAnimationVariants;
+
   return (
     <motion.p
-      variants={variants ? variants : textSubVariants}
-      initial={showAnimation ? 'hidden' : ''}
-      whileInView={showAnimation ? 'show' : ''}
+      variants={variants ? variants : textVariants}
+      initial='hidden'
+      whileInView='show'
       className={cn(
         'font-display text-[calc((14/16)*1rem)] font-[500] leading-[1.2] tracking-[calc((1/16)*1rem)]',
         className
