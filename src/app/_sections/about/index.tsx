@@ -6,8 +6,10 @@ import { cn } from '@/lib/utils';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
-import { TextBody, TextDisplay, TextHeading } from '@/components/text';
-import Card from './card';
+import { TextBody, TextDisplay, TextHeading, TextSub } from '@/components/text';
+import Card from '@/components/card';
+import VerifiedBadge from '@/../public/about/verified-badge';
+import Image from 'next/image';
 
 const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -39,7 +41,25 @@ const About = ({ className }: ComponentBaseProps) => {
             scale: 1.1
           }}
         >
-          <Card />
+          <Card>
+            <Card.Image>
+              <Image
+                fill
+                className='object-cover'
+                src='/about/profile-picture.png'
+                alt='profile picture'
+              />
+            </Card.Image>
+            <Card.Text>
+              <div className='flex flex-row items-center justify-start'>
+                <TextHeading className='text-brand'>mikey</TextHeading>
+                <VerifiedBadge className='h-[24px]' />
+              </div>
+              <div className=''>
+                <TextSub>@michaelcanonizado</TextSub>
+              </div>
+            </Card.Text>
+          </Card>
         </motion.div>
         <div className='!m-0 max-w-[500px] space-y-lg'>
           <div className=''>

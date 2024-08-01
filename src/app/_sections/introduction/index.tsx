@@ -1,11 +1,19 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { ComponentBaseProps } from '@/types';
-import { TextBody, textBodyVariants, TextHeading } from '@/components/text';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Card from '@/components/card';
 import { useRef } from 'react';
+
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { ComponentBaseProps } from '@/types';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+import {
+  TextBody,
+  textBodyVariants,
+  TextHeading,
+  TextSub
+} from '@/components/text';
+import Card from '@/components/card';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -29,7 +37,24 @@ const Introduction = ({ className }: ComponentBaseProps) => {
           }}
           className=''
         >
-          <Card />
+          <Card className='bg-muted/90'>
+            <Card.Image>
+              <Image
+                fill
+                className='object-cover'
+                src='/about/profile-picture.png'
+                alt='profile picture'
+              />
+            </Card.Image>
+            <Card.Text>
+              <div className='flex flex-row items-center justify-start'>
+                <TextHeading className='text-brand'>mikey</TextHeading>
+              </div>
+              <div className=''>
+                <TextSub>@michaelcanonizado</TextSub>
+              </div>
+            </Card.Text>
+          </Card>
         </motion.div>
 
         <div className='max-w-[400px] space-y-md'>
