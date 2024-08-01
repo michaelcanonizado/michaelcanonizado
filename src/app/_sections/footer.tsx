@@ -42,7 +42,12 @@ const links: Links[] = [
 ];
 
 const Footer = ({ className }: ComponentBaseProps) => {
-  const headerColor = 'text-foreground';
+  const textColor = 'text-foreground';
+
+  const text = {
+    heading:
+      'Creating a digital experience that bridge aesthetics and functionality'
+  };
 
   return (
     <section className={cn('w-full space-y-md', className)}>
@@ -54,21 +59,18 @@ const Footer = ({ className }: ComponentBaseProps) => {
       <div className='flex flex-col justify-end bg-muted !py-0'>
         <div className='flex grow flex-row justify-between px-xl py-xl'>
           <div className='max-w-[500px]'>
-            <TextHeading className={headerColor}>
-              Creating a digital experience that bridge aesthetics and
-              functionality
-            </TextHeading>
+            <TextHeading className={textColor}>{text.heading}</TextHeading>
           </div>
           <div className='flex flex-row gap-xl'>
             {links.map((linkGroup, index) => {
               return (
                 <div className='space-y-md' key={index}>
                   <div className=''>
-                    <TextHeading className={headerColor}>
+                    <TextHeading className={textColor}>
                       {linkGroup.heading}
                     </TextHeading>
                   </div>
-                  <div className={headerColor}>
+                  <div className={textColor}>
                     {linkGroup.links.map((link, index) => {
                       return <TextBody key={index}>{link.name}</TextBody>;
                     })}
