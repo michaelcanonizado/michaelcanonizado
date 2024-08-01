@@ -5,9 +5,27 @@ import { ComponentBaseProps } from '@/types';
 import { motion } from 'framer-motion';
 
 import { TextBody, TextHeading, TextSub } from '@/components/text';
-import Link from '@/components/link';
+import Image from 'next/image';
 
-const Project = ({ className }: ComponentBaseProps) => {
+export type ProjectType = {
+  image: {
+    src: string;
+    alt: string;
+  };
+  heading: string;
+  technologies: string[];
+  description: string;
+  url: string;
+};
+
+const Project = ({
+  className,
+  image,
+  heading,
+  technologies,
+  description,
+  url
+}: ProjectType & ComponentBaseProps) => {
   const containerVariants = {
     hidden: {
       y: 50,
@@ -41,34 +59,45 @@ const Project = ({ className }: ComponentBaseProps) => {
         className
       )}
     >
-      <div className='h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
-        <div className='h-full w-full bg-muted' />
+      <div className='relative h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
+        <Image fill src={image.src} alt={image.alt} />
       </div>
+
       <div className='flex flex-col justify-between p-lg'>
         <div className='mb-lg'>
           <div className='mb-xs flex items-center justify-start'>
-            <TextHeading showAnimation={false}>minder</TextHeading>
+            <TextHeading showAnimation={false}>{heading}</TextHeading>
           </div>
+
           <div className='mb-md flex flex-row gap-sm'>
-            <TextSub showAnimation={false} className='font-semibold'>
-              NextJS
-            </TextSub>
-            <TextSub showAnimation={false} className='font-semibold'>
-              ShadCN
-            </TextSub>
-            <TextSub showAnimation={false} className='font-semibold'>
-              MongoDB
-            </TextSub>
+            {technologies.map((technology, index) => {
+              return (
+                <TextSub
+                  key={index}
+                  showAnimation={false}
+                  className='font-semibold'
+                >
+                  {technology}
+                </TextSub>
+              );
+            })}
           </div>
+
           <div className='flex items-center justify-end'>
-            <TextBody showAnimation={false}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              nibh ligula, tempor sed elementum quis, sodales ac erat. Cras
-              rhoncus volutpat lectus nec venenatis.
-            </TextBody>
+            <TextBody showAnimation={false}>{description}</TextBody>
           </div>
         </div>
-        <Link>View</Link>
+
+        <div
+          className={cn(
+            'group w-fit rounded-full border px-lg py-sm hover:bg-background/50',
+            className
+          )}
+        >
+          <TextBody showAnimation={false} className=''>
+            View
+          </TextBody>
+        </div>
       </div>
     </motion.div>
   );

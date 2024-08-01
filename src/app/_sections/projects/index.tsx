@@ -2,7 +2,21 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 
 import { TextDisplay, TextHeading } from '@/components/text';
-import Project from '@/app/_sections/projects/project';
+import Project, { ProjectType } from '@/app/_sections/projects/project';
+
+const projectsList: ProjectType[] = [
+  {
+    image: {
+      src: '/projects/react-movies.png',
+      alt: 'Project React Movies'
+    },
+    technologies: ['React', 'TailwindCSS', 'Redux'],
+    heading: 'React Movies',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet lectus risus. Proin vitae diam erat. Mauris porttitor felis nec accumsan semper. ',
+    url: 'https://google.com'
+  }
+];
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
@@ -19,9 +33,18 @@ const Projects = ({ className }: ComponentBaseProps) => {
         </div>
       </div>
       <div className='flex flex-col gap-lg'>
-        <Project />
-        <Project />
-        <Project />
+        {projectsList.map((project, index) => {
+          return (
+            <Project
+              key={index}
+              image={project.image}
+              heading={project.heading}
+              technologies={project.technologies}
+              description={project.description}
+              url={project.url}
+            />
+          );
+        })}
       </div>
     </section>
   );
