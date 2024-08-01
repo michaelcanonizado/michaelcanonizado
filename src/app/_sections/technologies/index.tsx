@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
+import { TextBody, TextDisplay, TextHeading } from '@/components/text';
 
 import Git from '@/../public/technologies/git';
 import Java from '@/../public/technologies/java';
@@ -16,7 +16,7 @@ import ReactJS from '@/../public/technologies/reactjs';
 import Redux from '@/../public/technologies/redux';
 import TailwindCSS from '@/../public/technologies/tailwindcss';
 import Typescript from '@/../public/technologies/typescript';
-import InfiniteSlider from '@/components/ui/infinite-slider';
+import InfiniteSlider from '@/components/infinite-slider';
 
 const technologyLogos = [
   {

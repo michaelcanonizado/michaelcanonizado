@@ -3,8 +3,8 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { TextDisplay } from '@/components/ui/text';
-import Card from '@/components/ui/card';
+import { TextDisplay } from '@/components/text';
+import Card from '@/components/card';
 import { useRef } from 'react';
 
 const Closing = ({ className }: ComponentBaseProps) => {

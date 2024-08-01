@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
-import { TextBody, TextDisplay, TextHeading } from '@/components/ui/text';
+import { TextBody, TextDisplay, TextHeading } from '@/components/text';
 import Image from 'next/image';
-import Card from '@/components/ui/card';
+import Card from '@/components/card';
 
 const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);

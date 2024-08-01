@@ -1,5 +1,5 @@
-import { NameFirst, NameLast } from '../../../public/name/';
-import { TextBody, TextHeading } from '@/components/ui/text';
+import { NameFirst, NameLast } from '@/../public/name/';
+import { TextBody, TextHeading } from '@/components/text';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 

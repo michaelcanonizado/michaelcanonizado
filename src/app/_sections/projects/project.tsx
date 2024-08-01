@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion } from 'framer-motion';
 
-import { TextBody, TextHeading, TextSub } from '@/components/ui/text';
-import Link from '@/components/ui/link';
+import { TextBody, TextHeading, TextSub } from '@/components/text';
+import Link from '@/components/link';
 
 const Project = ({ className }: ComponentBaseProps) => {
   const containerVariants = {

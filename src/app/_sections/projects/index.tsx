@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 
-import { TextDisplay, TextHeading } from '@/components/ui/text';
-import Project from '@/components/ui/project';
+import { TextDisplay, TextHeading } from '@/components/text';
+import Project from '@/app/_sections/projects/project';
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (

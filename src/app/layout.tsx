@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { inter, clashDisplay } from '@/styles/fonts';
-import NavigationBar from '@/components/sections/navigation-bar';
+import NavigationBar from '@/app/_sections/navigation-bar';
 import Cursor from './cursor';
 import CursorContextProvider from '@/context/cursor';
 import LenisScrollProvider from '@/providers/lenis';

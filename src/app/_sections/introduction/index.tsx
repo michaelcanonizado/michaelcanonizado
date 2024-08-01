@@ -2,9 +2,9 @@
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, textBodyVariants, TextHeading } from '@/components/ui/text';
+import { TextBody, textBodyVariants, TextHeading } from '@/components/text';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Card from '@/components/ui/card';
+import Card from '@/components/card';
 import { useRef } from 'react';
 
 const Introduction = ({ className }: ComponentBaseProps) => {

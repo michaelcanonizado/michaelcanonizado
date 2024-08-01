@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody } from '@/components/ui/text';
+import { TextBody } from '@/components/text';
 
 const Link = ({ className, children }: ComponentBaseProps) => {
   return (

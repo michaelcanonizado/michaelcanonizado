@@ -6,12 +6,7 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion, useAnimate } from 'framer-motion';
 
-import {
-  TextBody,
-  TextDisplay,
-  TextHeading,
-  TextSub
-} from '@/components/ui/text';
+import { TextBody, TextDisplay, TextHeading, TextSub } from '@/components/text';
 
 const experiences = [
   {

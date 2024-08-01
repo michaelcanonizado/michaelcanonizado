@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
-import { TextBody, TextHeading } from '@/components/ui/text';
+import { TextBody, TextHeading } from '@/components/text';
 import { ComponentBaseProps, Links } from '@/types';
 import { NameFirst } from '@/../public/name/';
-import InfiniteSlider from '@/components/ui/infinite-slider';
+import InfiniteSlider from '@/components/infinite-slider';
 
 const links: Links[] = [
   {
