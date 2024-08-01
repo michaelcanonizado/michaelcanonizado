@@ -1,8 +1,45 @@
 import { cn } from '@/lib/utils';
 import { TextBody, TextHeading } from '@/components/ui/text';
-import { ComponentBaseProps } from '@/types';
+import { ComponentBaseProps, Links } from '@/types';
 import { NameFirst } from '@/../public/name/';
 import InfiniteSlider from '@/components/ui/infinite-slider';
+
+const links: Links[] = [
+  {
+    heading: 'Site Map',
+    links: [
+      {
+        name: 'About',
+        href: '/'
+      },
+      {
+        name: 'Projects',
+        href: '/'
+      },
+      {
+        name: 'Experience',
+        href: '/'
+      }
+    ]
+  },
+  {
+    heading: 'Follow Me',
+    links: [
+      {
+        name: 'LinkedIn',
+        href: '/'
+      },
+      {
+        name: 'Github',
+        href: '/'
+      },
+      {
+        name: 'Discord',
+        href: '/'
+      }
+    ]
+  }
+];
 
 const Footer = ({ className }: ComponentBaseProps) => {
   const headerColor = 'text-foreground';
@@ -23,26 +60,22 @@ const Footer = ({ className }: ComponentBaseProps) => {
             </TextHeading>
           </div>
           <div className='flex flex-row gap-xl'>
-            <div className='space-y-md'>
-              <div className=''>
-                <TextHeading className={headerColor}>Site Map</TextHeading>
-              </div>
-              <div className={headerColor}>
-                <TextBody>About</TextBody>
-                <TextBody>Projects</TextBody>
-                <TextBody>Experience</TextBody>
-              </div>
-            </div>
-            <div className='space-y-md'>
-              <div className=''>
-                <TextHeading className={headerColor}>Follow Me</TextHeading>
-              </div>
-              <div className={headerColor}>
-                <TextBody>LinkedIn</TextBody>
-                <TextBody>Github</TextBody>
-                <TextBody>Discord</TextBody>
-              </div>
-            </div>
+            {links.map((linkGroup, index) => {
+              return (
+                <div className='space-y-md' key={index}>
+                  <div className=''>
+                    <TextHeading className={headerColor}>
+                      {linkGroup.heading}
+                    </TextHeading>
+                  </div>
+                  <div className={headerColor}>
+                    {linkGroup.links.map((link, index) => {
+                      return <TextBody key={index}>{link.name}</TextBody>;
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className='px-md pb-md'>
