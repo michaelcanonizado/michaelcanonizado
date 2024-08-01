@@ -42,7 +42,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
               <Image
                 fill
                 className='object-cover'
-                src='/about/profile-picture.png'
+                src='/introduction/card-image.png'
                 alt='profile picture'
               />
             </Card.Image>
