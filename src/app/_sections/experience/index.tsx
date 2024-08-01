@@ -5,21 +5,21 @@ import Dropdown from './dropdown';
 
 const experiences = [
   {
-    heading: 'Discovered the world of programming',
+    heading: 'The start of my journey 🚀',
     description:
-      'Etiam ante lorem, consectetur sit amet magna eu, venenatis aliquet arcu. Vestibulum in lacus a nisl.',
+      'My journey into the world of programming started with the renowned Harvard CS50 course. This foundational experience became my gateway drug to programming. This led me to choose web-development and master the essentials: HTML, CSS, and Javascript. Driven by desire, I dove into full-stack development, ReactJS, Typescript, and other technologies.',
     time: '2020 - 2021'
   },
   {
-    heading: 'Freelancing',
+    heading: 'Freelancing 👨‍💻',
     description:
-      'venenatis aliquet arcu. Vestibulum in lacus a suscipit condimentum risu.',
+      'Eager to put my skills to the test, I challeneged myself to start freelancing. Working with diverse clients and projects honed my ability to communicate effectively and deliver top-notch solutions. This experience taught me more than just coding; it was a masterclass in time management and collaboration. ',
     time: '2022-2023'
   },
   {
-    heading: 'Studying at Bicol University',
+    heading: 'Academic Adventure 🎓',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit condimentum risus, vitae fermentum nisi efficitur et.',
+      'Taking my passion for programming to the next level, I embarked on a formal education journey by pursuing a degree in Computer Science at Bicol University. I am currently deepening my understanding on data-structures, algorithms, and software engineering priciples.',
     time: '2023 - Present'
   }
 ];
