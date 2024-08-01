@@ -7,7 +7,7 @@ import Project, { ProjectType } from '@/app/_sections/projects/project';
 const projectsList: ProjectType[] = [
   {
     image: {
-      src: '/projects/react-movies.png',
+      src: '/projects/minder.png',
       alt: 'Project React Movies'
     },
     technologies: ['NextJS', 'TailwindCSS', 'MongoDB'],
