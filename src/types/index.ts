@@ -7,3 +7,7 @@ export type Link = {
   src: string;
   name: string;
 };
+export type Links = {
+  heading: string;
+  links: Link[];
+};
