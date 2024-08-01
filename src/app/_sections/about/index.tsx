@@ -7,8 +7,7 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
 import { TextBody, TextDisplay, TextHeading } from '@/components/text';
-import Image from 'next/image';
-import Card from '@/components/card';
+import Card from './card';
 
 const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -39,11 +38,8 @@ const About = ({ className }: ComponentBaseProps) => {
             y,
             scale: 1.1
           }}
-          className=''
         >
-          <Card className='relative h-[500px] w-[350px]'>
-            <Image fill src='/about/image-4.jpg' alt=' mikey' />
-          </Card>
+          <Card />
         </motion.div>
         <div className='!m-0 max-w-[500px] space-y-lg'>
           <div className=''>
