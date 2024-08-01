@@ -59,8 +59,8 @@ const Project = ({
         className
       )}
     >
-      <div className='relative h-[350px] w-full min-w-[400px] lg:max-w-[700px]'>
-        <Image fill src={image.src} alt={image.alt} />
+      <div className='relative h-[350px] w-full min-w-[500px] lg:max-w-[700px]'>
+        <Image objectFit='cover' fill src={image.src} alt={image.alt} />
       </div>
 
       <div className='flex flex-col justify-between p-lg'>
