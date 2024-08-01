@@ -142,8 +142,8 @@ const Dropdown = ({
       <div
         id='text'
         className={cn(
-          'z-10 flex w-full flex-col pb-md text-foreground duration-300 ease-in group-hover:px-md group-hover:text-foreground',
-          isOpen ? 'px-md' : ''
+          'z-10 flex w-full flex-col pb-lg text-foreground duration-300 ease-in group-hover:px-lg group-hover:text-foreground',
+          isOpen ? 'px-lg' : ''
         )}
       >
         <div className='flex w-full flex-row items-center justify-between py-lg'>
