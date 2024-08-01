@@ -167,16 +167,18 @@ const Dropdown = ({
       >
         <div className='flex w-full flex-row items-center justify-between py-lg'>
           <div>
-            <TextHeading>{heading}</TextHeading>
+            <TextHeading showAnimation={false}>{heading}</TextHeading>
           </div>
           <div className='flex flex-row items-center gap-sm md:gap-md'>
-            <TextBody className='mb-[-2px]'>{time}</TextBody>
+            <TextBody showAnimation={false} className='mb-[-2px]'>
+              {time}
+            </TextBody>
             <OpenStateIcon isOpen={isOpen} />
           </div>
         </div>
 
         <div>
-          <TextBody>{description}</TextBody>
+          <TextBody showAnimation={false}>{description}</TextBody>
         </div>
       </div>
     </motion.div>
