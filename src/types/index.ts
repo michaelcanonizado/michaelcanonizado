@@ -4,8 +4,8 @@ export type ComponentBaseProps = {
 };
 
 export type Link = {
-  src: string;
   name: string;
+  href: string;
 };
 export type Links = {
   heading: string;
