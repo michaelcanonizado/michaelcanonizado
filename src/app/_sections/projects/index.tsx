@@ -10,11 +10,22 @@ const projectsList: ProjectType[] = [
       src: '/projects/react-movies.png',
       alt: 'Project React Movies'
     },
-    technologies: ['React', 'TailwindCSS', 'Redux'],
-    heading: 'React Movies',
+    technologies: ['NextJS', 'TailwindCSS', 'MongoDB'],
+    heading: 'Minder',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet lectus risus. Proin vitae diam erat. Mauris porttitor felis nec accumsan semper. ',
     url: 'https://google.com'
+  },
+  {
+    image: {
+      src: '/projects/react-movies.png',
+      alt: 'Project React Movies'
+    },
+    technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
+    heading: 'React Movies',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet lectus risus. Proin vitae diam erat. Mauris porttitor felis nec accumsan semper. ',
+    url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
   }
 ];
 
