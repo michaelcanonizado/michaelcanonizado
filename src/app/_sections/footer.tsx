@@ -43,17 +43,17 @@ const links: Links[] = [
 
 const Footer = ({ className }: ComponentBaseProps) => {
   const textColor = 'text-foreground';
-
   const text = {
     heading:
       'Creating a digital experience that bridge aesthetics and functionality'
   };
+  const email = 'michaelxaviercanonizado@gmail.com';
 
   return (
     <section className={cn('w-full space-y-md', className)}>
       <InfiniteSlider className='' baseVelocity={-3}>
         <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
-          michaelxaviercanonizado@gmail.com
+          {email}
         </span>
       </InfiniteSlider>
       <div className='flex flex-col justify-end bg-muted !py-0'>
