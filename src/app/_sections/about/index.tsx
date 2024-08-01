@@ -46,7 +46,7 @@ const About = ({ className }: ComponentBaseProps) => {
               <Image
                 fill
                 className='object-cover'
-                src='/about/profile-picture.png'
+                src='/about/card-image.png'
                 alt='profile picture'
               />
             </Card.Image>
@@ -69,7 +69,7 @@ const About = ({ className }: ComponentBaseProps) => {
           </div>
           <div className='space-y-md'>
             <TextBody>
-              I am a 2nd year Computer Science student with 4 years of
+              I am a sophomore Computer Science student with 4 years of
               experience in web development.
             </TextBody>
             <TextBody>
