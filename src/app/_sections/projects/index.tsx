@@ -13,8 +13,8 @@ const projectsList: ProjectType[] = [
     technologies: ['NextJS', 'TailwindCSS', 'MongoDB'],
     heading: 'Minder',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet lectus risus. Proin vitae diam erat. Mauris porttitor felis nec accumsan semper. ',
-    url: 'https://google.com'
+      'Due to my lack of knowledge in Excel, I created a personal finance tracker. Since I am more skilled in web development, I created a website that tracks my finances and provides analytics.',
+    url: 'https://www.google.com/search?sca_esv=9267af3241730e66&sca_upv=1&sxsrf=ADLYWIIVyDV_Fpv-ecnUUlRBWOuXghCXQA:1722605376684&q=cats&source=lnms&fbs=AEQNm0B8dVdIWR07uWWlg1TdKnNtA1cwMugrQsIKmAo5AEZHWRFlUeGLxYlhagMfUatSvHu3MSamP9Qd2SfjyZyVIdPFrZFmdorP0BQX-5QUvERZ7CgntLysKxPYR85LNkkQ-ODVQlzCBgHDwYGwBEtb1wyzIiqYOAGOFOhRLG73H-MUdJY1ZFjTgiSsk2gQgTHDHU_Mnn5ewYy4nGfZAENFgsXyYdMtYQ&sa=X&ved=2ahUKEwjv2cKMtdaHAxUyj68BHV1fE_cQ0pQJegQIFBAB&biw=1051&bih=835&dpr=1.1'
   },
   {
     image: {
@@ -24,7 +24,7 @@ const projectsList: ProjectType[] = [
     technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
     heading: 'React Movies',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet lectus risus. Proin vitae diam erat. Mauris porttitor felis nec accumsan semper. ',
+      'Developed as a freshman project, this movie database web app provides detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
     url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
   }
 ];
