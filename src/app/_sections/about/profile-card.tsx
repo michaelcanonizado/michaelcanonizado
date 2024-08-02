@@ -60,7 +60,12 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
   }, [isHovered]);
 
   return (
-    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className=''>
+    <a
+      href='https://github.com/michaelcanonizado'
+      target='_blank'
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Card className={className}>
         <Card.Image>
           <Image
@@ -77,13 +82,14 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
           </div>
 
           <TextSub>@michaelcanonizado</TextSub>
+
           <div className='glex-row flex items-center gap-xs'>
             <GitCommit className='h-[20px] w-[20px]' />
             <TextSub>{commitCount} commits</TextSub>
           </div>
         </Card.Text>
       </Card>
-    </div>
+    </a>
   );
 };
 
