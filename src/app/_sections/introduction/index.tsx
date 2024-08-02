@@ -14,6 +14,7 @@ import {
   TextSub
 } from '@/components/text';
 import Card from '@/components/card';
+import ProfileCard from './profile-card';
 
 const Introduction = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -37,24 +38,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
           }}
           className=''
         >
-          <Card className='bg-muted/90'>
-            <Card.Image>
-              <Image
-                fill
-                className='object-cover'
-                src='/introduction/card-image.png'
-                alt='profile picture'
-              />
-            </Card.Image>
-            <Card.Text>
-              <div className='flex flex-row items-center justify-start'>
-                <TextHeading className='text-brand'>mikey</TextHeading>
-              </div>
-              <div className=''>
-                <TextSub>@michaelcanonizado</TextSub>
-              </div>
-            </Card.Text>
-          </Card>
+          <ProfileCard />
         </motion.div>
 
         <div className='max-w-[480px] space-y-md'>
