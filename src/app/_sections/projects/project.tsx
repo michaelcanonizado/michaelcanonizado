@@ -7,6 +7,43 @@ import { motion } from 'framer-motion';
 import { TextBody, TextHeading, TextSub } from '@/components/text';
 import Image from 'next/image';
 
+const ExternalLink = ({ className }: ComponentBaseProps) => {
+  return (
+    <svg
+      className={className}
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+    >
+      <path d='M15 3h6v6' />
+      <path d='M10 14 21 3' />
+      <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6' />
+    </svg>
+  );
+};
+
+const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
+  return (
+    <a
+      href={url}
+      target='_blank'
+      className={cn(
+        'group flex w-fit flex-row items-center gap-xs rounded-bl-[50%] rounded-br-[50%] rounded-tl-[50%] rounded-tr-[50%] border-2 border-brand px-lg py-md hover:bg-background/50',
+        className
+      )}
+    >
+      <TextSub showAnimation={false} className='mb-[-2px]'>
+        View
+      </TextSub>
+      <ExternalLink className='h-[16px]] w-[16px]' />
+    </a>
+  );
+};
+
 export type ProjectType = {
   image: {
     src: string;
@@ -88,16 +125,7 @@ const Project = ({
           </div>
         </div>
 
-        <div
-          className={cn(
-            'group w-fit rounded-full border px-lg py-sm hover:bg-background/50',
-            className
-          )}
-        >
-          <TextBody showAnimation={false} className=''>
-            View
-          </TextBody>
-        </div>
+        <Link url={url} />
       </div>
     </motion.div>
   );
