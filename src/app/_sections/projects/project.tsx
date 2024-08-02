@@ -145,12 +145,18 @@ const Project = ({
         className
       )}
     >
-      <div className='relative h-[350px] w-full min-w-[500px] lg:max-w-[700px]'>
-        <Image objectFit='cover' fill src={image.src} alt={image.alt} />
+      <div className='relative min-h-[350px] w-full sm:min-w-[500px] lg:max-w-[700px]'>
+        <Image
+          objectFit='cover'
+          objectPosition='center'
+          fill
+          src={image.src}
+          alt={image.alt}
+        />
       </div>
 
-      <div className='flex flex-col justify-between p-lg'>
-        <div className='mb-lg'>
+      <div className='flex max-w-[800px] flex-col justify-between p-lg'>
+        <div className='mb-md'>
           <div className='mb-xs flex items-center justify-start'>
             <TextHeading showAnimation={false}>{heading}</TextHeading>
           </div>
