@@ -6,10 +6,8 @@ import { cn } from '@/lib/utils';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { ComponentBaseProps } from '@/types';
 
-import { TextBody, TextDisplay, TextHeading, TextSub } from '@/components/text';
-import Card from '@/components/card';
-import VerifiedBadge from '@/../public/about/verified-badge';
-import Image from 'next/image';
+import { TextBody, TextDisplay, TextHeading } from '@/components/text';
+import ProfileCard from './profile-card';
 
 const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -29,7 +27,7 @@ const About = ({ className }: ComponentBaseProps) => {
     >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
-          {'You can call me Mikey!'}
+          {/* {'You can call me Mikey!'} */}
         </TextDisplay>
       </div>
       <div className='flex items-start justify-center gap-xl space-x-xl'>
@@ -41,25 +39,7 @@ const About = ({ className }: ComponentBaseProps) => {
             scale: 1.1
           }}
         >
-          <Card>
-            <Card.Image>
-              <Image
-                fill
-                className='object-cover'
-                src='/about/card-image.png'
-                alt='profile picture'
-              />
-            </Card.Image>
-            <Card.Text>
-              <div className='flex flex-row items-center justify-start'>
-                <TextHeading className='text-brand'>mikey</TextHeading>
-                <VerifiedBadge className='h-[24px]' />
-              </div>
-              <div className=''>
-                <TextSub>@michaelcanonizado</TextSub>
-              </div>
-            </Card.Text>
-          </Card>
+          <ProfileCard />
         </motion.div>
         <div className='!m-0 max-w-[500px] space-y-lg'>
           <div className=''>
