@@ -64,7 +64,7 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
     if (isHovered) {
       interval = setInterval(() => {
         setCommitCount(previousCount => previousCount + 1);
-      }, 100);
+      }, 50);
     } else if (!isHovered && interval) {
       clearInterval(interval);
     }
@@ -94,24 +94,31 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
         </Card.Image>
         <Card.Text>
           <div className='flex flex-row items-center justify-start'>
-            <TextHeading className='text-brand'>mikey</TextHeading>
+            <TextHeading showAnimation={false} className='text-brand'>
+              mikey
+            </TextHeading>
             <VerifiedBadge className='h-[24px]' />
           </div>
 
-          <TextSub className='font-light tracking-widest'>
+          <TextSub showAnimation={false} className='font-light tracking-widest'>
             @michaelcanonizado
           </TextSub>
 
           <div className='glex-row ml-[-2px] flex items-center'>
             <MapPin className='h-[16px] w-[16px]' />
-            <TextSub className='font-light tracking-widest'>
+            <TextSub
+              showAnimation={false}
+              className='font-light tracking-widest'
+            >
               Albay, Philippines
             </TextSub>
           </div>
 
           <div className='mt-sm flex flex-row items-center gap-xs'>
             <GitCommit className='h-[20px] w-[20px]' />
-            <TextSub>{commitCount.toLocaleString('en-US')} commits</TextSub>
+            <TextSub showAnimation={false}>
+              {commitCount.toLocaleString('en-US')} commits
+            </TextSub>
           </div>
         </Card.Text>
       </Card>
