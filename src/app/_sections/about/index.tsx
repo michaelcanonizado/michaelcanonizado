@@ -27,7 +27,7 @@ const About = ({ className }: ComponentBaseProps) => {
     >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
-          {/* {'You can call me Mikey!'} */}
+          {'You can call me Mikey!'}
         </TextDisplay>
       </div>
       <div className='flex items-start justify-center gap-xl space-x-xl'>
