@@ -85,7 +85,7 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
 
           <div className='glex-row flex items-center gap-xs'>
             <GitCommit className='h-[20px] w-[20px]' />
-            <TextSub>{commitCount} commits</TextSub>
+            <TextSub>{commitCount.toLocaleString('en-US')} commits</TextSub>
           </div>
         </Card.Text>
       </Card>
