@@ -31,8 +31,8 @@ const projectsList: ProjectType[] = [
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('container space-y-xl', className)}>
-      <div className='flex flex-col items-center space-y-lg'>
+    <section className={cn('container space-y-lg md:space-y-xl', className)}>
+      <div className='flex flex-col items-center space-y-md md:space-y-lg'>
         <div className=''>
           <TextDisplay className='text-center'>Projects</TextDisplay>
         </div>
@@ -43,7 +43,7 @@ const Projects = ({ className }: ComponentBaseProps) => {
           </TextHeading>
         </div>
       </div>
-      <div className='flex flex-col gap-lg'>
+      <div className='flex flex-col gap-md md:gap-lg'>
         {projectsList.map((project, index) => {
           return (
             <Project

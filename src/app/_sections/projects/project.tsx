@@ -155,13 +155,13 @@ const Project = ({
         />
       </div>
 
-      <div className='flex max-w-[800px] flex-col justify-between p-lg'>
-        <div className='mb-md'>
+      <div className='flex max-w-[800px] flex-col justify-between gap-lg px-md pb-lg pt-md md:gap-xl md:px-lg md:pt-lg'>
+        <div>
           <div className='mb-xs flex items-center justify-start'>
             <TextHeading showAnimation={false}>{heading}</TextHeading>
           </div>
 
-          <div className='mb-md flex flex-row gap-sm'>
+          <div className='mb-md flex flex-row flex-wrap gap-x-sm'>
             {technologies.map((technology, index) => {
               return (
                 <TextSub
