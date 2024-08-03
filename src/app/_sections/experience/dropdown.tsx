@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion, useAnimate } from 'framer-motion';
-import { TextBody, TextHeading } from '@/components/text';
+import { TextBody, TextHeading, TextSub } from '@/components/text';
 
 const OpenStateIcon = ({ isOpen }: { isOpen: boolean }) => {
   const variants = {
@@ -62,18 +62,16 @@ const Dropdown = ({
 
   const onMouseEnter = () => {
     animate('#overlay', { x: '0%' }, { ease: 'easeIn', duration: 0.2 });
-
     animate(
       '#open-state-icon',
       { rotate: '90deg' },
       { ease: 'linear', duration: 0.2 }
     );
   };
+
   const onMouseLeave = () => {
     if (isOpen) return;
-
     animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
-
     animate(
       '#open-state-icon',
       { rotate: '-90deg' },
@@ -86,35 +84,35 @@ const Dropdown = ({
 
   useEffect(() => {
     if (isOpen) {
-      animate('#overlay', { x: '0%' });
+      animate('#overlay', { x: '0%' }, { damping: 100 });
+    } else {
+      animate('#overlay', { x: '-100%' }, { ease: 'easeOut', duration: 0.1 });
+      animate(
+        '#open-state-icon',
+        { rotate: '-90deg' },
+        { ease: 'linear', duration: 0.2 }
+      );
     }
   }, [isOpen]);
 
   const variants = {
-    hidden: {
-      x: '-100%',
-      height: '100px'
-    },
-    show: {
-      x: '0%'
-    },
     open: {
       height: 'auto'
     },
     close: {
-      height: '100px'
+      height: '0px'
     }
   };
 
   return (
     <motion.div
       ref={scope}
-      variants={variants}
-      initial='hidden'
+      initial={{
+        x: '-100%'
+      }}
       whileInView={{
         x: '0%'
       }}
-      animate={isOpen ? 'open' : 'close'}
       transition={{
         x: {
           delay: 0.1 * index,
@@ -130,7 +128,7 @@ const Dropdown = ({
       onMouseLeave={onMouseLeave}
       onClick={onClick}
       className={cn(
-        'group relative box-border flex w-full overflow-hidden border-b px-0',
+        'group relative flex w-full overflow-hidden !border-x-0 border-b px-0',
         className
       )}
       {...props}
@@ -140,27 +138,39 @@ const Dropdown = ({
         className='absolute inset-0 z-0 translate-x-[-100%] bg-muted'
       />
       <div
-        id='text'
         className={cn(
-          'z-10 flex w-full flex-col pb-lg text-foreground duration-300 ease-in group-hover:px-lg group-hover:text-foreground',
-          isOpen ? 'px-lg' : ''
+          'z-10 flex w-full flex-col text-foreground duration-300 ease-in group-hover:text-foreground'
         )}
       >
-        <div className='flex w-full flex-row items-center justify-between py-lg'>
-          <div>
+        <div
+          className={cn(
+            'flex w-full flex-row items-center justify-between gap-sm py-lg duration-300 ease-in md:gap-md',
+            isOpen
+              ? 'px-md md:px-lg'
+              : 'px-0 group-hover:px-md md:group-hover:px-lg'
+          )}
+        >
+          <div className='flex grow flex-col items-start justify-between gap-sm xs:flex-row xs:items-center xs:gap-0'>
             <TextHeading showAnimation={false}>{heading}</TextHeading>
-          </div>
-          <div className='flex flex-row items-center gap-sm md:gap-md'>
-            <TextBody showAnimation={false} className='mb-[-2px]'>
+
+            <TextSub showAnimation={false} className='mb-[-2px]'>
               {time}
-            </TextBody>
-            <OpenStateIcon isOpen={isOpen} />
+            </TextSub>
           </div>
+
+          <OpenStateIcon isOpen={isOpen} />
         </div>
 
-        <div>
+        <motion.div
+          variants={variants}
+          animate={isOpen ? 'open' : 'close'}
+          className={cn('mb-lg px-md md:px-lg')}
+          style={{
+            margin: isOpen ? '' : '0px'
+          }}
+        >
           <TextBody showAnimation={false}>{description}</TextBody>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );
