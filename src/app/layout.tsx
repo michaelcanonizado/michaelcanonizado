@@ -19,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark min-h-screen bg-background text-foreground'>
+      {/* bg-red-500 xs:bg-orange-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500  */}
       <body
         className={cn(
           'relative flex flex-col justify-center font-sans',
