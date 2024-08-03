@@ -5,12 +5,14 @@ import { ComponentBaseProps } from '@/types';
 
 const Hero = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('container !mt-0 !pt-0', className)}>
+    <section className={cn('container !mt-0 mb-xl !pt-0', className)}>
       <div className='max-height flex w-full flex-col justify-end pb-md text-center'>
         <div className='flex grow flex-col items-center justify-center space-y-md'>
-          <div className='max-w-[25ch]'>
-            <TextHeading showAnimation={false}>
-              creator. storyteller. web developer.
+          <div>
+            <TextHeading showAnimation={false} className='flex flex-col'>
+              <span className='leading-[inherit]'>creator.</span>
+              <span className='leading-[inherit]'>storyteller.</span>
+              <span className='leading-[inherit]'>web developer.</span>
             </TextHeading>
           </div>
           <div>
