@@ -6,7 +6,6 @@ import { NameFirst } from '@/../public/name/';
 import InfiniteSlider from '@/components/infinite-slider';
 import { LinkedinLogo } from '@/../public/footer/linkedin';
 import { GithubLogo } from '@/../public/footer/github';
-import { DiscordLogo } from '@/../public/footer/discord';
 
 const links: Links[] = [
   {
@@ -38,11 +37,6 @@ const links: Links[] = [
         name: 'Github',
         href: 'https://github.com/michaelcanonizado',
         icon: <GithubLogo />
-      },
-      {
-        name: 'Discord',
-        href: '/',
-        icon: <DiscordLogo />
       }
     ]
   }
