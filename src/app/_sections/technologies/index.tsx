@@ -65,11 +65,11 @@ const Technologies = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'mb-xl flex !min-h-0 w-screen max-w-full flex-col items-center space-y-lg overflow-hidden !pt-0',
+        'flex !min-h-0 w-screen max-w-full flex-col items-center space-y-md overflow-hidden !pt-0 md:space-y-lg lg:my-xl',
         className
       )}
     >
-      <div className='flex max-w-[900px] flex-col items-center justify-center space-y-lg'>
+      <div className='flex max-w-[900px] flex-col items-center justify-center space-y-md px-lg md:space-y-lg'>
         <div>
           <TextDisplay>Technologies</TextDisplay>
         </div>
@@ -82,16 +82,17 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         </div>
       </div>
       <InfiniteSlider
-        className='group border-none py-lg'
+        className='group !mt-0 border-none py-lg'
         baseVelocity={1.5}
         stopOnHover={false}
       >
         <div className='flex w-fit flex-row flex-nowrap'>
           {technologyLogos.map((logo, index) => {
             return (
-              <div className='mx-lg h-fit w-fit' key={index}>
+              <div className='mx-md h-fit w-fit md:mx-lg' key={index}>
                 {React.cloneElement(logo.component, {
-                  className: 'fill-foreground stroke-foreground'
+                  className:
+                    'fill-foreground stroke-foreground h-[40px] md:h-max'
                 })}
               </div>
             );
