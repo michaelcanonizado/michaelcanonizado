@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 
-import { TextDisplay, TextHeading } from '@/components/text';
+import { TextDisplay, TextHeading, TextSub } from '@/components/text';
 import Project, { ProjectType } from '@/app/_sections/projects/project';
 
 const projectsList: ProjectType[] = [
@@ -38,9 +38,12 @@ const Projects = ({ className }: ComponentBaseProps) => {
         </div>
         <div className='max-w-[600px]'>
           <TextHeading className='text-center'>
-            I really enjoy working on side projects. Wearing multiple hats as a
+            I love working on side projects. Wearing multiple hats as a
             designer, thinker, and a manager!
           </TextHeading>
+          <TextSub className='mt-xs text-center md:mt-sm'>
+            {"( I'll make better mockups soon! hehe )"}
+          </TextSub>
         </div>
       </div>
       <div className='flex flex-col gap-md md:gap-lg'>
