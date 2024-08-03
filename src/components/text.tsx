@@ -152,7 +152,7 @@ export const TextBody = ({
       initial='hidden'
       whileInView='show'
       className={cn(
-        'text-[calc((16/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)] xs:text-[calc((18/16)*1rem)] md:text-[calc((20/16)*1rem)]',
+        'text-[calc((14/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)] xs:text-[calc((16/16)*1rem)] sm:text-[calc((18/16)*1rem)] md:text-[calc((20/16)*1rem)]',
         className
       )}
     >
