@@ -51,21 +51,21 @@ const Footer = ({ className }: ComponentBaseProps) => {
 
   return (
     <section className={cn('w-full space-y-md', className)}>
-      <div className='max-height !m-lg flex flex-col justify-end rounded-xl bg-muted py-lg'>
+      <div className='max-height flex flex-col justify-end bg-muted py-md md:py-lg lg:!m-lg lg:rounded-xl'>
         <div className='flex grow flex-col justify-between'>
-          <InfiniteSlider className='' baseVelocity={-3}>
-            <span className='mx-lg font-display text-[100px] font-bold group-hover:text-foreground-secondary'>
+          <InfiniteSlider baseVelocity={-3}>
+            <span className='mx-lg font-display text-[64px] font-bold group-hover:text-foreground-secondary lg:text-[100px]'>
               {email}
             </span>
           </InfiniteSlider>
-          <div className='flex flex-row justify-between gap-lg px-lg py-xl'>
-            <div className='max-w-[500px]'>
+          <div className='flex flex-col justify-between gap-lg px-md py-md md:px-lg md:py-xl lg:flex-row'>
+            <div className='max-w-[20ch] xs:max-w-[25ch] sm:max-w-[25ch] md:max-w-[30ch] lg:max-w-[50ch]'>
               <TextHeading className={textColor}>{text.heading}</TextHeading>
             </div>
-            <div className='flex flex-row gap-xl'>
+            <div className='flex flex-col gap-md lg:flex-row lg:gap-xl'>
               {links.map((linkGroup, index) => {
                 return (
-                  <div className='h-fit space-y-md' key={index}>
+                  <div className='space-y- h-fit lg:space-y-md' key={index}>
                     <div className=''>
                       <TextHeading className={textColor}>
                         {linkGroup.heading}
@@ -82,7 +82,7 @@ const Footer = ({ className }: ComponentBaseProps) => {
             </div>
           </div>
         </div>
-        <div className='px-lg'>
+        <div className='px-md md:px-lg'>
           <NameFirst className='fill-brand' />
         </div>
       </div>
