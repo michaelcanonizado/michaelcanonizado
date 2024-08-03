@@ -29,7 +29,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
             Logo
           </TextBody>
         </div>
-        <div className='flex flex-row gap-md'>
+        <div className='hidden flex-row gap-md sm:flex'>
           <NavLink className=''>about</NavLink>
           <NavLink className=''>experience</NavLink>
           <NavLink className=''>projects</NavLink>
