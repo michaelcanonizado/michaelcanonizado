@@ -49,7 +49,7 @@ const Card = ({ className, children, ...props }: ComponentBaseProps) => {
         type: 'spring'
       }}
       className={cn(
-        'relative h-[500px] w-[350px] space-y-md rounded-lg border bg-muted/20 p-lg backdrop-blur-[8px]',
+        'relative min-w-[82vw] space-y-md rounded-lg border bg-muted/20 p-lg backdrop-blur-[8px] sm:w-[420px] sm:min-w-0 lg:w-[350px]',
         className
       )}
     >
