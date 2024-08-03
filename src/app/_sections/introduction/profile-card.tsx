@@ -4,6 +4,7 @@ import Card from '@/components/card';
 import { TextHeading, TextSub } from '@/components/text';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import Username from '@/../public/introduction/username';
 
 const Check = ({ className }: ComponentBaseProps) => {
   return (
@@ -38,12 +39,7 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
         </Card.Image>
         <Card.Text className=''>
           <div className='py-sm'>
-            <TextHeading
-              showAnimation={false}
-              className='text-center text-[calc((27/16)*1rem)]'
-            >
-              @michaelcanonizado
-            </TextHeading>
+            <Username />
           </div>
           <div className='flex flex-col gap-[2px]'>
             {textList.map((text, index) => {

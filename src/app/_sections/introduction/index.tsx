@@ -29,19 +29,22 @@ const Introduction = ({ className }: ComponentBaseProps) => {
 
   return (
     <section ref={containerRef} className={cn('container my-0', className)}>
-      <div className='flex items-center justify-center gap-2xl overflow-hidden rounded-xl bg-muted py-2xl'>
+      <div className='flex flex-col items-center justify-center gap-lg overflow-hidden rounded-xl bg-muted pb-xl pt-lg lg:mb-0 lg:flex-row lg:gap-xl lg:py-2xl'>
         <motion.div
           style={{
             y,
             rotate: rotate,
             scale
           }}
-          className=''
+          className='hidden lg:block'
         >
           <ProfileCard />
         </motion.div>
+        <div className='block lg:hidden'>
+          <ProfileCard className='' />
+        </div>
 
-        <div className='max-w-[480px] space-y-md'>
+        <div className='max-w-[480px] space-y-md px-md xs:px-lg md:px-0'>
           <div>
             <TextHeading variants={textBodyVariants}>
               Looking for a developer who can create a visually appealing and
