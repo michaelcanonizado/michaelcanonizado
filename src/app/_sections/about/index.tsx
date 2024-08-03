@@ -23,14 +23,14 @@ const About = ({ className }: ComponentBaseProps) => {
   return (
     <section
       ref={containerRef}
-      className={cn('max-height container space-y-xl !pt-0', className)}
+      className={cn('container mb-lg space-y-lg !pt-0', className)}
     >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
           {'You can call me Mikey!'}
         </TextDisplay>
       </div>
-      <div className='flex items-start justify-center gap-xl space-x-xl'>
+      <div className='flex flex-col items-center justify-center gap-lg lg:flex-row lg:gap-xl'>
         <motion.div
           style={{
             rotate,
@@ -38,10 +38,15 @@ const About = ({ className }: ComponentBaseProps) => {
             y,
             scale: 1.1
           }}
+          className='hidden lg:block'
         >
           <ProfileCard />
         </motion.div>
-        <div className='!m-0 max-w-[500px] space-y-lg'>
+        <div className='!ml-0 block lg:hidden'>
+          <ProfileCard className='' />
+        </div>
+
+        <div className='ml-0 space-y-md px-md xs:px-lg sm:ml-xl sm:max-w-[550px] sm:pl-lg lg:ml-0 lg:max-w-[500px] lg:space-y-lg'>
           <div className=''>
             <TextHeading>
               I am a self-taught web developer based in the Philippines!
