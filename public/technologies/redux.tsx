@@ -9,7 +9,6 @@ export const Redux = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='243'
       height='75'
       viewBox='0 0 969 300'
       fill='#E23C12'

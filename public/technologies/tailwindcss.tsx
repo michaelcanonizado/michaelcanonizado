@@ -9,7 +9,6 @@ export const TailwindCSS = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='532'
       height='75'
       viewBox='0 0 1057 149'
       fill='#E23C12'

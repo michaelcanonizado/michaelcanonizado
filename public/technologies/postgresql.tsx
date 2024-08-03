@@ -9,7 +9,6 @@ export const PostgreSQL = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='374'
       height='75'
       viewBox='0 0 2959 594'
       fill='#E23C12'

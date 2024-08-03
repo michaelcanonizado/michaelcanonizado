@@ -9,7 +9,6 @@ export const NextJS = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='329'
       height='75'
       viewBox='0 0 1151 259'
       fill='#E23C12'

@@ -9,7 +9,6 @@ export const Git = React.forwardRef<
       {...props}
       className={className}
       ref={ref}
-      width='175'
       height='75'
       viewBox='0 0 588 253'
       fill='#E23C12'

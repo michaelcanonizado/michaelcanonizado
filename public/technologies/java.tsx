@@ -9,7 +9,6 @@ export const Java = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='152'
       height='75'
       viewBox='0 0 810 401'
       fill='#E23C12'

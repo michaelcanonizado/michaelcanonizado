@@ -9,7 +9,6 @@ export const MongoDB = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='298'
       height='75'
       viewBox='0 0 1380 348'
       fill='#E23C12'

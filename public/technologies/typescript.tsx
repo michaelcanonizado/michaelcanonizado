@@ -9,7 +9,6 @@ export const Typescript = React.forwardRef<
       ref={ref}
       {...props}
       className={className}
-      width='261'
       height='75'
       viewBox='0 0 1004 289'
       fill='#E23C12'
