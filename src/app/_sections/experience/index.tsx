@@ -28,7 +28,7 @@ const Experience = ({ className }: ComponentBaseProps) => {
   return (
     <section
       className={cn(
-        'container flex !max-w-[1000px] flex-col items-center space-y-lg',
+        'container !mt-lg flex !max-w-[1000px] flex-col items-center space-y-lg',
         className
       )}
     >
