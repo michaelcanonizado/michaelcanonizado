@@ -1,8 +1,12 @@
 import { cn } from '@/lib/utils';
 import { TextBody, TextHeading } from '@/components/text';
 import { ComponentBaseProps, Links } from '@/types';
+
 import { NameFirst } from '@/../public/name/';
 import InfiniteSlider from '@/components/infinite-slider';
+import { LinkedinLogo } from '@/../public/footer/linkedin';
+import { GithubLogo } from '@/../public/footer/github';
+import { DiscordLogo } from '@/../public/footer/discord';
 
 const links: Links[] = [
   {
@@ -27,15 +31,18 @@ const links: Links[] = [
     links: [
       {
         name: 'LinkedIn',
-        href: '/'
+        href: 'https://www.linkedin.com/in/michaelcanonizado/',
+        icon: <LinkedinLogo />
       },
       {
         name: 'Github',
-        href: '/'
+        href: 'https://github.com/michaelcanonizado',
+        icon: <GithubLogo />
       },
       {
         name: 'Discord',
-        href: '/'
+        href: '/',
+        icon: <DiscordLogo />
       }
     ]
   }
@@ -73,7 +80,19 @@ const Footer = ({ className }: ComponentBaseProps) => {
                     </div>
                     <div className={textColor}>
                       {linkGroup.links.map((link, index) => {
-                        return <TextBody key={index}>{link.name}</TextBody>;
+                        return (
+                          <a
+                            href={link.href}
+                            target='_blank'
+                            className='flex w-fit flex-row items-center gap-sm'
+                            key={index}
+                          >
+                            {link.icon && (
+                              <div className='size-[20px]'>{link.icon}</div>
+                            )}
+                            <TextBody>{link.name}</TextBody>
+                          </a>
+                        );
                       })}
                     </div>
                   </div>
