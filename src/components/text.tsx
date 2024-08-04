@@ -142,8 +142,9 @@ export const TextBody = ({
   className,
   children,
   showAnimation = true,
-  variants
-}: TextProps) => {
+  variants,
+  ...props
+}: TextProps & React.HTMLAttributes<HTMLParagraphElement> & MotionProps) => {
   const textVariants = showAnimation ? textBodyVariants : noAnimationVariants;
 
   return (
@@ -155,6 +156,7 @@ export const TextBody = ({
         'text-[calc((14/16)*1rem)] font-[400] leading-[1.4] tracking-[calc((1/16)*1rem)] xs:text-[calc((16/16)*1rem)] sm:text-[calc((18/16)*1rem)] md:text-[calc((20/16)*1rem)]',
         className
       )}
+      {...props}
     >
       {children}
     </motion.p>
