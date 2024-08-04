@@ -1,19 +1,24 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody } from '@/components/text';
-
-const NavLink = ({ className, children }: ComponentBaseProps) => {
-  return (
-    <TextBody
-      showAnimation={false}
-      className={cn('font-display font-[500] hover:cursor-pointer', className)}
-    >
-      {children}
-    </TextBody>
-  );
-};
+import AnchorLink from '@/components/anchor-link';
 
 const NavigationBar = ({ className }: ComponentBaseProps) => {
+  const links = [
+    {
+      name: 'Projects',
+      id: 'projects'
+    },
+    {
+      name: 'About',
+      id: 'about'
+    },
+    {
+      name: 'Experience',
+      id: 'experience'
+    }
+  ];
+
   return (
     <header className={cn('flex flex-row justify-center', className)}>
       <nav
@@ -30,9 +35,13 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
           </TextBody>
         </div>
         <div className='hidden flex-row gap-md sm:flex'>
-          <NavLink className=''>about</NavLink>
-          <NavLink className=''>experience</NavLink>
-          <NavLink className=''>projects</NavLink>
+          {links.map((link, index) => {
+            return (
+              <AnchorLink key={index} scrollTo={link.id}>
+                {link.name}
+              </AnchorLink>
+            );
+          })}
         </div>
       </nav>
     </header>
