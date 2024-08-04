@@ -52,7 +52,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
         className
       )}
     >
-      <div className='absolute inset-0 z-0'>
+      <div className='absolute inset-0 z-0 hidden lg:block'>
         <motion.div
           style={{
             rotate: TLrotate,
