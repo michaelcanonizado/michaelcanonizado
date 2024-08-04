@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentBaseProps } from '@/types';
 import { cn } from '@/lib/utils';
 import { TextBody } from './text';
