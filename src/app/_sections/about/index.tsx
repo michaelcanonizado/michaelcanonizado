@@ -22,6 +22,7 @@ const About = ({ className }: ComponentBaseProps) => {
 
   return (
     <section
+      id='about'
       ref={containerRef}
       className={cn('container mb-lg space-y-lg !pt-0', className)}
     >

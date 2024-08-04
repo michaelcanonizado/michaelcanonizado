@@ -27,6 +27,7 @@ const experiences = [
 const Experience = ({ className }: ComponentBaseProps) => {
   return (
     <section
+      id='experience'
       className={cn(
         'container !mt-lg flex !max-w-[1000px] flex-col items-center space-y-lg',
         className

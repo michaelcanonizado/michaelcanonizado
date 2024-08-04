@@ -31,7 +31,10 @@ const projectsList: ProjectType[] = [
 
 const Projects = ({ className }: ComponentBaseProps) => {
   return (
-    <section className={cn('container space-y-lg md:space-y-xl', className)}>
+    <section
+      id='projects'
+      className={cn('container space-y-lg md:space-y-xl', className)}
+    >
       <div className='flex flex-col items-center space-y-md md:space-y-lg'>
         <div className=''>
           <TextDisplay className='text-center'>Projects</TextDisplay>
