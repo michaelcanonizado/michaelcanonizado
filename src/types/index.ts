@@ -3,12 +3,12 @@ export type ComponentBaseProps = {
   children?: React.ReactNode;
 };
 
-export type Link = {
+export type ExternalLinkType = {
   name: string;
   href: string;
   icon?: React.ReactNode;
 };
-export type Links = {
-  heading: string;
-  links: Link[];
+export type AnchorLinkType = {
+  name: string;
+  id: string;
 };
