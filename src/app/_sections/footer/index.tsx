@@ -1,46 +1,52 @@
 import { cn } from '@/lib/utils';
-import { TextBody, TextHeading } from '@/components/text';
-import { ComponentBaseProps, Links } from '@/types';
+import { AnchorLinkType, ComponentBaseProps, ExternalLinkType } from '@/types';
 
+import { TextBody, TextHeading } from '@/components/text';
 import { NameFirst } from '@/../public/name/';
+import AnchorLink from '@/components/anchor-link';
 import InfiniteSlider from '@/components/infinite-slider';
 import { LinkedinLogo } from '@/../public/footer/linkedin';
 import { GithubLogo } from '@/../public/footer/github';
 
-const links: Links[] = [
-  {
-    heading: 'Site Map',
-    links: [
-      {
-        name: 'About',
-        href: '/'
-      },
-      {
-        name: 'Projects',
-        href: '/'
-      },
-      {
-        name: 'Experience',
-        href: '/'
-      }
-    ]
-  },
-  {
-    heading: 'Follow Me',
-    links: [
-      {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/michaelcanonizado/',
-        icon: <LinkedinLogo />
-      },
-      {
-        name: 'Github',
-        href: 'https://github.com/michaelcanonizado',
-        icon: <GithubLogo />
-      }
-    ]
-  }
-];
+const externalLinks: {
+  heading: string;
+  links: ExternalLinkType[];
+} = {
+  heading: 'Follow Me',
+  links: [
+    {
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/michaelcanonizado/',
+      icon: <LinkedinLogo />
+    },
+    {
+      name: 'Github',
+      href: 'https://github.com/michaelcanonizado',
+      icon: <GithubLogo />
+    }
+  ]
+};
+
+const anchorLinks: {
+  heading: string;
+  links: AnchorLinkType[];
+} = {
+  heading: 'Site Map',
+  links: [
+    {
+      name: 'About',
+      id: 'about'
+    },
+    {
+      name: 'Projects',
+      id: 'projects'
+    },
+    {
+      name: 'Experience',
+      id: 'experience'
+    }
+  ]
+};
 
 const Footer = ({ className }: ComponentBaseProps) => {
   const textColor = 'text-foreground';
@@ -64,34 +70,51 @@ const Footer = ({ className }: ComponentBaseProps) => {
               <TextHeading className={textColor}>{text.heading}</TextHeading>
             </div>
             <div className='flex flex-col gap-md lg:flex-row lg:gap-xl'>
-              {links.map((linkGroup, index) => {
-                return (
-                  <div className='space-y- h-fit lg:space-y-md' key={index}>
-                    <div className=''>
-                      <TextHeading className={textColor}>
-                        {linkGroup.heading}
-                      </TextHeading>
-                    </div>
-                    <div className={textColor}>
-                      {linkGroup.links.map((link, index) => {
-                        return (
-                          <a
-                            href={link.href}
-                            target='_blank'
-                            className='flex w-fit flex-row items-center gap-sm'
-                            key={index}
-                          >
-                            {link.icon && (
-                              <div className='size-[20px]'>{link.icon}</div>
-                            )}
-                            <TextBody>{link.name}</TextBody>
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              })}
+              <div className='space-y- h-fit lg:space-y-md'>
+                <div className=''>
+                  <TextHeading className={textColor}>
+                    {externalLinks.heading}
+                  </TextHeading>
+                </div>
+                <div className={textColor}>
+                  {externalLinks.links.map((link, index) => {
+                    return (
+                      <a
+                        href={link.href}
+                        target='_blank'
+                        className='flex w-fit flex-row items-center gap-sm'
+                        key={index}
+                      >
+                        {link.icon && (
+                          <div className='size-[20px]'>{link.icon}</div>
+                        )}
+                        <TextBody>{link.name}</TextBody>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className='space-y- h-fit lg:space-y-md'>
+                <div className=''>
+                  <TextHeading className={textColor}>
+                    {anchorLinks.heading}
+                  </TextHeading>
+                </div>
+                <div className={textColor}>
+                  {anchorLinks.links.map((link, index) => {
+                    return (
+                      <AnchorLink
+                        scrollTo={link.id}
+                        className='flex w-fit flex-row items-center gap-sm'
+                        key={index}
+                      >
+                        {link.name}
+                      </AnchorLink>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
