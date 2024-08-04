@@ -3,16 +3,19 @@
 import { ComponentBaseProps } from '@/types';
 import { cn } from '@/lib/utils';
 import { TextBody } from './text';
+import { useLenis } from 'lenis/react';
 
 export const AnchorLink = ({
   className,
   children,
-  scrollTo
-}: { scrollTo: string } & ComponentBaseProps) => {
+  target
+}: { target: string } & ComponentBaseProps) => {
+  const lenis = useLenis();
+
   return (
     <TextBody
       onClick={() => {
-        document.getElementById(scrollTo)?.scrollIntoView();
+        lenis?.scrollTo(target);
       }}
       showAnimation={false}
       className={cn('font-display font-[500] hover:cursor-pointer', className)}

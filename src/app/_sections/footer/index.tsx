@@ -35,15 +35,15 @@ const anchorLinks: {
   links: [
     {
       name: 'About',
-      id: 'about'
+      id: '#about'
     },
     {
       name: 'Projects',
-      id: 'projects'
+      id: '#projects'
     },
     {
       name: 'Experience',
-      id: 'experience'
+      id: '#experience'
     }
   ]
 };
@@ -105,7 +105,7 @@ const Footer = ({ className }: ComponentBaseProps) => {
                   {anchorLinks.links.map((link, index) => {
                     return (
                       <AnchorLink
-                        scrollTo={link.id}
+                        target={link.id}
                         className='flex w-fit flex-row items-center gap-sm'
                         key={index}
                       >

@@ -7,15 +7,15 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
   const links = [
     {
       name: 'Projects',
-      id: 'projects'
+      id: '#projects'
     },
     {
       name: 'About',
-      id: 'about'
+      id: '#about'
     },
     {
       name: 'Experience',
-      id: 'experience'
+      id: '#experience'
     }
   ];
 
@@ -37,7 +37,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
         <div className='hidden flex-row gap-md sm:flex'>
           {links.map((link, index) => {
             return (
-              <AnchorLink key={index} scrollTo={link.id}>
+              <AnchorLink key={index} target={link.id}>
                 {link.name}
               </AnchorLink>
             );
