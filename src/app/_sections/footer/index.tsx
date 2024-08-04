@@ -1,10 +1,10 @@
 import { cn } from '@/lib/utils';
 import { AnchorLinkType, ComponentBaseProps, ExternalLinkType } from '@/types';
 
-import { TextBody, TextHeading } from '@/components/text';
 import { NameFirst } from '@/../public/name/';
+import { TextBody, TextHeading } from '@/components/text';
+import InfiniteEmailSlider from './infinite-email-slider';
 import AnchorLink from '@/components/anchor-link';
-import InfiniteSlider from '@/components/infinite-slider';
 import { LinkedinLogo } from '@/../public/footer/linkedin';
 import { GithubLogo } from '@/../public/footer/github';
 
@@ -60,11 +60,7 @@ const Footer = ({ className }: ComponentBaseProps) => {
     <section className={cn('w-full space-y-md', className)}>
       <div className='max-height flex flex-col justify-end bg-muted py-md md:py-lg lg:!m-lg lg:rounded-xl'>
         <div className='flex grow flex-col justify-between'>
-          <InfiniteSlider baseVelocity={-3}>
-            <span className='mx-lg font-display text-[64px] font-bold group-hover:text-foreground-secondary lg:text-[100px]'>
-              {email}
-            </span>
-          </InfiniteSlider>
+          <InfiniteEmailSlider email={email} />
           <div className='flex flex-col justify-between gap-lg px-md py-md md:px-lg md:py-xl lg:flex-row'>
             <div className='max-w-[20ch] xs:max-w-[25ch] sm:max-w-[25ch] md:max-w-[30ch] lg:max-w-[50ch]'>
               <TextHeading className={textColor}>{text.heading}</TextHeading>
