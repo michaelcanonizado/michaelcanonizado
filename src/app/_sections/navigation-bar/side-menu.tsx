@@ -15,6 +15,7 @@ const SideMenu = ({
 } & ComponentBaseProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const curveWidth = 200;
   const enterEase = [0.25, 1, 0.5, 1];
   const exitEase = [0.5, 0, 0.75, 0];
 
@@ -39,10 +40,10 @@ const SideMenu = ({
 
   const sideMenuVariants: Variants = {
     initial: {
-      x: 'calc(100% + 150px)'
+      x: `calc(100% + ${curveWidth}px)`
     },
     exit: {
-      x: 'calc(100% + 150px)',
+      x: `calc(100% + ${curveWidth}px)`,
       transition: {
         ease: exitEase,
         duration: 0.8
@@ -77,8 +78,8 @@ const SideMenu = ({
     })
   };
 
-  const curveInitialPath = `M150 0 L150 ${window.innerHeight} Q-150 ${window.innerHeight / 2} 150 0`;
-  const curveFinalPath = `M150 0 L150 ${window.innerHeight} Q150 ${window.innerHeight / 2} 150 0`;
+  const curveInitialPath = `M${curveWidth} 0 L${curveWidth} ${window.innerHeight} Q-${curveWidth} ${window.innerHeight / 2} ${curveWidth} 0`;
+  const curveFinalPath = `M${curveWidth} 0 L${curveWidth} ${window.innerHeight} Q${curveWidth} ${window.innerHeight / 2} ${curveWidth} 0`;
   const curveVariants: Variants = {
     initial: {
       d: curveInitialPath
@@ -134,7 +135,12 @@ const SideMenu = ({
             exit='exit'
             className='fixed right-0 top-0 z-40 flex h-screen w-fit flex-row'
           >
-            <svg className='h-full w-[150px] bg-transparent fill-muted'>
+            <svg
+              className={cn(
+                'h-full bg-transparent fill-muted',
+                `w-[${curveWidth}px] `
+              )}
+            >
               <motion.path
                 variants={curveVariants}
                 initial='initial'
