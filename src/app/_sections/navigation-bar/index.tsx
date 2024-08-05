@@ -21,7 +21,12 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
   ];
 
   return (
-    <header className={cn('flex flex-row justify-center', className)}>
+    <header
+      className={cn(
+        'sticky top-0 z-50 flex flex-row justify-center',
+        className
+      )}
+    >
       <nav
         className={cn(
           'container !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
