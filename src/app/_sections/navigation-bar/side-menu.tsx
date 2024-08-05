@@ -101,6 +101,30 @@ const SideMenu = ({
     }
   };
 
+  const overlayVariants = {
+    initial: {
+      opacity: 0
+    },
+    hidden: {
+      opacity: 0
+      // transition: {
+      //   ease: exitEase,
+      //   duration: 0.8
+      // }
+    },
+    show: {
+      opacity: 100
+      // transition: {
+      //   ease: enterEase,
+      //   duration: 1.5
+      // }
+    }
+  };
+  const closeSideMenu = () => {
+    console.log('Closing sidebar!');
+    setIsOpen(false);
+  };
+
   return (
     <div
       className={cn(
@@ -130,6 +154,18 @@ const SideMenu = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            variants={overlayVariants}
+            initial='initial'
+            animate='show'
+            exit='hidden'
+            onClick={closeSideMenu}
+            className='fixed left-0 top-0 h-screen w-screen bg-muted/20 backdrop-blur-[6px]'
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
             variants={sideMenuVariants}
             initial='initial'
             animate='show'
@@ -137,6 +173,7 @@ const SideMenu = ({
             className='fixed right-0 top-0 z-40 flex h-screen w-fit flex-row'
           >
             <svg
+              onClick={closeSideMenu}
               className={cn(
                 'h-full bg-transparent fill-muted',
                 `w-[${curveWidth}px] `
@@ -148,6 +185,7 @@ const SideMenu = ({
               {links.map((link, index) => {
                 return (
                   <motion.div
+                    onClick={closeSideMenu}
                     variants={linkVariants}
                     custom={index}
                     key={index}
