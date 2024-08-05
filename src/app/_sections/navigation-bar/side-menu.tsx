@@ -6,7 +6,7 @@ import { motion, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 
-const Hamburger = ({ className }: ComponentBaseProps) => {
+const SideMenu = ({ className }: ComponentBaseProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const hamburgerTVariants: Variants = {
@@ -49,4 +49,4 @@ const Hamburger = ({ className }: ComponentBaseProps) => {
   );
 };
 
-export default Hamburger;
+export default SideMenu;

@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { AnchorLinkType, ComponentBaseProps } from '@/types';
 import { TextBody } from '@/components/text';
 import AnchorLink from '@/components/anchor-link';
-import Hamburger from './hamburger';
+import SideMenu from './side-menu';
 
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const links: AnchorLinkType[] = [
@@ -45,7 +45,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
           })}
         </div>
         <div className='block: md:hidden'>
-          <Hamburger />
+          <SideMenu />
         </div>
       </nav>
     </header>
