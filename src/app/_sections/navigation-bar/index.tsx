@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { TextBody } from '@/components/text';
 import AnchorLink from '@/components/anchor-link';
+import Hamburger from './hamburger';
 
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const links = [
@@ -42,6 +43,9 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
               </AnchorLink>
             );
           })}
+        </div>
+        <div className=''>
+          <Hamburger />
         </div>
       </nav>
     </header>
