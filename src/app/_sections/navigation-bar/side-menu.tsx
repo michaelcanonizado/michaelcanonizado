@@ -15,6 +15,9 @@ const SideMenu = ({
 } & ComponentBaseProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const enterEase = [0.25, 1, 0.5, 1];
+  const exitEase = [0.5, 0, 0.75, 0];
+
   const hamburgerTVariants: Variants = {
     close: {
       translateY: '0px'
@@ -36,15 +39,24 @@ const SideMenu = ({
 
   const sideMenuVariants: Variants = {
     initial: {
-      x: '100%'
+      x: 'calc(100% + 150px)'
     },
     exit: {
-      x: '100%'
+      x: 'calc(100% + 150px)',
+      transition: {
+        ease: exitEase,
+        duration: 0.8
+      }
     },
     enter: {
-      x: '0%'
+      x: '0%',
+      transition: {
+        ease: enterEase,
+        duration: 0.8
+      }
     }
   };
+
   const linkVariants: Variants = {
     initial: {
       x: '150%'
@@ -60,9 +72,31 @@ const SideMenu = ({
       x: '0%',
       transition: {
         type: 'spring',
-        delay: 0.4 * (index + 1)
+        delay: 0.2 * (index + 1)
       }
     })
+  };
+
+  const curveInitialPath = `M150 0 L150 ${window.innerHeight} Q-150 ${window.innerHeight / 2} 150 0`;
+  const curveFinalPath = `M150 0 L150 ${window.innerHeight} Q150 ${window.innerHeight / 2} 150 0`;
+  const curveVariants: Variants = {
+    initial: {
+      d: curveInitialPath
+    },
+    exit: {
+      d: curveInitialPath,
+      transition: {
+        ease: exitEase,
+        duration: 0.8
+      }
+    },
+    enter: {
+      d: curveFinalPath,
+      transition: {
+        ease: enterEase,
+        duration: 1.5
+      }
+    }
   };
 
   return (
@@ -98,20 +132,21 @@ const SideMenu = ({
             initial='initial'
             animate='enter'
             exit='exit'
-            transition={{
-              ease: [0.5, 0, 0.75, 0],
-              duration: 0.8
-            }}
-            className='fixed right-0 top-0 z-40 h-screen translate-x-[90%] bg-muted'
+            className='fixed right-0 top-0 z-40 flex h-screen w-fit flex-row'
           >
-            <div className='mt-xl flex flex-col gap-md px-xl py-xl'>
+            <svg className='h-full w-[150px] bg-transparent fill-muted'>
+              <motion.path
+                variants={curveVariants}
+                initial='initial'
+                animate='enter'
+                exit='exit'
+              />
+            </svg>
+            <div className='flex flex-col gap-md bg-muted px-xl py-2xl'>
               {links.map((link, index) => {
                 return (
                   <motion.div
                     variants={linkVariants}
-                    initial='initial'
-                    animate='enter'
-                    exit='exit'
                     custom={index}
                     key={index}
                   >
