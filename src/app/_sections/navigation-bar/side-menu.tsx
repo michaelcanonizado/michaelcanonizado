@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { AnchorLinkType, ComponentBaseProps } from '@/types';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
+
 import AnchorLink from '@/components/anchor-link';
 
 const SideMenu = ({
@@ -42,14 +43,14 @@ const SideMenu = ({
     initial: {
       x: `calc(100% + ${curveWidth}px)`
     },
-    exit: {
+    hidden: {
       x: `calc(100% + ${curveWidth}px)`,
       transition: {
         ease: exitEase,
         duration: 0.8
       }
     },
-    enter: {
+    show: {
       x: '0%',
       transition: {
         ease: enterEase,
@@ -62,14 +63,14 @@ const SideMenu = ({
     initial: {
       x: '150%'
     },
-    exit: index => ({
+    hidden: index => ({
       x: '150%',
       transition: {
         type: 'spring',
         delay: 0.1 * (index + 1)
       }
     }),
-    enter: index => ({
+    show: index => ({
       x: '0%',
       transition: {
         type: 'spring',
@@ -84,14 +85,14 @@ const SideMenu = ({
     initial: {
       d: curveInitialPath
     },
-    exit: {
+    hidden: {
       d: curveInitialPath,
       transition: {
         ease: exitEase,
         duration: 0.8
       }
     },
-    enter: {
+    show: {
       d: curveFinalPath,
       transition: {
         ease: enterEase,
@@ -131,8 +132,8 @@ const SideMenu = ({
           <motion.div
             variants={sideMenuVariants}
             initial='initial'
-            animate='enter'
-            exit='exit'
+            animate='show'
+            exit='hidden'
             className='fixed right-0 top-0 z-40 flex h-screen w-fit flex-row'
           >
             <svg
@@ -141,12 +142,7 @@ const SideMenu = ({
                 `w-[${curveWidth}px] `
               )}
             >
-              <motion.path
-                variants={curveVariants}
-                initial='initial'
-                animate='enter'
-                exit='exit'
-              />
+              <motion.path variants={curveVariants} />
             </svg>
             <div className='flex flex-col gap-md bg-muted px-xl py-2xl'>
               {links.map((link, index) => {
