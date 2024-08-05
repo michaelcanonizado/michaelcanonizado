@@ -45,7 +45,7 @@ const Projects = ({ className }: ComponentBaseProps) => {
             designer, thinker, and a manager!
           </TextHeading>
           <TextSub className='mt-xs text-center md:mt-sm'>
-            {"( I'll make better mockups soon! hehe )"}
+            {"( I'll make better mockups soon! )"}
           </TextSub>
         </div>
       </div>
