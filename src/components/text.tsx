@@ -177,7 +177,7 @@ export const TextSub = ({
       initial='hidden'
       whileInView='show'
       className={cn(
-        'font-display text-[calc((12/16)*1rem)] font-[500] leading-[1.2] tracking-[calc((1/16)*1rem)] sm:text-[calc((14/16)*1rem)]',
+        'font-display text-[calc((12/16)*1rem)] font-[300] leading-[1.2] tracking-[calc((1/16)*1rem)] sm:text-[calc((14/16)*1rem)]',
         className
       )}
     >
