@@ -44,9 +44,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
             );
           })}
         </div>
-        <div className='block: md:hidden'>
-          <SideMenu />
-        </div>
+        <SideMenu links={links} className='block: md:hidden' />
       </nav>
     </header>
   );
