@@ -7,6 +7,7 @@ import { AnchorLinkType, ComponentBaseProps } from '@/types';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import AnchorLink from '@/components/anchor-link';
+import { TextHeading, TextSub } from '@/components/text';
 
 const SideMenu = ({
   className,
@@ -182,23 +183,33 @@ const SideMenu = ({
               <motion.path variants={curveVariants} />
             </svg>
             <div className='flex flex-col gap-md bg-muted px-xl py-2xl'>
-              {links.map((link, index) => {
-                return (
-                  <motion.div
-                    onClick={closeSideMenu}
-                    variants={linkVariants}
-                    custom={index}
-                    key={index}
-                  >
-                    <AnchorLink
-                      className='font-display text-[calc((20/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)] xs:!text-[calc((24/16)*1rem)]'
-                      target={link.id}
+              <motion.div
+                onClick={closeSideMenu}
+                variants={linkVariants}
+                custom={0}
+                className=''
+              >
+                <TextSub>Site Map</TextSub>
+              </motion.div>
+              <div className='space-y-md'>
+                {links.map((link, index) => {
+                  return (
+                    <motion.div
+                      onClick={closeSideMenu}
+                      variants={linkVariants}
+                      custom={index + 1}
+                      key={index}
                     >
-                      {link.name}
-                    </AnchorLink>
-                  </motion.div>
-                );
-              })}
+                      <AnchorLink
+                        className='font-display text-[calc((20/16)*1rem)] font-[600] leading-[1.1] tracking-[calc((0/16)*1rem)] xs:!text-[calc((24/16)*1rem)]'
+                        target={link.id}
+                      >
+                        {link.name}
+                      </AnchorLink>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         )}
