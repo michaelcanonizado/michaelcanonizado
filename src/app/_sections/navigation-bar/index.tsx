@@ -24,7 +24,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
     <header className={cn('flex flex-row justify-center', className)}>
       <nav
         className={cn(
-          'container !my-0 flex h-[64px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
+          'container !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
         )}
       >
         <div>
@@ -35,7 +35,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
             Logo
           </TextBody>
         </div>
-        <div className='hidden flex-row gap-md sm:flex'>
+        <div className='hidden flex-row gap-md md:flex'>
           {links.map((link, index) => {
             return (
               <AnchorLink key={index} target={link.id}>
@@ -44,7 +44,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
             );
           })}
         </div>
-        <div className=''>
+        <div className='block: md:hidden'>
           <Hamburger />
         </div>
       </nav>
