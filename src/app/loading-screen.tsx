@@ -24,7 +24,7 @@ const LoadingScreen = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
-  const initialDelay = 1000;
+  const initialDelay = 1200;
   const intervalDelay = 200;
 
   const easing = [0.5, 0, 0.75, 0];
@@ -109,8 +109,10 @@ const LoadingScreen = () => {
               {textList[textIndex]}
             </TextDisplay>
           </div>
-          <div className='absolute bottom-xl'>
-            <TextSub>Best viewed on desktop</TextSub>
+          <div className='absolute bottom-xl px-md'>
+            <TextSub className='text-center'>
+              Best viewed on desktop or a larger window size
+            </TextSub>
           </div>
         </motion.div>
       </div>
