@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { TextDisplay } from '@/components/text';
+import { TextDisplay, TextSub } from '@/components/text';
 import Card from '@/components/card';
 import { useRef } from 'react';
 
@@ -59,14 +59,24 @@ const Closing = ({ className }: ComponentBaseProps) => {
             y: TLy
           }}
           className='absolute left-[12%] top-[-6%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] rotate-[10deg] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
-        />
+        >
+          <div className='grid h-full w-full place-items-center'>
+            <TextSub className='text-center'>Placeholders😅</TextSub>
+          </div>
+        </motion.div>
         <motion.div
           style={{
             rotate: TRrotate,
             y: TRy
           }}
           className='absolute right-[12%] top-[-5%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
-        />
+        >
+          <div className='grid h-full w-full place-items-center px-lg'>
+            <TextSub className='text-center'>
+              Future projects will be displayed here😎
+            </TextSub>
+          </div>
+        </motion.div>
         <motion.div
           style={{
             rotate: BLrotate,
@@ -74,7 +84,11 @@ const Closing = ({ className }: ComponentBaseProps) => {
             x: -115
           }}
           className='absolute bottom-[-2%] left-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] rotate-[-5deg] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
-        />
+        >
+          <div className='grid h-full w-full place-items-center px-lg'>
+            <TextSub className='text-center'>Nice meeting you!🤓</TextSub>
+          </div>
+        </motion.div>
         <motion.div
           style={{
             rotate: BRrotate,
@@ -82,7 +96,11 @@ const Closing = ({ className }: ComponentBaseProps) => {
             x: BRx
           }}
           className='absolute bottom-[-2%] right-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] overflow-hidden rounded-lg bg-brand opacity-[60%]'
-        />
+        >
+          <div className='grid h-full w-full place-items-center px-lg'>
+            <TextSub className='text-center'>Have you tried hovering the cards🤔</TextSub>
+          </div>
+        </motion.div>
       </div>
       <div className='z-10 max-w-[1000px] text-center'>
         <TextDisplay>{text.display}</TextDisplay>
