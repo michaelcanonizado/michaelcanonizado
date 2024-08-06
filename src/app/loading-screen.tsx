@@ -19,7 +19,7 @@ const textList = [
   'Kamusta'
 ];
 
-const Loading = () => {
+const LoadingScreen = () => {
   const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
@@ -69,4 +69,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingScreen;

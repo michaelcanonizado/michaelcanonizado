@@ -7,14 +7,14 @@ import LenisScrollProvider from '@/providers/lenis';
 
 import NavigationBar from '@/app/_sections/navigation-bar';
 import Cursor from './cursor';
-import Loading from './loading';
+import LoadingScreen from './loading-screen';
 
 export const metadata: Metadata = {
   title: 'Michael Canonizado',
   description: 'A personal portfolio'
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <LenisScrollProvider>
           <CursorContextProvider>
-            <Loading />
+            <LoadingScreen />
             {/* <Cursor /> */}
             <NavigationBar />
             {children}
