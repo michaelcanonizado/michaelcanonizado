@@ -128,7 +128,7 @@ const Dropdown = ({
       onMouseLeave={onMouseLeave}
       onClick={onClick}
       className={cn(
-        'group relative flex w-full overflow-hidden !border-x-0 border-b px-0',
+        'group relative flex w-full overflow-hidden !border-x-0 border-b px-0 hover:cursor-pointer',
         className
       )}
       {...props}
