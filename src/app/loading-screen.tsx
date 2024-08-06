@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { animate, AnimatePresence, motion } from 'framer-motion';
 
 import { TextDisplay, TextHeading } from '@/components/text';
 
@@ -41,13 +41,32 @@ const LoadingScreen = () => {
     return () => clearInterval(timeout);
   }, [textIndex]);
 
+  const loadingScreenVariants = {
+    initial: {
+      y: '0%'
+    },
+    show: {
+      y: '0%'
+    },
+    hidden: {
+      y: '-100%',
+      transition: {
+        ease: [0.5, 0, 0.75, 0],
+        duration: 0.8
+      }
+    }
+  };
+
   return (
     <AnimatePresence>
       <motion.div
+        variants={loadingScreenVariants}
+        initial='initial'
+        animate={isComplete ? 'hidden' : 'show'}
         transition={{
-          duration: initialDelay / 1000
+          duration: 0.2
         }}
-        className='sticky inset-0 top-0 z-[99] grid h-screen place-items-center bg-muted'
+        className='fixed inset-0 top-0 z-[99] grid h-screen place-items-center bg-muted'
       >
         <motion.div
           initial={{
@@ -57,11 +76,11 @@ const LoadingScreen = () => {
             opacity: 100
           }}
           transition={{
-            duration: 1
+            duration: initialDelay / 1000
           }}
           className='flex flex-row items-center justify-center gap-lg'
         >
-          <div className='size-[36px] rounded-full bg-foreground' />
+          <div className='size-[24px] rounded-full bg-foreground' />
           <TextDisplay showAnimation={false} className='text-foreground'>
             {textList[textIndex]}
           </TextDisplay>
