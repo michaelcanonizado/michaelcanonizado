@@ -7,7 +7,7 @@ import { AnchorLinkType, ComponentBaseProps } from '@/types';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import AnchorLink from '@/components/anchor-link';
-import { TextHeading, TextSub } from '@/components/text';
+import { TextSub } from '@/components/text';
 
 const SideMenu = ({
   className,
@@ -80,8 +80,9 @@ const SideMenu = ({
     })
   };
 
-  const curveInitialPath = `M${curveWidth} 0 L${curveWidth} ${window.innerHeight} Q-${curveWidth} ${window.innerHeight / 2} ${curveWidth} 0`;
-  const curveFinalPath = `M${curveWidth} 0 L${curveWidth} ${window.innerHeight} Q${curveWidth} ${window.innerHeight / 2} ${curveWidth} 0`;
+  const curveInitialPath = `M100 0 L100 ${window.innerHeight} Q-${curveWidth} ${window.innerHeight / 2} 100 0`;
+  const curveFinalPath = `M100 0 L100 ${window.innerHeight} Q100 ${window.innerHeight / 2} 100 0`;
+
   const curveVariants: Variants = {
     initial: {
       d: curveInitialPath
@@ -175,10 +176,7 @@ const SideMenu = ({
           >
             <svg
               onClick={closeSideMenu}
-              className={cn(
-                'h-full bg-transparent fill-muted',
-                `w-[${curveWidth}px] `
-              )}
+              className='h-full w-[100px] bg-transparent fill-muted'
             >
               <motion.path variants={curveVariants} />
             </svg>
@@ -187,7 +185,6 @@ const SideMenu = ({
                 onClick={closeSideMenu}
                 variants={linkVariants}
                 custom={0}
-                className=''
               >
                 <TextSub>Site Map</TextSub>
               </motion.div>
