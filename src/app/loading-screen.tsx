@@ -101,9 +101,9 @@ const LoadingScreen = () => {
           transition={{
             duration: initialDelay / 1000
           }}
-          className='flex flex-row items-center justify-center gap-lg'
+          className='flex flex-row items-center justify-center gap-sm md:gap-lg'
         >
-          <div className='size-[24px] rounded-full bg-foreground' />
+          <div className='size-[16px] rounded-full bg-foreground md:size-[24px]' />
           <TextDisplay showAnimation={false} className='text-foreground'>
             {textList[textIndex]}
           </TextDisplay>
