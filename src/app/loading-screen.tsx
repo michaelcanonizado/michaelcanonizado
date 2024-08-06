@@ -21,13 +21,18 @@ const textList = [
 
 const LoadingScreen = () => {
   const [textIndex, setTextIndex] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
+  const initialDelay = 1000;
+  const intervalDelay = 200;
 
   useEffect(() => {
     if (textIndex >= textList.length - 1) {
+      setIsComplete(true);
       return;
     }
 
-    const interval = textIndex === 0 ? 1000 : 200;
+    const interval = textIndex === 0 ? initialDelay : intervalDelay;
 
     const timeout = setTimeout(() => {
       setTextIndex(previousIndex => previousIndex + 1);
@@ -39,11 +44,8 @@ const LoadingScreen = () => {
   return (
     <AnimatePresence>
       <motion.div
-        exit={{
-          y: '-100%'
-        }}
         transition={{
-          duration: 1
+          duration: initialDelay / 1000
         }}
         className='sticky inset-0 top-0 z-[99] grid h-screen place-items-center bg-muted'
       >
