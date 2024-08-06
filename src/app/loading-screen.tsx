@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { motion, Variants } from 'framer-motion';
 
-import { TextDisplay } from '@/components/text';
+import { TextDisplay, TextSub } from '@/components/text';
 
 const textList = [
   'Hello',
@@ -101,12 +101,17 @@ const LoadingScreen = () => {
           transition={{
             duration: initialDelay / 1000
           }}
-          className='flex flex-row items-center justify-center gap-sm md:gap-lg'
+          className='absolute inset-0 flex flex-col items-center justify-center'
         >
-          <div className='size-[16px] rounded-full bg-foreground md:size-[24px]' />
-          <TextDisplay showAnimation={false} className='text-foreground'>
-            {textList[textIndex]}
-          </TextDisplay>
+          <div className='flex flex-row items-center justify-center gap-sm md:gap-lg'>
+            <div className='size-[16px] rounded-full bg-foreground md:size-[24px]' />
+            <TextDisplay showAnimation={false} className='text-foreground'>
+              {textList[textIndex]}
+            </TextDisplay>
+          </div>
+          <div className='absolute bottom-xl'>
+            <TextSub>Best viewed on desktop</TextSub>
+          </div>
         </motion.div>
       </div>
       <svg className={cn('w-full', `fill-muted`)} viewBox='0 0 1000 150'>
