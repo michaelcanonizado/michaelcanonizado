@@ -86,7 +86,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
               return <TextBody key={index}>{textBody}</TextBody>;
             })}
           </div>
-          <div>
+          <div className='hidden lg:block'>
             <Arrow className='h-[100px] text-brand' />
           </div>
         </div>
