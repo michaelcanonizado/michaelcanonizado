@@ -13,7 +13,7 @@ const experiences = [
   {
     heading: 'Freelancing 👨‍💻',
     description:
-      'Eager to put my skills to the test, I challenged myself to start freelancing. Working with diverse clients and projects honed my ability to communicate effectively and deliver top-notch solutions. This experience taught me more than just coding; it was a masterclass in time management and collaboration.',
+      'Eager to put my skills to the test, I challenged myself to start freelancing. Working with diverse clients and projects honed my ability to communicate effectively and deliver top-notch solutions. This experience taught me more than just coding: It was a masterclass in time management and collaboration.',
     time: '2022 - 2023'
   },
   {
