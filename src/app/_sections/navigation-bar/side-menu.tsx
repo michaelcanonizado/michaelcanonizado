@@ -179,7 +179,7 @@ const SideMenu = ({
           >
             <svg
               onClick={closeSideMenu}
-              className='h-full w-[100px] bg-transparent fill-muted'
+              className='absolute h-full w-[100px] translate-x-[-98%] bg-transparent fill-muted'
             >
               <motion.path variants={curveVariants} />
             </svg>
