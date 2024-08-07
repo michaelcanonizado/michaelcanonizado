@@ -98,9 +98,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
           className='absolute bottom-[-2%] right-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] overflow-hidden rounded-lg bg-brand opacity-[60%]'
         >
           <div className='grid h-full w-full place-items-center px-lg'>
-            <TextSub className='text-center'>
-              Have you tried hovering the cards?🤔
-            </TextSub>
+            <TextSub className='text-center'>Have you tried hovering the cards🤔</TextSub>
           </div>
         </motion.div>
       </div>
