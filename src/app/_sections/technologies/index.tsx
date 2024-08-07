@@ -75,7 +75,7 @@ const Technologies = ({ className }: ComponentBaseProps) => {
         </div>
         <div>
           <TextHeading className='text-center'>
-            My expertise spans a diverse range of technologies. Utilixing the
+            My expertise spans a diverse range of technologies. Utilizing the
             latest technologies to deliver high-perfomance and scalable
             solutions.
           </TextHeading>
