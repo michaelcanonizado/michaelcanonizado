@@ -11,7 +11,7 @@ import LoadingScreen from './loading-screen';
 
 export const metadata: Metadata = {
   title: 'Michael Canonizado',
-  description: 'A personal portfolio'
+  description: 'Personal portfolio'
 };
 
 export default async function RootLayout({
