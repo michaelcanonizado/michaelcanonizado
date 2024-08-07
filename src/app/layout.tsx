@@ -21,7 +21,6 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark bg-background text-foreground'>
-      {/* bg-red-500 xs:bg-orange-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500  */}
       <body
         className={cn(
           'relative flex min-h-screen flex-col justify-center font-sans',
@@ -31,7 +30,7 @@ export default async function RootLayout({
       >
         <LenisScrollProvider>
           <CursorContextProvider>
-            {/* <LoadingScreen /> */}
+            <LoadingScreen />
             {/* <Cursor /> */}
             <NavigationBar />
             {children}
