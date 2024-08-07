@@ -141,7 +141,7 @@ const SideMenu = ({
         animate={isOpen ? 'open' : 'close'}
         onClick={() => setIsOpen(prev => !prev)}
         className={
-          'fixed top-[12px] z-50 flex aspect-square flex-col items-center justify-center gap-[4px] rounded-full bg-brand p-[12px] hover:cursor-pointer'
+          'absolute top-[12px] z-50 flex aspect-square flex-col items-center justify-center gap-[4px] rounded-full bg-brand p-[12px] hover:cursor-pointer'
         }
       >
         <motion.div

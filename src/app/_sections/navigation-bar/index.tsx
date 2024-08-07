@@ -77,7 +77,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
     >
       <nav
         className={cn(
-          'container !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
+          'container relative !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
         )}
       >
         <div>
