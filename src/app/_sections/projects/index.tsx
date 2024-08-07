@@ -24,7 +24,7 @@ const projectsList: ProjectType[] = [
     technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
     heading: 'React Movies',
     description:
-      'Developed as a freshman project, this movie database web app provides detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
+      'Developed as a freshman project, this movie database web app shows detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
     url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
   }
 ];
@@ -41,8 +41,8 @@ const Projects = ({ className }: ComponentBaseProps) => {
         </div>
         <div className='max-w-[600px]'>
           <TextHeading className='text-center'>
-            I love working on side projects. Wearing multiple hats as a
-            designer, thinker, and a manager!
+            I love working on projects: Wearing multiple hats as a designer,
+            thinker, and a manager!
           </TextHeading>
           <TextSub className='mt-xs text-center md:mt-sm'>
             {"( I'll make better mockups soon! )"}
