@@ -32,7 +32,6 @@ export default async function RootLayout({
           <CursorContextProvider>
             <LoadingScreen />
             {/* <Cursor /> */}
-            {/* <NavigationBar /> */}
             {children}
           </CursorContextProvider>
         </LenisScrollProvider>
