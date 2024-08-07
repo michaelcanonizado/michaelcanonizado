@@ -8,6 +8,7 @@ import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import AnchorLink from '@/components/anchor-link';
 import { TextSub } from '@/components/text';
+import useDeviceSize from '@/hooks/use-device-size';
 
 const SideMenu = ({
   className,
@@ -16,6 +17,8 @@ const SideMenu = ({
   links: AnchorLinkType[];
 } & ComponentBaseProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [width, height] = useDeviceSize();
 
   const curveWidth = 200;
   const enterEase = [0.25, 1, 0.5, 1];
@@ -80,8 +83,8 @@ const SideMenu = ({
     })
   };
 
-  const curveInitialPath = `M100 0 L100 ${window.innerHeight} Q-${curveWidth} ${window.innerHeight / 2} 100 0`;
-  const curveFinalPath = `M100 0 L100 ${window.innerHeight} Q100 ${window.innerHeight / 2} 100 0`;
+  const curveInitialPath = `M100 0 L100 ${height} Q-${curveWidth} ${height / 2} 100 0`;
+  const curveFinalPath = `M100 0 L100 ${height} Q100 ${height / 2} 100 0`;
 
   const curveVariants: Variants = {
     initial: {
