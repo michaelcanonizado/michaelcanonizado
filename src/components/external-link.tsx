@@ -12,8 +12,9 @@ import { default as NextLink } from 'next/link';
 const ExternalLink = ({
   className,
   children,
+  target = '_blank',
   href
-}: { href: string } & ComponentBaseProps) => {
+}: { href: string; target?: '_blank' | '_self' } & ComponentBaseProps) => {
   const containerRef = useRef<HTMLAnchorElement | null>(null);
 
   const x = useMotionValue(0);
@@ -60,7 +61,7 @@ const ExternalLink = ({
       onMouseLeave={onMouseLeave}
       style={{ x: moveTextXBy, y: moveTextYBy }}
       transition={transition}
-      target='_blank'
+      target={target}
       className={cn(
         'group relative flex w-fit flex-row items-center gap-xs px-lg py-md',
         className
