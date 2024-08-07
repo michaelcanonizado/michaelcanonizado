@@ -7,6 +7,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { TextBody, TextHeading, TextSub } from '@/components/text';
 import Image from 'next/image';
 import { MouseEventHandler, useRef } from 'react';
+import MagneticHover from '@/components/magnetic-hover';
 
 const ExternalLink = ({ className }: ComponentBaseProps) => {
   return (
@@ -55,9 +56,7 @@ const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
     x.set(0);
     y.set(0);
   };
-
-  const moveRingXBy = useTransform(xSpring, [-0.5, 0.5], [-10, 10]);
-  const moveRingYBy = useTransform(ySpring, [-0.5, 0.5], [-5, 5]);
+  
   const moveTextXBy = useTransform(xSpring, [-0.5, 0.5], [-6, 6]);
   const moveTextYBy = useTransform(ySpring, [-0.5, 0.5], [-3, 3]);
 
@@ -80,9 +79,9 @@ const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
         className
       )}
     >
-      <motion.div
-        style={{ x: moveRingXBy, y: moveRingYBy }}
-        transition={transition}
+      <MagneticHover
+        xIntensity={10}
+        yIntensity={5}
         className='absolute inset-0 rounded-bl-[50%] rounded-br-[50%] rounded-tl-[50%] rounded-tr-[50%] border-2 border-brand bg-transparent'
       />
       <TextSub showAnimation={false} className='mb-[-2px]'>
