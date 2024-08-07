@@ -8,6 +8,7 @@ import { TextBody, TextHeading, TextSub } from '@/components/text';
 import Image from 'next/image';
 import { MouseEventHandler, useRef } from 'react';
 import MagneticHover from '@/components/magnetic-hover';
+import { default as NextLink } from 'next/link';
 
 const ExternalLink = ({ className }: ComponentBaseProps) => {
   return (
@@ -56,7 +57,7 @@ const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
     x.set(0);
     y.set(0);
   };
-  
+
   const moveTextXBy = useTransform(xSpring, [-0.5, 0.5], [-6, 6]);
   const moveTextYBy = useTransform(ySpring, [-0.5, 0.5], [-3, 3]);
 
@@ -65,8 +66,10 @@ const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
     stiffness: 200
   };
 
+  const AnimatedLink = motion(NextLink);
+
   return (
-    <motion.a
+    <AnimatedLink
       href={url}
       ref={containerRef}
       onMouseMove={onMouseMove}
@@ -88,7 +91,7 @@ const Link = ({ className, url }: { url: string } & ComponentBaseProps) => {
         View
       </TextSub>
       <ExternalLink className='h-[16px]] w-[16px]' />
-    </motion.a>
+    </AnimatedLink>
   );
 };
 
