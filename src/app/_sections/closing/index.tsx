@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { TextDisplay, TextSub } from '@/components/text';
 import Card from '@/components/card';
 import { useRef } from 'react';
+import MagneticHover from '@/components/magnetic-hover';
 
 const Closing = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -60,9 +61,9 @@ const Closing = ({ className }: ComponentBaseProps) => {
           }}
           className='absolute left-[12%] top-[-6%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] rotate-[10deg] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
         >
-          <div className='grid h-full w-full place-items-center'>
+          <MagneticHover className='grid h-full w-full place-items-center'>
             <TextSub className='text-center'>Placeholders😅</TextSub>
-          </div>
+          </MagneticHover>
         </motion.div>
         <motion.div
           style={{
@@ -71,11 +72,11 @@ const Closing = ({ className }: ComponentBaseProps) => {
           }}
           className='absolute right-[12%] top-[-5%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
         >
-          <div className='grid h-full w-full place-items-center px-lg'>
+          <MagneticHover className='grid h-full w-full place-items-center px-lg'>
             <TextSub className='text-center'>
               Future projects will be displayed here😎
             </TextSub>
-          </div>
+          </MagneticHover>
         </motion.div>
         <motion.div
           style={{
@@ -85,9 +86,9 @@ const Closing = ({ className }: ComponentBaseProps) => {
           }}
           className='absolute bottom-[-2%] left-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] rotate-[-5deg] scale-[1.5] overflow-hidden rounded-lg bg-brand opacity-[60%]'
         >
-          <div className='grid h-full w-full place-items-center px-lg'>
+          <MagneticHover className='grid h-full w-full place-items-center px-lg'>
             <TextSub className='text-center'>Nice meeting you!🤓</TextSub>
-          </div>
+          </MagneticHover>
         </motion.div>
         <motion.div
           style={{
@@ -97,9 +98,11 @@ const Closing = ({ className }: ComponentBaseProps) => {
           }}
           className='absolute bottom-[-2%] right-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] overflow-hidden rounded-lg bg-brand opacity-[60%]'
         >
-          <div className='grid h-full w-full place-items-center px-lg'>
-            <TextSub className='text-center'>Have you tried hovering the cards🤔</TextSub>
-          </div>
+          <MagneticHover className='grid h-full w-full place-items-center px-lg'>
+            <TextSub className='text-center'>
+              Have you tried hovering the cards🤔
+            </TextSub>
+          </MagneticHover>
         </motion.div>
       </div>
       <div className='z-10 max-w-[1000px] text-center'>
