@@ -22,6 +22,13 @@
   }
 }
 
+::-moz-selection {
+  background-color: #008000;
+}
+::selection {
+  background-color: #008000;
+}
+
 @layer components {
   .container {
     @apply mx-auto my-xl w-full max-w-[1440px] px-md py-lg md:my-xl md:px-lg md:py-xl;
