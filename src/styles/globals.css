@@ -4,25 +4,6 @@
 
 @layer base {
   :root {
-    /* --brand: 150 7% 6%; */
-    --brand: 12 85% 48%;
-
-    --navbar-background: 12 85% 48%;
-    --navbar-foreground: 44 22% 90%;
-
-    --background: 44 22% 90%;
-    --foreground: 12 85% 48%;
-    --foreground-secondary: 0 0% 100%;
-
-    --muted: 40 12% 85%;
-    --muted-foreground: 12 85% 48%;
-
-    --border: 12 85% 48%;
-    --input: 12 85% 48%;
-    --ring: 12 85% 48%;
-  }
-
-  .dark {
     --brand: 270 100% 68%;
 
     --navbar-background: 150 7% 6%;

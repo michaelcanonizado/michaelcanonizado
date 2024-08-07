@@ -20,7 +20,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='dark bg-background text-foreground'>
+    <html lang='en' className='bg-background text-foreground'>
       <body
         className={cn(
           'relative flex min-h-screen flex-col justify-center font-sans',
