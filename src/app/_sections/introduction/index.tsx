@@ -49,6 +49,14 @@ const Introduction = ({ className }: ComponentBaseProps) => {
   const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
 
+  const text = {
+    heading:
+      'Looking for a developer who can create a visually appealing and fully functional website?',
+    body: [
+      'Your search ends here! With my knowledge in web development, you&apos;ll get a website that sets you apart!'
+    ]
+  };
+
   return (
     <section ref={containerRef} className={cn('container my-0', className)}>
       <div className='flex flex-col items-center justify-center gap-lg overflow-hidden rounded-xl bg-muted pb-xl pt-lg lg:mb-0 lg:flex-row lg:gap-xl lg:py-2xl'>
@@ -69,18 +77,16 @@ const Introduction = ({ className }: ComponentBaseProps) => {
         <div className='relative max-w-[480px] space-y-md px-md xs:px-lg md:px-0'>
           <div>
             <TextHeading variants={textBodyVariants}>
-              Looking for a developer who can create a visually appealing and
-              fully functional website?
+              {text.heading}
             </TextHeading>
           </div>
 
           <div>
-            <TextBody>
-              Your search ends here! With my knowledge in web development,
-              you&apos;ll get a website that sets you apart!
-            </TextBody>
+            {text.body.map((textBody, index) => {
+              return <TextBody key={index}>{textBody}</TextBody>;
+            })}
           </div>
-          <div className=''>
+          <div>
             <Arrow className='h-[100px] text-brand' />
           </div>
         </div>
