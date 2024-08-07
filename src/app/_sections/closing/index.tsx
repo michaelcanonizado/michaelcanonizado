@@ -100,7 +100,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
         >
           <MagneticHover className='grid h-full w-full place-items-center overflow-hidden rounded-lg bg-brand/60 px-lg'>
             <TextSub className='text-center'>
-              Have you tried hovering the cards🤔
+              Have you tried hovering the cards?🤔
             </TextSub>
           </MagneticHover>
         </motion.div>
