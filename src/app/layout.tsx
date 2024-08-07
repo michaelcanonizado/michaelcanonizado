@@ -5,7 +5,7 @@ import { inter, clashDisplay } from '@/styles/fonts';
 import CursorContextProvider from '@/context/cursor';
 import LenisScrollProvider from '@/providers/lenis';
 
-import NavigationBar from '@/app/_sections/navigation-bar';
+import { Analytics } from '@vercel/analytics/react';
 import Cursor from './cursor';
 import LoadingScreen from './loading-screen';
 
@@ -35,6 +35,7 @@ export default async function RootLayout({
             {children}
           </CursorContextProvider>
         </LenisScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
