@@ -53,7 +53,7 @@ const Introduction = ({ className }: ComponentBaseProps) => {
     heading:
       'Looking for a developer who can create a visually appealing and fully functional website?',
     body: [
-      'Your search ends here! With my knowledge in web development, you&apos;ll get a website that sets you apart!'
+      "Your search ends here! With my knowledge in web development, you'll get a website that sets you apart!"
     ]
   };
 
