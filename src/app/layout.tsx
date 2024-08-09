@@ -10,8 +10,8 @@ import Cursor from './cursor';
 import LoadingScreen from './loading-screen';
 
 export const metadata: Metadata = {
-  title: 'Michael Canonizado',
-  description: 'Personal portfolio'
+  title: 'michaelcanonizado',
+  description: 'Portfolio Website'
 };
 
 export default async function RootLayout({
