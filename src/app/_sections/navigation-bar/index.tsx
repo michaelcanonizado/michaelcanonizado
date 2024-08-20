@@ -15,6 +15,7 @@ import {
   Variants
 } from 'framer-motion';
 import useDeviceSize from '@/hooks/use-device-size';
+import WarningBanner from './warning-banner';
 
 const links: AnchorLinkType[] = [
   {
@@ -76,9 +77,10 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
       className={cn(
         'sticky top-0 z-50 flex flex-row justify-center',
         className,
-        isHidden ? 'translate-y-[-100%]' : 'translate-y-0'
+        isHidden ? 'translate-y-[-100%]' : 'flex translate-y-0 flex-col'
       )}
     >
+      <WarningBanner className='flex h-[72px] bg-red-500 md:hidden' />
       <nav
         className={cn(
           'container relative !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
