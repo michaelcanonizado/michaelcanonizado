@@ -24,7 +24,7 @@ const About = ({ className }: ComponentBaseProps) => {
     <section
       id='about'
       ref={containerRef}
-      className={cn('container mb-lg space-y-lg !pt-0', className)}
+      className={cn('container mb-lg space-y-lg', className)}
     >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>

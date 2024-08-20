@@ -33,7 +33,7 @@ const Projects = ({ className }: ComponentBaseProps) => {
   return (
     <section
       id='projects'
-      className={cn('container space-y-lg md:space-y-xl', className)}
+      className={cn('container !mb-0 space-y-lg md:space-y-xl', className)}
     >
       <div className='flex flex-col items-center space-y-md md:space-y-lg'>
         <div className=''>
