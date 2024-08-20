@@ -35,12 +35,9 @@ const links: AnchorLinkType[] = [
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const [isHidden, setIsHidden] = useState(false);
   const { scrollYProgress } = useScroll();
-  const [width, height] = useDeviceSize();
 
   useMotionValueEvent(scrollYProgress, 'change', () => {
-    const isMobile = width < 500;
-
-    if (scrollYProgress.get() >= (isMobile ? 0.993 : 0.995)) {
+    if (scrollYProgress.get() >= 0.995) {
       setIsHidden(true);
     } else {
       setIsHidden(false);
@@ -54,7 +51,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
       y: '0%'
     },
     hidden: {
-      y: '-100%',
+      y: '-200%',
       transition: {
         ease: exitEase,
         duration: 0.8
@@ -70,37 +67,38 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
   };
 
   return (
-    <motion.header
-      variants={navigationBarVariants}
-      initial='initial'
-      animate={isHidden ? 'hidden' : 'show'}
-      className={cn(
-        'sticky top-0 z-50 flex flex-row justify-center',
-        className,
-        isHidden ? 'translate-y-[-100%]' : 'flex translate-y-0 flex-col'
-      )}
-    >
-      <WarningBanner className='flex h-[72px] bg-red-500 md:hidden' />
-      <nav
+    <div className='sticky top-0 z-50'>
+      <WarningBanner className='relative z-50 flex md:hidden' />
+      <motion.header
+        variants={navigationBarVariants}
+        initial='initial'
+        animate={isHidden ? 'hidden' : 'show'}
         className={cn(
-          'container relative !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
+          'relative z-[49] flex flex-row justify-center',
+          className
         )}
       >
-        <div>
-          <Logo className='size-[48px]' />
-        </div>
-        <div className='hidden flex-row gap-md md:flex'>
-          {links.map((link, index) => {
-            return (
-              <AnchorLink key={index} target={link.id}>
-                {link.name}
-              </AnchorLink>
-            );
-          })}
-        </div>
-        <SideMenu links={links} className='block: md:hidden' />
-      </nav>
-    </motion.header>
+        <nav
+          className={cn(
+            'container relative !my-0 flex h-[72px] flex-row items-center justify-between bg-transparent !py-0 text-foreground'
+          )}
+        >
+          <div>
+            <Logo className='size-[48px]' />
+          </div>
+          <div className='hidden flex-row gap-md md:flex'>
+            {links.map((link, index) => {
+              return (
+                <AnchorLink key={index} target={link.id}>
+                  {link.name}
+                </AnchorLink>
+              );
+            })}
+          </div>
+          <SideMenu links={links} className='block: md:hidden' />
+        </nav>
+      </motion.header>
+    </div>
   );
 };
 
