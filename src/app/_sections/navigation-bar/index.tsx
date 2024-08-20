@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import { AnchorLinkType, ComponentBaseProps } from '@/types';
@@ -14,6 +14,7 @@ import {
   motion,
   Variants
 } from 'framer-motion';
+import useDeviceSize from '@/hooks/use-device-size';
 
 const links: AnchorLinkType[] = [
   {
@@ -33,9 +34,12 @@ const links: AnchorLinkType[] = [
 const NavigationBar = ({ className }: ComponentBaseProps) => {
   const [isHidden, setIsHidden] = useState(false);
   const { scrollYProgress } = useScroll();
+  const [width, height] = useDeviceSize();
 
   useMotionValueEvent(scrollYProgress, 'change', () => {
-    if (scrollYProgress.get() >= 0.995) {
+    const isMobile = width < 500;
+
+    if (scrollYProgress.get() >= (isMobile ? 0.993 : 0.995)) {
       setIsHidden(true);
     } else {
       setIsHidden(false);
