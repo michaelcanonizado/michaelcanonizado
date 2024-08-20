@@ -73,10 +73,7 @@ const NavigationBar = ({ className }: ComponentBaseProps) => {
         variants={navigationBarVariants}
         initial='initial'
         animate={isHidden ? 'hidden' : 'show'}
-        className={cn(
-          'relative z-[49] flex flex-row justify-center',
-          className
-        )}
+        className={cn('relative flex flex-row justify-center', className)}
       >
         <nav
           className={cn(

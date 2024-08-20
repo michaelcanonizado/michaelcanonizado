@@ -144,7 +144,7 @@ const SideMenu = ({
         animate={isOpen ? 'open' : 'close'}
         onClick={() => setIsOpen(prev => !prev)}
         className={
-          'absolute top-[12px] z-50 flex aspect-square flex-col items-center justify-center gap-[4px] rounded-full bg-brand p-[12px] hover:cursor-pointer'
+          'absolute top-[12px] z-[100] flex aspect-square flex-col items-center justify-center gap-[4px] rounded-full bg-brand p-[12px] hover:cursor-pointer'
         }
       >
         <motion.div
@@ -164,7 +164,7 @@ const SideMenu = ({
             animate='show'
             exit='hidden'
             onClick={closeSideMenu}
-            className='fixed left-0 top-0 h-screen w-screen bg-muted/20 backdrop-blur-[6px]'
+            className='fixed left-0 top-0 z-[98] h-screen w-screen bg-muted/20 backdrop-blur-[6px]'
           />
         )}
       </AnimatePresence>
@@ -175,7 +175,7 @@ const SideMenu = ({
             initial='initial'
             animate='show'
             exit='hidden'
-            className='fixed right-0 top-0 z-40 flex h-screen w-fit flex-row'
+            className='fixed right-0 top-0 z-[99] flex h-screen w-fit flex-row'
           >
             <svg
               onClick={closeSideMenu}
