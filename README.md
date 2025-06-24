@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Michael Xavier Canonizado</h1>
-<h3 align="center">Passionately Learning and Growing in Web Development</h3>
+<h3 align="center">Passionately Learning and Growing in Software Development</h3>
 
 # 💫 About Me:
 
