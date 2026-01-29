@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 import { ComponentBaseProps } from '@/types';
-import { TextBody, TextDisplay, TextHeading } from '@/components/text';
+import { TextDisplay, TextHeading } from '@/components/text';
 
 import Git from '@/../public/technologies/git';
 import Java from '@/../public/technologies/java';
