@@ -57,8 +57,6 @@ const Sparkles = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
 );
 Sparkles.displayName = 'Sparkles';
 
-const textList = ['Responsive Design', 'Beautiful UI', 'High SEO'];
-
 const ProfileCard = ({ className }: ComponentBaseProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -115,6 +113,8 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
       }
     })
   };
+
+  const textList = ['Clean Code', 'Fast Learner', 'Commited'];
 
   return (
     <a
