@@ -62,6 +62,16 @@ const technologyLogos = [
 ];
 
 const Technologies = ({ className }: ComponentBaseProps) => {
+  const technologySvgs = technologyLogos.map((logo, index) => {
+    return (
+      <div className='mx-md h-fit w-fit md:mx-lg' key={index}>
+        {React.cloneElement(logo.component, {
+          className: 'fill-foreground stroke-foreground h-[40px] md:h-[60px]'
+        })}
+      </div>
+    );
+  });
+
   return (
     <section
       className={cn(
@@ -83,20 +93,12 @@ const Technologies = ({ className }: ComponentBaseProps) => {
       </div>
       <InfiniteSlider
         className='group !mt-0 border-none py-lg'
-        baseVelocity={1.5}
+        baseVelocity={0.5}
         stopOnHover={false}
       >
         <div className='flex w-fit flex-row flex-nowrap'>
-          {technologyLogos.map((logo, index) => {
-            return (
-              <div className='mx-md h-fit w-fit md:mx-lg' key={index}>
-                {React.cloneElement(logo.component, {
-                  className:
-                    'fill-foreground stroke-foreground h-[40px] md:h-max'
-                })}
-              </div>
-            );
-          })}
+          {technologySvgs}
+          {technologySvgs}
         </div>
       </InfiniteSlider>
     </section>
