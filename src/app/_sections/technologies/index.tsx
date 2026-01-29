@@ -10,54 +10,59 @@ import Git from '@/../public/technologies/git';
 import Java from '@/../public/technologies/java';
 import MongoDB from '@/../public/technologies/mongodb';
 import NextJS from '@/../public/technologies/nextjs';
-import Node from '@/../public/technologies/node';
 import PostgreSQL from '@/../public/technologies/postgresql';
 import ReactJS from '@/../public/technologies/reactjs';
-import Redux from '@/../public/technologies/redux';
 import TailwindCSS from '@/../public/technologies/tailwindcss';
 import Typescript from '@/../public/technologies/typescript';
 import InfiniteSlider from '@/components/infinite-slider';
+import SpringBoot from '../../../../public/technologies/spring-boot';
+import Docker from '../../../../public/technologies/docker';
+import Redis from '../../../../public/technologies/redis';
 
 const technologyLogos = [
-  {
-    name: 'Git',
-    component: <Git />
-  },
   {
     name: 'Java',
     component: <Java />
   },
   {
-    name: 'MongoDB',
-    component: <MongoDB />
-  },
-  {
-    name: 'NextJS',
-    component: <NextJS />
-  },
-  {
-    name: 'ReactJS',
-    component: <ReactJS />
+    name: 'Spring Boot',
+    component: <SpringBoot />
   },
   {
     name: 'Typescript',
     component: <Typescript />
   },
   {
+    name: 'ReactJS',
+    component: <ReactJS />
+  },
+  {
+    name: 'NextJS',
+    component: <NextJS />
+  },
+  {
     name: 'TailwindCSS',
     component: <TailwindCSS />
   },
   {
-    name: 'Redux',
-    component: <Redux />
-  },
-  {
-    name: 'Node',
-    component: <Node />
-  },
-  {
     name: 'PostgreSQL',
     component: <PostgreSQL />
+  },
+  {
+    name: 'Redis',
+    component: <Redis />
+  },
+  {
+    name: 'MongoDB',
+    component: <MongoDB />
+  },
+  {
+    name: 'Docker',
+    component: <Docker />
+  },
+  {
+    name: 'Git',
+    component: <Git />
   }
 ];
 
