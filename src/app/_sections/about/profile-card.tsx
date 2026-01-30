@@ -95,7 +95,7 @@ const ProfileCard = ({ className }: ComponentBaseProps) => {
         <Card.Text>
           <div className='flex flex-row items-center justify-start'>
             <TextHeading showAnimation={false} className='text-brand'>
-              mikey
+              mike
             </TextHeading>
             <VerifiedBadge className='h-[24px]' />
           </div>
