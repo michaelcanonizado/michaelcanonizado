@@ -7,7 +7,7 @@ import Project, { ProjectType } from '@/app/_sections/projects/project';
 const projectsList: ProjectType[] = [
   {
     image: {
-      src: '/projects/minder.png',
+      src: '/projects/bu-tabulation-system.png',
       alt: 'BU Tabulation System'
     },
     technologies: ['React', 'Spring Boot', 'PostreSQL', 'Redis'],
@@ -28,7 +28,7 @@ const projectsList: ProjectType[] = [
   },
   {
     image: {
-      src: '/projects/react-movies.png',
+      src: '/projects/markup.png',
       alt: 'Markup'
     },
     technologies: ['Java', 'Java Swing'],
@@ -39,7 +39,7 @@ const projectsList: ProjectType[] = [
   },
   {
     image: {
-      src: '/projects/react-movies.png',
+      src: '/projects/rsa-cipher-tool.png',
       alt: 'RSA Cipher Tool'
     },
     technologies: ['C'],
@@ -48,17 +48,6 @@ const projectsList: ProjectType[] = [
       'Developed as a freshman capstone project for Computer Programming 2 (CS-103), The RSA Cipher Tool is a C-based encryption tool with a custom bignum library that implements the RSA (Rivest–Shamir–Adleman) algorithm to generate keys, encrypt, and decrypt data. This taught me a lot about low-level concepts, cryptography, and number theory.',
     url: 'https://github.com/michaelcanonizado/rsa-cipher-tool'
   }
-  // {
-  //   image: {
-  //     src: '/projects/react-movies.png',
-  //     alt: 'Project React Movies'
-  //   },
-  //   technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
-  //   heading: 'React Movies',
-  //   description:
-  //     'Another freshman project for Introduction to Computing (CS-101) which tested my knowledge in React and foundational web developement concepts. This movie database website shows detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
-  //   url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
-  // }
 ];
 
 const Projects = ({ className }: ComponentBaseProps) => {
