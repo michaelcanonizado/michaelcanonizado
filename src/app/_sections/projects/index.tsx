@@ -8,25 +8,57 @@ const projectsList: ProjectType[] = [
   {
     image: {
       src: '/projects/minder.png',
+      alt: 'BU Tabulation System'
+    },
+    technologies: ['React', 'Spring Boot', 'PostreSQL', 'Redis'],
+    heading: 'BU Tabulation System',
+    description: `Being the Software Engineering Lead in GDGoC BU, I led the design and development of our flagship project. It's an offline pageant tabulation system built to handle multiple pageants across the university. It includes real-time judge-admin updates, leaderboards, and a dynamic formula engine using Google's Blockly library. This project taught me invaluable lessons in system design, managing critical computations, and project management.`,
+    url: 'https://github.com/GDGoC-BU/tabulation-system'
+  },
+  {
+    image: {
+      src: '/projects/minder.png',
       alt: 'Project React Movies'
     },
     technologies: ['NextJS', 'TailwindCSS', 'MongoDB'],
     heading: 'Minder',
     description:
-      'Due to my lack of knowledge in Excel, I created a personal finance tracker. Since I am more skilled in web development, I created a website that tracks my finances and provides analytics.',
+      'Due to my lack of knowledge in Excel, I created a personal finance tracker. Since I am more skilled in web development, I created a full-stack webapp that tracks my finances and provides analytics.',
     url: 'https://github.com/michaelcanonizado/minder'
   },
   {
     image: {
       src: '/projects/react-movies.png',
-      alt: 'Project React Movies'
+      alt: 'Markup'
     },
-    technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
-    heading: 'React Movies',
+    technologies: ['Java', 'Java Swing'],
+    heading: 'Markup',
     description:
-      'Developed as a freshman project, this movie database web app shows detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
-    url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
+      'Developed as a sophomore capstone project for Programming Languages (CS-112), Markup is a custom Markdown-inspired language. It features its own grammar, a fully functional parser, all accessible through an interactive GUI. This deepened my understanding of language theory, semantics, and compiler design.',
+    url: 'https://github.com/michaelcanonizado/markup'
+  },
+  {
+    image: {
+      src: '/projects/react-movies.png',
+      alt: 'RSA Cipher Tool'
+    },
+    technologies: ['C'],
+    heading: 'RSA Cipher Tool',
+    description:
+      'Developed as a freshman capstone project for Computer Programming 2 (CS-103), The RSA Cipher Tool is a C-based encryption tool with a custom bignum library that implements the RSA (Rivest–Shamir–Adleman) algorithm to generate keys, encrypt, and decrypt data. This taught me a lot about low-level concepts, cryptography, and number theory.',
+    url: 'https://github.com/michaelcanonizado/rsa-cipher-tool'
   }
+  // {
+  //   image: {
+  //     src: '/projects/react-movies.png',
+  //     alt: 'Project React Movies'
+  //   },
+  //   technologies: ['ReactJS', 'TailwindCSS', 'Redux'],
+  //   heading: 'React Movies',
+  //   description:
+  //     'Another freshman project for Introduction to Computing (CS-101) which tested my knowledge in React and foundational web developement concepts. This movie database website shows detailed movie information, ratings, and trailers, providing users with comprehensive movie information.',
+  //   url: 'https://michaelcanonizado.github.io/react-movies-website/#/popular'
+  // }
 ];
 
 const Projects = ({ className }: ComponentBaseProps) => {
@@ -41,12 +73,8 @@ const Projects = ({ className }: ComponentBaseProps) => {
         </div>
         <div className='max-w-[600px]'>
           <TextHeading className='text-center'>
-            I love working on projects: Wearing multiple hats as a designer,
-            thinker, and a manager!
+            Wearing multiple hats as a designer, developer, and leader!
           </TextHeading>
-          <TextSub className='mt-xs text-center md:mt-sm'>
-            {"( I'll make better mockups soon! )"}
-          </TextSub>
         </div>
       </div>
       <div className='flex flex-col gap-md md:gap-lg'>
