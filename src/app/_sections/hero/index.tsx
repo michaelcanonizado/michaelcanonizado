@@ -10,9 +10,9 @@ const Hero = ({ className }: ComponentBaseProps) => {
         <div className='flex grow flex-col items-center justify-center space-y-md'>
           <div>
             <TextHeading showAnimation={false} className='flex flex-col'>
-              <span className='leading-[inherit]'>creator.</span>
-              <span className='leading-[inherit]'>storyteller.</span>
-              <span className='leading-[inherit]'>web developer.</span>
+              <span className='leading-[inherit]'>architect.</span>
+              <span className='leading-[inherit]'>problem-solver.</span>
+              <span className='leading-[inherit]'>software engineer.</span>
             </TextHeading>
           </div>
           <div>

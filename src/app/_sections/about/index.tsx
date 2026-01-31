@@ -9,6 +9,34 @@ import { ComponentBaseProps } from '@/types';
 import { TextBody, TextDisplay, TextHeading } from '@/components/text';
 import ProfileCard from './profile-card';
 
+function getYearDifference(year: number, month: number): number {
+  const schoolYearEndingMonth = 5;
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+  let dif = currentYear - year;
+  if (currentMonth >= schoolYearEndingMonth) {
+    dif += 1;
+  }
+  return dif;
+}
+
+function getYearTitle() {
+  const dif = getYearDifference(2023, 5);
+  switch (dif) {
+    case 1:
+      return 'Freshman';
+    case 2:
+      return 'Sophomore';
+    case 3:
+      return 'Junior';
+    case 4:
+      return 'Senior';
+    default:
+      return 'Alumnus / Extra Year';
+  }
+}
+
 const About = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -18,7 +46,15 @@ const About = ({ className }: ComponentBaseProps) => {
 
   const rotate = useTransform(scrollYProgress, [0, 1], [-10, -3]);
   const x = useTransform(scrollYProgress, [0, 1], [-50, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.2, 1], [300, 0, -175]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 1], [300, 65, -175]);
+
+  const text = {
+    heading: 'Developing scalable user-centric solutions',
+    body: [
+      `I am a ${getYearTitle()} Computer Science student with ${getYearDifference(2021, 6)} years of experience.`,
+      'I love diving deep into system design, scalable software architectures, and UI/UX design, allowing me to create web-apps that are user-friendly, aesthetic, and functional.'
+    ]
+  };
 
   return (
     <section
@@ -28,7 +64,7 @@ const About = ({ className }: ComponentBaseProps) => {
     >
       <div className='flex flex-row justify-center'>
         <TextDisplay className='max-w-[10ch] text-center'>
-          {'You can call me Mikey!'}
+          {'You can call me Mike!'}
         </TextDisplay>
       </div>
       <div className='flex flex-col items-center justify-center gap-lg lg:flex-row lg:gap-xl'>
@@ -49,24 +85,12 @@ const About = ({ className }: ComponentBaseProps) => {
 
         <div className='ml-0 space-y-md px-md xs:px-lg sm:ml-xl sm:max-w-[550px] sm:pl-lg lg:ml-0 lg:max-w-[500px] lg:space-y-lg'>
           <div className=''>
-            <TextHeading>
-              I am a self-taught web developer based in the Philippines!
-            </TextHeading>
+            <TextHeading>{text.heading}</TextHeading>
           </div>
           <div className='space-y-md'>
-            <TextBody>
-              I am a sophomore Computer Science student with 4 years of
-              experience in web development.
-            </TextBody>
-            <TextBody>
-              I love building websites that are user-friendly, aesthetic, and
-              functional.
-            </TextBody>
-            <TextBody>
-              {
-                "I'm here to transform your ideas into a website that elevates your business. My strong work ethic and discipline set me apart as a developer you can rely on!"
-              }
-            </TextBody>
+            {text.body.map((body, index) => {
+              return <TextBody key={index}>{body}</TextBody>;
+            })}
           </div>
         </div>
       </div>

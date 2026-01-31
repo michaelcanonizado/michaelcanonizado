@@ -12,7 +12,7 @@ const externalLinks: {
   heading: string;
   links: ExternalLinkType[];
 } = {
-  heading: 'Follow Me',
+  heading: 'Contact',
   links: [
     {
       name: 'LinkedIn',
