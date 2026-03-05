@@ -7,6 +7,7 @@ import { TextDisplay, TextSub } from '@/components/text';
 import Card from '@/components/card';
 import { useRef } from 'react';
 import MagneticHover from '@/components/magnetic-hover';
+import Image from 'next/image';
 
 const Closing = ({ className }: ComponentBaseProps) => {
   const containerRef = useRef(null);
@@ -34,11 +35,11 @@ const Closing = ({ className }: ComponentBaseProps) => {
   const BLrotate = useTransform(scrollYProgress, [0.3, 0.6, 1], [-15, -10, -5]);
   const BLy = useTransform(scrollYProgress, [0, 0.5, 1], [-300, 150, 400]);
   /* Bottom Right Card */
-  const BRrotate = useTransform(scrollYProgress, [0, 0.5, 1], [2, 5, 15]);
+  const BRrotate = useTransform(scrollYProgress, [0, 0.5, 1], [20, 5, 10]);
   const BRy = useTransform(
     scrollYProgress,
     [0, 0.3, 0.5, 1],
-    [-500, -90, 150, 350]
+    [-500, -90, 120, 350]
   );
 
   const text = {
@@ -62,7 +63,12 @@ const Closing = ({ className }: ComponentBaseProps) => {
           className='absolute left-[12%] top-[-6%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] rotate-[10deg] scale-[1.5]'
         >
           <MagneticHover className='grid h-full w-full place-items-center overflow-hidden rounded-lg bg-brand/60 px-lg'>
-            <TextSub className='text-center'>Placeholders😅</TextSub>
+            <Image
+              src='/closing/portrait-2.JPG'
+              alt='portrait-1'
+              fill
+              className=''
+            />
           </MagneticHover>
         </motion.div>
         <motion.div
@@ -73,9 +79,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
           className='absolute right-[12%] top-[-5%] h-[23vw] min-h-[250px] w-[18vw] min-w-[175px] scale-[1.5]'
         >
           <MagneticHover className='grid h-full w-full place-items-center overflow-hidden rounded-lg bg-brand/60 px-lg'>
-            <TextSub className='text-center'>
-              Future projects will be displayed here😎
-            </TextSub>
+            <Image src='/closing/portrait-3.JPG' alt='portrait-3' fill />
           </MagneticHover>
         </motion.div>
         <motion.div
@@ -87,7 +91,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
           className='absolute bottom-[-2%] left-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px] rotate-[-5deg] scale-[1.5]'
         >
           <MagneticHover className='grid h-full w-full place-items-center overflow-hidden rounded-lg bg-brand/60 px-lg'>
-            <TextSub className='text-center'>Nice meeting you!🤓</TextSub>
+            <Image src='/closing/landscape-1.jpg' alt='landscape-1 ' fill />
           </MagneticHover>
         </motion.div>
         <motion.div
@@ -99,9 +103,7 @@ const Closing = ({ className }: ComponentBaseProps) => {
           className='absolute bottom-[-2%] right-[5%] h-[23vw] min-h-[175px] w-[35vw] min-w-[250px]'
         >
           <MagneticHover className='grid h-full w-full place-items-center overflow-hidden rounded-lg bg-brand/60 px-lg'>
-            <TextSub className='text-center'>
-              Have you tried hovering the cards?🤔
-            </TextSub>
+            <Image src='/closing/landscape-2.jpg' alt='landscape-2' fill />
           </MagneticHover>
         </motion.div>
       </div>
