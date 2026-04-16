@@ -6,6 +6,7 @@
 
 💻 - [Portfolio Website](https://michaelcanonizado.vercel.app/)<br>
 📧 - michaelxaviercanonizado@gmail.com<br>
+Lead Software Engineer @[GDGoC BU](https://github.com/GDGoC-BU)
 
 # 💻 Tech:
 
